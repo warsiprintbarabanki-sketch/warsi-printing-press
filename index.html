@@ -4,819 +4,521 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WARSI PRINTING PRESS | Premium Printing Studio</title>
-<meta name="description" content="WARSI PRINTING PRESS Barabanki - Visiting Cards, Wedding Cards, Flex Banners and Premium Printing Services.">
-<meta name="theme-color" content="#050510">
+<title>WARSI PRINTING PRESS | 4D Royal Printing Studio</title>
+<meta name="description" content="WARSI PRINTING PRESS, Barabanki. Premium visiting cards, wedding cards, flex banners, posters and printing services.">
+<meta name="theme-color" content="#080706">
+
+<!-- IMPORTANT: Apna original Google verification meta tag yahan dobara paste karein -->
 
 <style>
-#svgDownload{
- background:radial-gradient(circle at center,#35250d55,transparent 70%);
- border-top:1px solid #b58b3b;
-}
-.svg-download-btn{
- display:block;
- width:calc(100% - 24px);
- margin:0 12px 12px;
- padding:13px;
- border:1px solid #e4bd65;
- border-radius:9px;
- background:linear-gradient(120deg,#a87927,#ffe9ad,#bd8c37);
- color:#100d06;
- font-weight:bold;
- text-align:center;
- cursor:pointer;
-}
-.svg-download-btn:hover{transform:scale(1.02)}
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--gold:#e4bd65;--gold2:#ffe9ad}
-body{font-family:Arial,sans-serif;background:#050509;color:#fff;overflow-x:hidden}
-button,a{font-family:inherit}
-button{cursor:pointer}
-.hidden{display:none!important}
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&display=swap');
 
-/* GALAXY INTRO */
-#intro{
-position:fixed;inset:0;z-index:9999;
-display:flex;align-items:center;justify-content:center;
-flex-direction:column;text-align:center;overflow:hidden;
-background:
-radial-gradient(ellipse at 50% 45%,#37236e 0%,#15103e 30%,#07091c 65%,#02020b 100%);
+:root{
+ --gold:#d9ad58;
+ --gold2:#ffdf91;
+ --bg:#080706;
+ --panel:#15120e;
+ --text:#fff9ed;
+ --muted:#b9ad99;
+ --line:rgba(226,183,100,.25);
+ --glow:rgba(218,169,76,.25);
 }
-#intro:before,#intro:after{
-content:"";position:absolute;inset:-50%;
-background-image:
-radial-gradient(2px 2px at 20% 30%,white 99%,transparent),
-radial-gradient(2px 2px at 70% 20%,#ffe6a0 99%,transparent),
-radial-gradient(1px 1px at 40% 70%,white 99%,transparent),
-radial-gradient(2px 2px at 80% 80%,#b7c8ff 99%,transparent),
-radial-gradient(1px 1px at 10% 90%,white 99%,transparent);
-background-size:230px 190px;
-animation:starsMove 35s linear infinite;
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+ background:var(--bg);color:var(--text);
+ font-family:'DM Sans',sans-serif;overflow-x:hidden;
 }
-#intro:after{transform:rotate(45deg);opacity:.55;animation-duration:50s}
-@keyframes starsMove{to{transform:translate(150px,-100px) rotate(25deg)}}
-.galaxy-ring{
-position:absolute;width:min(90vw,650px);height:min(90vw,650px);
-border:1px solid #c8a2ff55;border-radius:50%;
-box-shadow:0 0 40px #8b55ff55,inset 0 0 50px #8b55ff33;
-animation:spin 18s linear infinite;
+body:before{
+ content:"";position:fixed;inset:0;z-index:-3;
+ background:
+ radial-gradient(ellipse at 15% 15%,rgba(181,121,31,.18),transparent 35%),
+ radial-gradient(ellipse at 85% 65%,rgba(120,77,20,.16),transparent 38%),
+ linear-gradient(135deg,#080706,#17110a 48%,#080706);
 }
-.galaxy-ring:before,.galaxy-ring:after{
-content:"";position:absolute;inset:12%;border:1px solid #f5d58a55;
-border-radius:50%;transform:rotateX(65deg);
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+.gold{color:var(--gold2)}
+.container{width:min(1160px,92%);margin:auto}
+.section{padding:90px 0;position:relative}
+.section-title{text-align:center;margin-bottom:42px}
+.section-title small{color:var(--gold);letter-spacing:4px;text-transform:uppercase}
+.section-title h2{
+ font-family:Cinzel,serif;font-size:clamp(28px,5vw,46px);
+ margin:12px 0;color:var(--gold2);text-shadow:0 0 25px var(--glow)
 }
-.galaxy-ring:after{inset:25%;transform:rotateY(65deg)}
-@keyframes spin{to{transform:rotate(360deg)}}
-.intro-content{position:relative;z-index:5;padding:20px;width:100%}
-.intro-title{
-font-size:clamp(27px,7vw,54px);font-weight:900;
-letter-spacing:2px;color:#ffe6a0;
-text-shadow:0 0 12px #e9c66c,0 0 35px #b78aff;
-margin-bottom:8px
+.section-title p{color:var(--muted);max-width:650px;margin:auto;line-height:1.7}
+.gold-line{width:90px;height:2px;margin:18px auto;background:linear-gradient(90deg,transparent,var(--gold2),transparent)}
+/* Golden ambient particles */
+#particles{position:fixed;inset:0;pointer-events:none;z-index:-1;overflow:hidden}
+.spark{
+ position:absolute;width:3px;height:3px;border-radius:50%;
+ background:#ffda83;box-shadow:0 0 12px 3px rgba(255,194,75,.35);
+ animation:rise linear infinite;opacity:.7
 }
-.intro-subtitle{color:#ddd1ff;font-size:13px;letter-spacing:4px}
-.intro-welcome{margin-top:10px;color:white;font-size:17px}
-
-/* CSS 3D ROBOT CAT */
-.cat-stage{
-height:310px;max-width:500px;margin:10px auto 0;
-position:relative;perspective:900px;overflow:hidden
-}
-.dora{
-width:160px;height:220px;position:absolute;left:50%;top:40px;
-transform:translateX(-50%);animation:catWalk 5s ease-in-out infinite;
-filter:drop-shadow(0 18px 20px #0009)
-}
-.cat-head{
-position:absolute;top:0;left:12px;width:136px;height:120px;
-border-radius:50%;background:linear-gradient(140deg,#5ddcff,#1682d0 55%,#0753a2);
-border:3px solid #bdeeff;
-box-shadow:inset -12px -10px 15px #003a7a,inset 8px 7px 12px #ffffff66,0 0 25px #42c9ff77;
-z-index:3
-}
-.cat-face{
-position:absolute;left:15px;top:30px;width:100px;height:78px;
-border-radius:50%;background:linear-gradient(145deg,#fff,#e5eaf0);
-box-shadow:inset -5px -6px 10px #aab5c2
-}
-.cat-eye{
-position:absolute;top:17px;width:17px;height:25px;
-background:white;border:2px solid #222;border-radius:50%
-}
-.cat-eye:after{
-content:"";position:absolute;width:6px;height:10px;
-background:#111;border-radius:50%;left:5px;top:8px
-}
-.cat-eye.left{left:35px}.cat-eye.right{right:35px}
-.cat-nose{
-position:absolute;top:43px;left:63px;width:17px;height:17px;
-border-radius:50%;background:radial-gradient(circle at 30% 25%,#ffb5b5,#e60026 65%,#8a0017);
-border:1px solid #9a0014;z-index:4
-}
-.cat-line{
-position:absolute;top:60px;left:71px;width:2px;height:20px;background:#555
-}
-.cat-mouth{
-position:absolute;top:72px;left:49px;width:45px;height:19px;
-border-bottom:2px solid #444;border-radius:0 0 50% 50%
-}
-.whisker{
-position:absolute;top:61px;width:25px;height:1px;background:#777
-}
-.whisker.l1{left:4px;transform:rotate(12deg)}
-.whisker.l2{left:3px;top:70px}
-.whisker.l3{left:4px;top:79px;transform:rotate(-12deg)}
-.whisker.r1{right:4px;transform:rotate(-12deg)}
-.whisker.r2{right:3px;top:70px}
-.whisker.r3{right:4px;top:79px;transform:rotate(12deg)}
-.cat-body{
-position:absolute;top:94px;left:30px;width:100px;height:105px;
-border-radius:42% 42% 30% 30%;
-background:linear-gradient(120deg,#5ddcff,#1682d0 60%,#0753a2);
-border:2px solid #bdeeff;
-box-shadow:inset -10px -7px 13px #003c7b,inset 8px 5px 10px #ffffff55
-}
-.cat-belly{
-position:absolute;left:14px;top:20px;width:68px;height:75px;
-border-radius:50%;background:linear-gradient(145deg,#fff,#dfe6ee);
-box-shadow:inset -5px -5px 9px #b8c0cc
-}
-.cat-pocket{
-position:absolute;left:16px;top:48px;width:37px;height:23px;
-border:2px solid #aaa;border-radius:0 0 50% 50%;background:#fff
-}
-.cat-collar{
-position:absolute;top:9px;left:0;width:100%;height:9px;
-background:#d71936;border:1px solid #8c0017;border-radius:5px
-}
-.cat-bell{
-position:absolute;top:14px;left:43px;width:17px;height:17px;
-border-radius:50%;background:radial-gradient(circle at 30% 25%,#fff3a6,#e7a900 70%,#895300);
-border:1px solid #ffe18a
-}
-.cat-arm{
-position:absolute;top:110px;width:23px;height:65px;
-border-radius:20px;background:linear-gradient(90deg,#0870bb,#62dfff);
-border:2px solid #bdeeff;transform-origin:top center
-}
-.cat-arm.left{left:15px;transform:rotate(20deg);animation:wave 1s ease-in-out infinite alternate}
-.cat-arm.right{right:12px;transform:rotate(-20deg)}
-.cat-foot{
-position:absolute;top:185px;width:48px;height:23px;
-border-radius:50%;background:linear-gradient(145deg,#fff,#bfcbd8);
-border:2px solid #fff
-}
-.cat-foot.left{left:25px}.cat-foot.right{right:25px}
-@keyframes catWalk{
-0%,100%{transform:translateX(-50%) translateY(0) rotate(-3deg)}
-25%{transform:translateX(-43%) translateY(-13px) rotate(3deg)}
-50%{transform:translateX(-50%) translateY(0) rotate(-3deg)}
-75%{transform:translateX(-57%) translateY(-13px) rotate(3deg)}
-}
-@keyframes wave{to{transform:rotate(48deg)}}
-.intro-message{
-color:#fff;font-size:14px;min-height:25px;margin:5px auto 18px;
-text-shadow:0 0 10px #a98aff
-}
-.intro-buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-.start-btn{
-padding:14px 26px;border:0;border-radius:30px;
-font-size:14px;font-weight:bold;color:#171006;
-background:linear-gradient(120deg,#b57b23,#ffe9a7,#c28c32);
-box-shadow:0 0 25px #e5bd6577
-}
-.skip-btn{
-padding:13px 22px;border:1px solid #e4bd65;border-radius:30px;
-background:#ffffff10;color:white
-}
-
-/* MAIN WEBSITE */
-#website{display:none}
+@keyframes rise{from{transform:translateY(110vh) scale(.5);opacity:0}15%{opacity:.8}to{transform:translateY(-10vh) scale(1.3);opacity:0}}
+/* Navigation */
 header{
-position:sticky;top:0;z-index:100;
-background:#080808ed;border-bottom:1px solid #b58b3b;
-backdrop-filter:blur(15px);padding:12px 5%;
-display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap
+ position:sticky;top:0;z-index:100;
+ background:rgba(8,7,6,.82);backdrop-filter:blur(18px);
+ border-bottom:1px solid var(--line)
 }
-.logo{display:flex;align-items:center;gap:10px}
-.logo-icon{
-width:48px;height:48px;border:2px solid var(--gold);
-border-radius:50%;display:grid;place-items:center;color:var(--gold2);
-font-size:24px;box-shadow:0 0 18px #d6ad5580
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand-mark{
+ width:45px;height:45px;border:1px solid var(--gold);
+ display:grid;place-items:center;border-radius:13px;
+ color:var(--gold2);font-family:Cinzel,serif;font-weight:bold;
+ transform:rotate(-5deg);box-shadow:0 0 20px var(--glow)
 }
-.logo h2{font-size:18px;color:var(--gold2);letter-spacing:1px}
-.logo small{display:block;color:#ccc;font-size:10px;letter-spacing:2px}
-nav{display:flex;gap:7px;flex-wrap:wrap}
-nav button{
-border:1px solid #80632e;background:transparent;color:#f7e3b2;
-padding:9px 12px;border-radius:20px;font-size:11px
+.brand-name{font-family:Cinzel,serif;font-size:15px;letter-spacing:1.4px}
+.brand-name span{display:block;color:var(--gold);font:10px 'DM Sans';letter-spacing:3px;margin-top:3px}
+.nav-links{display:flex;align-items:center;gap:23px}
+.nav-links a{font-size:12px;color:#e5d9c6;transition:.3s}
+.nav-links a:hover{color:var(--gold2)}
+.nav-cta,.btn{
+ border:1px solid var(--gold);border-radius:30px;padding:12px 20px;
+ color:#171006;background:linear-gradient(120deg,#b77b29,#ffe2a0,#c28b39);
+ font-weight:800;font-size:12px;display:inline-flex;align-items:center;
+ justify-content:center;gap:8px;box-shadow:0 8px 25px rgba(207,153,62,.18);
+ transition:.3s
 }
-nav button:hover{background:var(--gold);color:#000}
-.hero{
-min-height:490px;padding:65px 6%;display:flex;align-items:center;
-justify-content:space-between;gap:30px;flex-wrap:wrap;
-background:radial-gradient(circle at 80% 45%,#b7893155,transparent 35%)
+.nav-cta:hover,.btn:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(222,174,83,.35)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--gold2);padding:9px 12px;border-radius:10px}
+/* Hero */
+.hero{min-height:680px;display:grid;align-items:center;position:relative;overflow:hidden;padding:80px 0 90px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:40px}
+.eyebrow{color:var(--gold);letter-spacing:4px;font-size:11px;text-transform:uppercase}
+.hero h1{
+ font:800 clamp(40px,6.5vw,76px)/1.12 Cinzel,serif;
+ margin:20px 0;color:#fff4df;letter-spacing:-1.5px
 }
-.hero-content{max-width:650px}
-.tag{display:inline-block;border:1px solid var(--gold);color:var(--gold2);
-padding:8px 16px;border-radius:30px;font-size:12px;letter-spacing:2px;margin-bottom:20px}
-.hero h1{font-size:clamp(34px,6vw,65px);line-height:1.12;margin-bottom:18px}
-.hero h1 span{color:var(--gold2);text-shadow:0 0 25px #d6ad5570}
-.hero p{color:#ccc;line-height:1.8;font-size:15px}
-.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
-.btn{
-display:inline-block;text-decoration:none;border:0;padding:13px 20px;
-border-radius:30px;font-weight:bold;
-background:linear-gradient(120deg,#a87927,#ffe6a1,#bd8c37);color:#100d06
+.hero h1 em{font-style:normal;color:var(--gold2);text-shadow:0 0 28px rgba(226,177,82,.28)}
+.hero-copy{max-width:540px;color:#c5b9a6;line-height:1.9;font-size:15px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:30px}
+.btn-outline{background:transparent;color:var(--gold2);box-shadow:none}
+.hero-stats{display:flex;gap:30px;margin-top:42px;flex-wrap:wrap}
+.stat strong{display:block;color:var(--gold2);font:700 23px Cinzel}
+.stat span{font-size:11px;color:var(--muted)}
+/* 3D showroom */
+.showroom{height:430px;perspective:1100px;display:grid;place-items:center}
+.scene{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .18s ease-out}
+.orbit{
+ position:absolute;width:310px;height:310px;border:1px solid rgba(232,184,92,.22);
+ border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%) rotateX(70deg);
+ box-shadow:0 0 45px rgba(207,153,62,.08)
 }
-.btn-outline{background:transparent;color:var(--gold2);border:1px solid var(--gold)}
-.hero-art{
-width:250px;height:250px;border-radius:50%;border:2px solid #c79b4c;
-display:grid;place-items:center;background:radial-gradient(circle,#38280d,#080808 70%);
-box-shadow:0 0 50px #d6ad5540;animation:float 4s ease-in-out infinite
+.orbit.two{width:390px;height:390px;transform:translate(-50%,-50%) rotateX(70deg) rotateZ(55deg);border-style:dashed}
+.hero-product{
+ position:absolute;left:50%;top:48%;width:260px;height:170px;
+ transform:translate(-50%,-50%) rotateY(-18deg) rotateX(12deg) translateZ(50px);
+ transform-style:preserve-3d;animation:float 5s ease-in-out infinite
 }
-.hero-art span{font-size:100px}
-@keyframes float{50%{transform:translateY(-15px) rotate(4deg)}}
-.section{padding:50px 5%}
-.section-title{text-align:center;margin-bottom:30px}
-.section-title h2{font-size:30px;color:var(--gold2)}
-.section-title p{color:#aaa;margin-top:10px;font-size:13px}
-.service-grid{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
-gap:16px;max-width:1200px;margin:auto
+.card3d{
+ position:absolute;inset:0;border-radius:13px;
+ background:linear-gradient(135deg,#282016,#080706 55%,#6e4a1d);
+ border:1px solid #c69b51;
+ box-shadow:0 25px 50px #000,0 0 30px rgba(220,171,80,.22);
+ display:flex;flex-direction:column;justify-content:center;align-items:center;
+ text-align:center;backface-visibility:hidden
 }
-.service{
-background:linear-gradient(145deg,#1c1a16,#090909);
-border:1px solid #705326;border-radius:16px;padding:22px 12px;
-text-align:center;min-height:155px;cursor:pointer;transition:.3s
+.card3d:before{content:"";position:absolute;inset:8px;border:1px solid rgba(240,202,130,.5);border-radius:8px}
+.card3d h3{font:700 25px Cinzel;color:#f6d58c;letter-spacing:2px}
+.card3d p{font-size:9px;letter-spacing:3px;color:#fff0d0;margin-top:9px}
+.card3d small{color:#c99c51;margin-top:16px;font-size:8px;letter-spacing:2px}
+.floating-card{
+ position:absolute;width:130px;height:82px;border:1px solid #b88c48;border-radius:8px;
+ background:linear-gradient(130deg,#c9a15d,#332313 65%,#090807);
+ box-shadow:0 15px 30px #000;display:grid;place-items:center;
+ color:#fff0cf;font:700 11px Cinzel;letter-spacing:1px
 }
-.service:hover{transform:translateY(-7px);border-color:var(--gold2);box-shadow:0 0 25px #c99b4340}
-.service .emoji{font-size:35px;margin-bottom:12px}
-.service h3{font-size:14px;color:var(--gold2)}
-.service p{font-size:11px;color:#aaa;margin-top:7px;line-height:1.5}
-.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;max-width:1100px;margin:auto}
-.info{border:1px solid #574322;border-radius:14px;padding:22px;background:#111}
-.info h3{color:var(--gold2);margin-bottom:9px}
-.info p{color:#bbb;font-size:13px;line-height:1.7}
-
-/* CATEGORY PAGE */
-#catalogPage{display:none;min-height:75vh;padding:35px 5% 65px}
-.catalog-head{text-align:center;margin-bottom:28px}
-.catalog-head h2{font-size:clamp(25px,5vw,40px);color:var(--gold2)}
-.catalog-head p{color:#bbb;margin-top:10px}
-.back-btn{display:block;margin:0 auto 25px}
-.design-grid{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:20px;max-width:1250px;margin:auto
+.fc1{left:2%;top:20%;transform:rotateY(25deg) rotateZ(-12deg) translateZ(80px);animation:float 6s infinite}
+.fc2{right:0;bottom:18%;transform:rotateY(-28deg) rotateZ(12deg) translateZ(100px);animation:float 5s infinite reverse}
+.fc3{right:8%;top:10%;width:90px;height:60px;transform:rotateX(25deg) rotateZ(15deg);animation:float 7s infinite}
+@keyframes float{0%,100%{margin-top:0}50%{margin-top:-18px}}
+.glow-ball{
+ position:absolute;width:190px;height:190px;border-radius:50%;
+ background:radial-gradient(circle,rgba(228,179,85,.25),transparent 70%);
+ filter:blur(8px);top:50%;left:50%;transform:translate(-50%,-50%)
 }
-.design-card{background:#121212;border:1px solid #705326;border-radius:16px;overflow:hidden}
-.design-preview{
-height:180px;padding:12px;display:grid;place-items:center;
-background:linear-gradient(135deg,#292015,#080808)
+/* Feature strip */
+.feature-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.025)}
+.feature-row{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;padding:22px 0}
+.feature{text-align:center;color:#e9d6b5;font-size:12px}
+.feature b{display:block;color:var(--gold2);font-size:20px;margin-bottom:5px}
+/* Cards */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.service-card,.sample-card,.info-card{
+ position:relative;overflow:hidden;border:1px solid var(--line);border-radius:19px;
+ background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.018));
+ padding:26px;box-shadow:0 18px 40px rgba(0,0,0,.23);
+ transform-style:preserve-3d;transition:transform .35s,border-color .35s,box-shadow .35s
 }
-.sample{
-width:100%;height:100%;border-radius:7px;padding:15px;
-display:flex;flex-direction:column;justify-content:center;align-items:center;
-text-align:center;overflow:hidden;box-shadow:0 5px 15px #0008
+.service-card:hover,.sample-card:hover,.info-card:hover{
+ transform:translateY(-8px) rotateX(3deg) rotateY(-3deg);
+ border-color:var(--gold);box-shadow:0 20px 45px rgba(208,155,63,.13)
 }
-.sample strong{font-size:clamp(15px,3vw,22px);letter-spacing:1px}
-.sample small{font-size:10px;margin-top:7px}
-.sample span{font-size:10px;margin-top:5px}
-.design-card h3{color:var(--gold2);font-size:15px;padding:13px 13px 5px}
-.design-card p{color:#aaa;font-size:12px;line-height:1.5;padding:0 13px 12px}
-.order{
-display:block;text-align:center;text-decoration:none;background:#157a40;
-color:white;font-weight:bold;padding:12px;margin:0 12px 13px;border-radius:8px;font-size:13px
+.service-icon{font-size:34px;margin-bottom:18px;filter:drop-shadow(0 0 10px var(--glow))}
+.service-card h3,.sample-card h3{font:600 18px Cinzel;color:var(--gold2);margin-bottom:10px}
+.service-card p,.sample-card p,.info-card p{font-size:13px;color:var(--muted);line-height:1.7}
+.card-link{display:inline-block;color:var(--gold2);font-size:12px;margin-top:18px;font-weight:700}
+/* Showcase */
+.showcase{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}
+.showcase-visual{
+ min-height:340px;border-radius:22px;border:1px solid var(--line);
+ background:radial-gradient(circle at 50% 40%,#59401d,#17110b 60%,#090807);
+ display:grid;place-items:center;perspective:900px;overflow:hidden
 }
-footer{border-top:1px solid #6f542a;padding:30px 5%;text-align:center;background:#050505;color:#aaa;font-size:12px;line-height:2}
-footer strong{color:var(--gold2)}
-.whatsapp-float{
-position:fixed;left:17px;bottom:20px;z-index:400;background:#1da851;
-color:white;text-decoration:none;padding:13px 17px;border-radius:30px;font-weight:bold
+.print-stack{position:relative;width:230px;height:150px;transform-style:preserve-3d;transform:rotateX(55deg) rotateZ(-25deg);animation:stackFloat 6s ease-in-out infinite}
+.print-stack span{
+ position:absolute;inset:0;border:1px solid #f3d18a;border-radius:8px;
+ background:linear-gradient(135deg,#d6ad65,#261b10 70%);box-shadow:0 8px 0 #6d4c20,0 16px 0 #372615,0 24px 30px #000;
+ display:grid;place-items:center;color:#fff3d4;font:700 17px Cinzel
 }
-.speech{
-position:fixed;right:125px;bottom:85px;z-index:501;max-width:230px;
-padding:13px;border-radius:14px;background:#fff;color:#17120a;
-font-size:12px;line-height:1.5;box-shadow:0 0 20px #d6ad5570;display:none
+@keyframes stackFloat{50%{transform:rotateX(55deg) rotateZ(-25deg) translateY(-15px)}}
+.showcase-copy h3{font:700 30px Cinzel;color:var(--gold2);margin-bottom:15px}
+.showcase-copy p{color:var(--muted);line-height:1.9;margin-bottom:20px}
+/* visiting cards */
+.card-samples{display:grid;grid-template-columns:repeat(5,1fr);gap:15px}
+.sample-card{padding:13px}
+.mini-card{
+ aspect-ratio:1.65;display:flex;flex-direction:column;justify-content:center;align-items:center;
+ text-align:center;border-radius:8px;margin-bottom:14px;padding:8px;
+ background:linear-gradient(130deg,#21180d,#050505 65%,#8c6429);
+ border:1px solid #c59b53;box-shadow:0 8px 20px #000;
+ transform:rotateY(-8deg);transition:.4s
 }
-.robot{
-position:fixed;right:15px;bottom:12px;z-index:500;width:105px;height:140px;
-cursor:pointer;text-align:center;display:none
+.sample-card:hover .mini-card{transform:rotateY(8deg) rotateX(5deg) scale(1.04)}
+.mini-card strong{font:700 12px Cinzel;color:#ffdc96}
+.mini-card span{font-size:7px;color:#e7d4b4;margin-top:5px;letter-spacing:1px}
+.sample-card h3{font:600 12px 'DM Sans';margin:0}
+.sample-card p{font-size:10px;margin-top:5px}
+/* Gallery */
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.gallery-tile{
+ min-height:175px;border:1px solid var(--line);border-radius:15px;padding:20px;
+ display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;
+ background:linear-gradient(145deg,#5b401d,#1a120a 55%,#080706);
+ transition:.4s
 }
-.robot-body{
-width:85px;height:104px;margin:auto;position:relative;
-border-radius:42px 42px 25px 25px;
-background:linear-gradient(145deg,#f4f4f4,#8e929b 55%,#333943);
-border:2px solid #d7b45f;box-shadow:0 0 22px #d6ad5580;
-animation:float 3s ease-in-out infinite
+.gallery-tile:before{
+ content:"";position:absolute;width:170px;height:170px;border-radius:50%;
+ background:radial-gradient(circle,rgba(255,213,130,.22),transparent 70%);
+ top:-60px;right:-55px;transition:.4s
 }
-.robot-head{
-width:78px;height:62px;position:absolute;top:-22px;left:2px;
-border-radius:35px 35px 25px 25px;background:linear-gradient(145deg,#fff,#aeb5c1);
-border:2px solid #d7b45f
+.gallery-tile:hover{transform:translateY(-6px) rotateY(-4deg);border-color:var(--gold)}
+.gallery-tile:hover:before{transform:scale(1.5)}
+.gallery-tile span{font-size:30px;position:relative}
+.gallery-tile h3{font:600 16px Cinzel;color:var(--gold2);position:relative;margin-top:12px}
+.gallery-tile p{font-size:11px;color:#c7b79e;position:relative;margin-top:5px}
+/* About and contact */
+.about-box{border:1px solid var(--line);border-radius:22px;padding:38px;background:linear-gradient(130deg,rgba(202,153,69,.12),rgba(255,255,255,.025))}
+.about-box h3{font:700 27px Cinzel;color:var(--gold2);margin-bottom:15px}
+.about-box p{color:var(--muted);line-height:1.9}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.contact-item{padding:24px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.035)}
+.contact-item b{display:block;color:var(--gold2);margin:10px 0}
+.contact-item p{font-size:13px;color:var(--muted);line-height:1.7;overflow-wrap:anywhere}
+.contact-item .btn{margin-top:14px}
+/* Footer and floating buttons */
+footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:var(--muted);font-size:12px}
+footer strong{color:var(--gold2);font-family:Cinzel}
+.float-actions{position:fixed;right:17px;bottom:20px;z-index:90;display:flex;flex-direction:column;gap:10px}
+.float-actions a{width:49px;height:49px;border-radius:50%;display:grid;place-items:center;background:#1c160c;border:1px solid var(--gold);font-size:20px;box-shadow:0 5px 20px #000}
+/* Theme panel */
+.theme-toggle{position:fixed;left:15px;bottom:20px;z-index:100;background:#17120b;color:var(--gold2);border:1px solid var(--gold);border-radius:30px;padding:12px 15px;font-size:12px}
+.theme-panel{
+ position:fixed;left:15px;bottom:75px;width:min(300px,calc(100% - 30px));
+ z-index:110;background:#14100b;border:1px solid var(--gold);border-radius:18px;
+ padding:20px;box-shadow:0 20px 60px #000;display:none
 }
-.eyes{display:flex;justify-content:space-evenly;padding-top:20px}
-.eye{width:13px;height:17px;border-radius:50%;background:#00cfff;box-shadow:0 0 12px #00cfff}
-.robot-mouth{width:25px;height:6px;border-radius:10px;background:#333;margin:8px auto}
-.robot-chest{
-position:absolute;top:51px;left:24px;width:34px;height:34px;border:2px solid #d6ad55;
-border-radius:50%;display:grid;place-items:center;color:#d6ad55;font-size:17px
+.theme-panel.open{display:block;animation:panelIn .25s ease}
+@keyframes panelIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.theme-panel h3{font:600 17px Cinzel;color:var(--gold2);margin-bottom:15px}
+.theme-options{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.theme-options button{background:#241c11;border:1px solid var(--line);color:#f2dfbd;padding:10px 7px;border-radius:9px;font-size:11px}
+.theme-options button:hover{border-color:var(--gold)}
+/* Welcome */
+.welcome{
+ position:fixed;inset:0;z-index:200;background:radial-gradient(circle at center,#382711,#080706 65%);
+ display:grid;place-items:center;text-align:center;padding:25px;transition:opacity .7s,visibility .7s
 }
-.robot-label{font-size:11px;color:var(--gold2);font-weight:bold;margin-top:12px}
-@media(max-width:650px){
-header{justify-content:center}
-nav{justify-content:center}
-nav button{font-size:10px;padding:8px}
-.hero{text-align:center;justify-content:center}
-.hero-buttons{justify-content:center}
-.hero-art{width:190px;height:190px}
-.hero-art span{font-size:80px}
-.robot{transform:scale(.82);transform-origin:bottom right}
-.speech{right:100px;bottom:75px}
+.welcome.hide{opacity:0;visibility:hidden;pointer-events:none}
+.welcome-inner{max-width:600px}
+.welcome-logo{width:95px;height:95px;border:1px solid var(--gold);border-radius:25px;display:grid;place-items:center;margin:0 auto 25px;font:700 32px Cinzel;color:var(--gold2);box-shadow:0 0 45px var(--glow);transform:rotate(-7deg)}
+.welcome h1{font:700 clamp(28px,6vw,48px) Cinzel;color:var(--gold2);margin-bottom:13px}
+.welcome p{color:#c7b99f;line-height:1.7;margin-bottom:25px}
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .8s,transform .8s}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:850px){
+ .nav-links{display:none;position:absolute;top:76px;left:0;right:0;background:#0e0b08;padding:22px;flex-direction:column;border-bottom:1px solid var(--line)}
+ .nav-links.show{display:flex}.menu-btn{display:block}.nav-cta{display:none}
+ .hero-grid{grid-template-columns:1fr}.hero{text-align:center;padding-top:65px}
+ .hero-copy{margin:auto}.hero-actions,.hero-stats{justify-content:center}
+ .showroom{height:350px}.grid{grid-template-columns:repeat(2,1fr)}
+ .card-samples{grid-template-columns:repeat(2,1fr)}
+ .gallery-grid{grid-template-columns:repeat(2,1fr)}
+ .showcase{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}
+ .feature-row{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:480px){
+ .section{padding:65px 0}.grid{grid-template-columns:1fr}
+ .hero h1{font-size:39px}.showroom{height:300px}
+ .hero-product{transform:translate(-50%,-50%) scale(.82) rotateY(-18deg) rotateX(12deg)}
+ .orbit{width:250px;height:250px}.orbit.two{width:310px;height:310px}
+ .floating-card{width:95px;height:65px;font-size:9px}
+ .fc1{left:0}.fc2{right:0}
+ .card-samples{grid-template-columns:repeat(2,1fr)}
+ .gallery-grid{grid-template-columns:1fr 1fr}
+ .about-box{padding:25px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
 </style>
 </head>
-
 <body>
 
-<!-- GALAXY WELCOME SCREEN -->
-<section id="intro">
- <div class="galaxy-ring"></div>
- <div class="intro-content">
-  <div class="intro-title">WARSI PRINTING PRESS</div>
-  <div class="intro-subtitle">DESIGN • PRINT • QUALITY</div>
+<div id="particles"></div>
 
-  <div class="cat-stage">
-   <div class="dora">
-    <div class="cat-head">
-     <div class="cat-face"></div>
-     <div class="cat-eye left"></div>
-     <div class="cat-eye right"></div>
-     <div class="cat-nose"></div>
-     <div class="cat-line"></div>
-     <div class="cat-mouth"></div>
-     <div class="whisker l1"></div><div class="whisker l2"></div><div class="whisker l3"></div>
-     <div class="whisker r1"></div><div class="whisker r2"></div><div class="whisker r3"></div>
-    </div>
-    <div class="cat-body">
-     <div class="cat-collar"></div>
-     <div class="cat-bell"></div>
-     <div class="cat-belly"></div>
-     <div class="cat-pocket"></div>
-    </div>
-    <div class="cat-arm left"></div>
-    <div class="cat-arm right"></div>
-    <div class="cat-foot left"></div>
-    <div class="cat-foot right"></div>
+<div class="welcome" id="welcome">
+ <div class="welcome-inner">
+  <div class="welcome-logo">WP</div>
+  <p class="eyebrow">A Royal Printing Experience</p>
+  <h1>WARSI PRINTING PRESS</h1>
+  <p>Premium Printing • Creative Design • Royal Finishing</p>
+  <button class="btn" onclick="enterSite()">ENTER THE EXPERIENCE ✦</button>
+ </div>
+</div>
+
+<header>
+ <div class="container nav">
+  <a class="brand" href="#home">
+   <div class="brand-mark">WP</div>
+   <div class="brand-name">WARSI PRINTING PRESS<span>ROYAL PRINTING STUDIO</span></div>
+  </a>
+  <nav class="nav-links" id="navLinks">
+   <a href="#home">Home</a><a href="#services">Services</a>
+   <a href="#visiting">Visiting Cards</a><a href="#gallery">Gallery</a>
+   <a href="#about">About</a><a href="#contact">Contact</a>
+  </nav>
+  <a class="nav-cta" href="https://wa.me/918173834800">Order Now ↗</a>
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+ </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="container hero-grid">
+  <div class="hero-content reveal">
+   <p class="eyebrow">✦ Barabanki's Creative Printing Studio</p>
+   <h1>Printing With<br><em>Royal Touch.</em></h1>
+   <p class="hero-copy">Aapke har idea ko premium printing mein badalne ka ek naya experience. Wedding cards se visiting cards tak — quality, creativity aur royal finishing.</p>
+   <div class="hero-actions">
+    <a class="btn" href="https://wa.me/918173834800?text=Assalamualaikum%2C%20mujhe%20printing%20order%20karna%20hai.">✦ Start Your Order</a>
+    <a class="btn btn-outline" href="#services">Explore Services ↓</a>
+   </div>
+   <div class="hero-stats">
+    <div class="stat"><strong>8+</strong><span>Printing Services</span></div>
+    <div class="stat"><strong>10</strong><span>Card Concepts</span></div>
+    <div class="stat"><strong>100%</strong><span>Creative Focus</span></div>
    </div>
   </div>
-
-  <div class="intro-welcome">Assalamualaikum! Aapka khush aamdeed hai!</div>
-  <div class="intro-message" id="introMessage">Meet your friendly printing guide...</div>
-  <div class="intro-buttons">
-   <button class="start-btn" onclick="enterWebsite(true)">🚀 START & OPEN WEBSITE</button>
-   <button class="skip-btn" onclick="enterWebsite(false)">SKIP INTRO</button>
+  <div class="showroom">
+   <div class="scene" id="heroScene">
+    <div class="glow-ball"></div><div class="orbit"></div><div class="orbit two"></div>
+    <div class="hero-product">
+     <div class="card3d"><h3>WARSI</h3><p>PRINTING PRESS</p><small>CREATIVE • PREMIUM • ROYAL</small></div>
+    </div>
+    <div class="floating-card fc1">PREMIUM<br>PRINT</div>
+    <div class="floating-card fc2">ROYAL<br>DESIGN</div>
+    <div class="floating-card fc3">WP ✦</div>
+   </div>
   </div>
  </div>
 </section>
 
-<!-- MAIN WEBSITE -->
-<div id="website">
-<header>
- <div class="logo">
-  <div class="logo-icon">W</div>
-  <div>
-   <h2>WARSI PRINTING PRESS</h2>
-   <small>DESIGN • PRINT • QUALITY</small>
+<div class="feature-strip">
+ <div class="container feature-row">
+  <div class="feature"><b>✦</b>Creative Designs</div>
+  <div class="feature"><b>◈</b>Premium Finishing</div>
+  <div class="feature"><b>▣</b>Multiple Print Options</div>
+  <div class="feature"><b>♧</b>Personalised Orders</div>
+ </div>
+</div>
+
+<section class="section" id="services">
+ <div class="container">
+  <div class="section-title reveal"><small>What We Create</small><h2>Our Printing Services</h2><div class="gold-line"></div><p>Har occasion aur business ke liye creative printing solutions.</p></div>
+  <div class="grid">
+   <article class="service-card reveal"><div class="service-icon">💳</div><h3>Visiting Cards</h3><p>Business cards, premium matte, glossy aur luxury finishing designs.</p><a class="card-link" href="#visiting">Explore Designs →</a></article>
+   <article class="service-card reveal"><div class="service-icon">💍</div><h3>Wedding Cards</h3><p>Elegant wedding invitations, royal designs aur personalised cards.</p><a class="card-link" href="https://wa.me/918173834800?text=Wedding%20card%20design%20chahiye">Enquire Now →</a></article>
+   <article class="service-card reveal"><div class="service-icon">🖼️</div><h3>Flex Banners</h3><p>Shop banners, event flex, advertising aur promotional printing.</p><a class="card-link" href="https://wa.me/918173834800?text=Flex%20banner%20order%20karna%20hai">Enquire Now →</a></article>
+   <article class="service-card reveal"><div class="service-icon">🎨</div><h3>Posters</h3><p>Attractive promotional posters aur custom graphic layouts.</p><a class="card-link" href="https://wa.me/918173834800?text=Poster%20printing%20chahiye">Enquire Now →</a></article>
+   <article class="service-card reveal"><div class="service-icon">✉️</div><h3>Invitation Cards</h3><p>Special events, functions aur celebrations ke invitation cards.</p><a class="card-link" href="https://wa.me/918173834800?text=Invitation%20card%20chahiye">Enquire Now →</a></article>
+   <article class="service-card reveal"><div class="service-icon">📚</div><h3>Book Printing</h3><p>Books, notebooks, booklets aur customised printed material.</p><a class="card-link" href="https://wa.me/918173834800?text=Book%20printing%20chahiye">Enquire Now →</a></article>
+   <article class="service-card reveal"><div class="service-icon">🧾</div><h3>Bill Books</h3><p>Business bills, receipt books aur office stationery.</p><a class="card-link" href="https://wa.me/918173834800?text=Bill%20book%20chahiye">Enquire Now →</a></article>
+   <article class="service-card reveal"><div class="service-icon">🏷️</div><h3>Stickers & Labels</h3><p>Product labels, shop stickers aur custom branding material.</p><a class="card-link" href="https://wa.me/918173834800?text=Sticker%20aur%20label%20chahiye">Enquire Now →</a></article>
+   <article class="service-card reveal"><div class="service-icon">✧</div><h3>Custom Printing</h3><p>Aapke idea ke hisaab se customised design aur printing.</p><a class="card-link" href="https://wa.me/918173834800?text=Custom%20printing%20ke%20liye%20baat%20karni%20hai">Discuss Project →</a></article>
   </div>
  </div>
- <nav>
-  <button onclick="showHome()">HOME</button>
-  <button onclick="openCategory('visiting')">VISITING</button>
-  <button onclick="openCategory('wedding')">WEDDING</button>
-  <button onclick="openCategory('flex')">FLEX</button>
-  <button onclick="openCategory('pamphlet')">PAMPHLETS</button>
-  <button onclick="document.getElementById('svgDownload').scrollIntoView({behavior:'smooth'})">SVG DOWNLOAD</button>
- </nav>
-</header>
+</section>
 
-<main id="homePage">
- <section class="hero">
-  <div class="hero-content">
-   <div class="tag">PREMIUM PRINTING STUDIO</div>
-   <h1>Welcome to <span class="gold">WARSI</span><br>PRINTING PRESS</h1>
-   <p>आपका स्वागत है! शानदार Wedding Cards, Visiting Cards, Flex Banners और सभी प्रकार की Printing Services अब एक ही जगह पर।</p>
-   <div class="hero-buttons">
-    <button class="btn" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">EXPLORE DESIGNS</button>
-    <a class="btn btn-outline" href="https://wa.me/918173834800" target="_blank">WHATSAPP ORDER</a>
-   </div>
+<section class="section">
+ <div class="container showcase">
+  <div class="showcase-visual reveal">
+   <div class="print-stack"><span>WARSI ✦</span></div>
   </div>
-  <div class="hero-art"><span>🖨️</span></div>
- </section>
-
- <section class="section" id="services">
-  <div class="section-title">
-   <h2>Our Printing Services</h2>
-   <p>अपनी पसंद की कैटेगरी चुनें और 10 शानदार डिज़ाइन देखें</p>
+  <div class="showcase-copy reveal">
+   <p class="eyebrow">Designed To Impress</p>
+   <h3>Make Your First Impression Unforgettable.</h3>
+   <p>Ek achha design sirf print nahi hota — woh aapke business aur special moments ki pehchaan banata hai. Apna design idea WhatsApp par share karein.</p>
+   <a class="btn" href="https://wa.me/918173834800?text=I%20want%20a%20custom%20printing%20design">Create My Design ↗</a>
   </div>
-  <div class="service-grid" id="serviceGrid"></div>
- </section>
-
- <section class="section">
-  <div class="section-title">
-   <h2>Why Choose Us?</h2>
-   <p>आपके हर खास मौके के लिए शानदार प्रिंटिंग</p>
-  </div>
-  <div class="info-grid">
-   <div class="info"><h3>✦ Premium Quality</h3><p>साफ-सुथरी डिजाइन और बेहतरीन प्रिंटिंग क्वालिटी।</p></div>
-   <div class="info"><h3>✦ Custom Design</h3><p>आपकी पसंद के अनुसार डिजाइन और रंगों का चुनाव।</p></div>
-   <div class="info"><h3>✦ Easy WhatsApp Order</h3><p>डिजाइन चुनें और सीधे WhatsApp पर ऑर्डर भेजें।</p></div>
-  </div>
- </section>
-<section class="section" id="svgDownload">
- <div class="section-title">
-  <h2>✦ Premium Visiting Card Downloads ✦</h2>
-  <p>5 Royal Designs | Front & Back | Editable SVG</p>
  </div>
+</section>
 
- <div class="design-grid" id="svgDesignGrid"></div>
+<section class="section" id="visiting">
+ <div class="container">
+  <div class="section-title reveal"><small>Dedicated Card Collection</small><h2>Visiting Card Designs</h2><div class="gold-line"></div><p>Apne business ke liye ek professional pehchaan chunein. Apna favourite concept WhatsApp par bhejein.</p></div>
+  <div class="card-samples">
+   <article class="sample-card"><div class="mini-card"><strong>ROYAL GOLD</strong><span>PREMIUM BUSINESS CARD</span></div><h3>01 • Royal Gold</h3><p>Elegant golden finish</p></article>
+   <article class="sample-card"><div class="mini-card" style="background:linear-gradient(130deg,#eee,#999);color:#111"><strong style="color:#222">SILVER ELITE</strong><span style="color:#333">BUSINESS IDENTITY</span></div><h3>02 • Silver Elite</h3><p>Modern silver look</p></article>
+   <article class="sample-card"><div class="mini-card" style="background:linear-gradient(130deg,#073d36,#07110e)"><strong>EMERALD</strong><span>PREMIUM BUSINESS</span></div><h3>03 • Emerald</h3><p>Deep green luxury</p></article>
+   <article class="sample-card"><div class="mini-card" style="background:linear-gradient(130deg,#67232e,#18080b)"><strong>ROYAL MAROON</strong><span>YOUR BRAND</span></div><h3>04 • Maroon</h3><p>Classic royal style</p></article>
+   <article class="sample-card"><div class="mini-card" style="background:linear-gradient(130deg,#e9b8a9,#4b2524)"><strong style="color:#fff">ROSE GOLD</strong><span style="color:#fff">CREATIVE STUDIO</span></div><h3>05 • Rose Gold</h3><p>Soft metallic finish</p></article>
+   <article class="sample-card"><div class="mini-card" style="background:linear-gradient(130deg,#13274d,#080c18)"><strong>BLUE ELITE</strong><span>BUSINESS CARD</span></div><h3>06 • Blue Elite</h3><p>Corporate blue</p></article>
+   <article class="sample-card"><div class="mini-card" style="background:linear-gradient(130deg,#e8e0c9,#8d8066)"><strong style="color:#342819">CLASSIC IVORY</strong><span style="color:#342819">TIMELESS DESIGN</span></div><h3>07 • Ivory</h3><p>Clean classic look</p></article>
+   <article class="sample-card"><div class="mini-card" style="background:linear-gradient(130deg,#401d65,#10071c)"><strong>ROYAL PURPLE</strong><span>PREMIUM PRINT</span></div><h3>08 • Purple</h3><p>Bold creative style</p></article>
+   <article class="sample-card"><div class="mini-card" style="background:linear-gradient(130deg,#17636c,#071a21)"><strong>CYBER TEAL</strong><span>FUTURE BUSINESS</span></div><h3>09 • Cyber Teal</h3><p>Futuristic identity</p></article>
+   <article class="sample-card"><div class="mini-card" style="background:linear-gradient(130deg,#b88a45,#35210e)"><strong>BLACK LABEL</strong><span>EXCLUSIVE EDITION</span></div><h3>10 • Black Label</h3><p>Luxury dark design</p></article>
+  </div>
+  <div style="text-align:center;margin-top:30px"><a class="btn" href="https://wa.me/918173834800?text=Mujhe%20visiting%20card%20design%20samples%20aur%20price%20chahiye">Order Visiting Cards ↗</a></div>
+ </div>
+</section>
+
+<section class="section" id="gallery">
+ <div class="container">
+  <div class="section-title reveal"><small>Our Creative World</small><h2>Printing Gallery</h2><div class="gold-line"></div><p>Har category ke liye alag creative printing collection.</p></div>
+  <div class="gallery-grid">
+   <a class="gallery-tile" href="https://wa.me/918173834800?text=Wedding%20card%20gallery%20dikhaiye"><span>💍</span><h3>Wedding Cards</h3><p>Royal invitation collection</p></a>
+   <a class="gallery-tile" href="https://wa.me/918173834800?text=Flex%20banner%20samples%20dikhaiye"><span>🖼️</span><h3>Flex Banners</h3><p>Promotional displays</p></a>
+   <a class="gallery-tile" href="https://wa.me/918173834800?text=Poster%20samples%20dikhaiye"><span>🎨</span><h3>Posters</h3><p>Creative poster designs</p></a>
+   <a class="gallery-tile" href="https://wa.me/918173834800?text=Invitation%20samples%20dikhaiye"><span>✉️</span><h3>Invitations</h3><p>Special occasion cards</p></a>
+   <a class="gallery-tile" href="https://wa.me/918173834800?text=Book%20printing%20samples"><span>📚</span><h3>Books</h3><p>Booklets and publications</p></a>
+   <a class="gallery-tile" href="https://wa.me/918173834800?text=Bill%20book%20samples"><span>🧾</span><h3>Bill Books</h3><p>Business stationery</p></a>
+   <a class="gallery-tile" href="https://wa.me/918173834800?text=Sticker%20samples"><span>🏷️</span><h3>Stickers</h3><p>Labels and branding</p></a>
+   <a class="gallery-tile" href="https://wa.me/918173834800?text=Custom%20printing%20samples"><span>✦</span><h3>Custom Prints</h3><p>Your idea, our design</p></a>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="about">
+ <div class="container">
+  <div class="section-title reveal"><small>Our Identity</small><h2>About WARSI</h2><div class="gold-line"></div></div>
+  <div class="about-box reveal">
+   <h3>Creative Ideas. Premium Printing.</h3>
+   <p><strong class="gold">WARSI PRINTING PRESS</strong> mein hum visiting cards, wedding cards, flex banners, posters, invitations aur business printing solutions provide karte hain. Hamara focus creative designs, attractive presentation aur customer ki requirement ke mutabiq printing par hai.</p>
+   <p style="margin-top:12px">Aap apna design, text ya reference WhatsApp par share karke order ke baare mein baat kar sakte hain.</p>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="contact">
+ <div class="container">
+  <div class="section-title reveal"><small>Let's Connect</small><h2>Contact & Orders</h2><div class="gold-line"></div><p>Apne next printing project ke liye humse contact karein.</p></div>
+  <div class="contact-grid">
+   <div class="contact-item"><span style="font-size:27px">📍</span><b>Our Address</b><p>Niyamatganj Chauraha,<br>Tikaitnagar–Bhelsar Road,<br>Tehsil Ram Sanehi Ghat,<br>District Barabanki, Uttar Pradesh.</p></div>
+   <div class="contact-item"><span style="font-size:27px">📞</span><b>Call Us</b><p>+91 8173834800</p><a class="btn" href="tel:+918173834800">Call Now ↗</a></div>
+   <div class="contact-item"><span style="font-size:27px">💬</span><b>WhatsApp Orders</b><p>Design, quantity aur order details WhatsApp par share karein.</p><a class="btn" href="https://wa.me/918173834800">Chat on WhatsApp ↗</a></div>
+  </div>
+  <div style="text-align:center;margin-top:30px"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Niyamatganj+Chauraha+Barabanki+Uttar+Pradesh">Find Our Location ↗</a></div>
+ </div>
 </section>
 </main>
 
-<section id="catalogPage">
- <button class="btn back-btn" onclick="showHome()">← BACK TO HOME</button>
- <div class="catalog-head">
-  <div class="tag">WARSI PRINTING PRESS</div>
-  <h2 id="catalogTitle">Our Designs</h2>
-  <p id="catalogDescription">अपना पसंदीदा डिजाइन चुनें</p>
- </div>
- <div class="design-grid" id="designGrid"></div>
-</section>
-
 <footer>
- <strong>WARSI PRINTING PRESS</strong><br>
- Niyamatganj Chauraha, Tikaitnagar–Bhelsar Road<br>
- Tehsil Ram Sanehi Ghat, District Barabanki, Uttar Pradesh<br>
- Phone / WhatsApp: +91 8173834800<br>
- Email: ajahruddinsheikh0@gmail.com<br>
- © 2026 WARSI PRINTING PRESS. All Rights Reserved.
+ <div class="container">
+  <strong>WARSI PRINTING PRESS</strong>
+  <p style="margin-top:9px">A Royal Touch To Every Print ✦</p>
+  <p style="margin-top:8px">© <span id="year"></span> WARSI PRINTING PRESS. All Rights Reserved.</p>
+ </div>
 </footer>
+
+<button class="theme-toggle" onclick="toggleThemes()">✦ Change Look</button>
+<div class="theme-panel" id="themePanel">
+ <h3>Choose Your Royal Theme</h3>
+ <div class="theme-options">
+  <button onclick="setTheme('gold')">Black & Gold</button>
+  <button onclick="setTheme('blue')">Royal Blue</button>
+  <button onclick="setTheme('purple')">Purple Galaxy</button>
+  <button onclick="setTheme('green')">Emerald Gold</button>
+  <button onclick="setTheme('rose')">Rose Gold</button>
+  <button onclick="setTheme('light')">Ivory Luxury</button>
+ </div>
+ <button onclick="document.body.classList.toggle('calm')" style="margin-top:10px;width:100%;padding:10px;border:1px solid var(--line);background:#241c11;color:#f2dfbd;border-radius:9px;font-size:11px">Toggle Calm Motion</button>
 </div>
 
-<a class="whatsapp-float" id="waFloat" href="https://wa.me/918173834800" target="_blank" style="display:none">WhatsApp</a>
-
-<div class="speech" id="speech"></div>
-<div class="robot" id="smallRobot" onclick="robotTalk(true)">
- <div class="robot-body">
-  <div class="robot-head">
-   <div class="eyes"><div class="eye"></div><div class="eye"></div></div>
-   <div class="robot-mouth"></div>
-  </div>
-  <div class="robot-chest">W</div>
- </div>
- <div class="robot-label">TALK TO ME</div>
+<div class="float-actions">
+ <a href="https://wa.me/918173834800" aria-label="WhatsApp">✆</a>
+ <a href="tel:+918173834800" aria-label="Call">☎</a>
 </div>
 
 <script>
-const phone="918173834800";
+const particles=document.getElementById('particles');
+for(let i=0;i<38;i++){
+ const s=document.createElement('i');
+ s.className='spark';s.style.left=Math.random()*100+'%';
+ s.style.animationDuration=(8+Math.random()*15)+'s';
+ s.style.animationDelay=(-Math.random()*20)+'s';
+ s.style.opacity=(.25+Math.random()*.65);
+ particles.appendChild(s);
+}
+function enterSite(){
+ document.getElementById('welcome').classList.add('hide');
+ try{sessionStorage.setItem('warsiEntered','yes')}catch(e){}
+}
+try{if(sessionStorage.getItem('warsiEntered'))document.getElementById('welcome').classList.add('hide')}catch(e){}
+function toggleMenu(){document.getElementById('navLinks').classList.toggle('show')}
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('show')));
+function toggleThemes(){document.getElementById('themePanel').classList.toggle('open')}
+function setTheme(t){
+ const themes={
+  gold:['#d9ad58','#ffdf91','#080706','#15120e','#fff9ed','#b9ad99','rgba(218,169,76,.25)'],
+  blue:['#83baff','#d6eaff','#07101d','#101d30','#f3f8ff','#b5c5d9','rgba(91,155,255,.25)'],
+  purple:['#c69aff','#eedaff','#10091b','#21132f','#fff6ff','#c5b2d4','rgba(176,105,255,.25)'],
+  green:['#9cc98a','#e2ffc9','#07130d','#132219','#f4fff0','#b6c8b1','rgba(128,205,115,.25)'],
+  rose:['#d99b91','#ffe0d7','#170c0c','#281817','#fff5f1','#d3b7ae','rgba(223,139,128,.25)'],
+  light:['#a77b32','#d6ad65','#f5efe3','#fffaf0','#241b10','#756956','rgba(173,128,55,.2)']
+ };
+ const v=themes[t];const r=document.documentElement;
+ ['--gold','--gold2','--bg','--panel','--text','--muted','--glow'].forEach((k,i)=>r.style.setProperty(k,v[i]));
+ document.getElementById('themePanel').classList.remove('open');
+ try{localStorage.setItem('warsiTheme',t)}catch(e){}
+}
+try{const saved=localStorage.getItem('warsiTheme');if(saved)setTheme(saved)}catch(e){}
+document.getElementById('year').textContent=new Date().getFullYear();
 
-const categories={
- visiting:{title:"Visiting Cards",emoji:"💳",desc:"Business ke liye 10 Visiting Card Designs",designs:[
- ["Luxury Black Gold","Black and gold royal business card","black"],
- ["Classic Blue","Professional blue and white card","blue"],
- ["Royal Red","Bold red and black business card","red"],
- ["Elegant White","Simple clean white business card","white"],
- ["Premium Green","Green and gold premium design","green"],
- ["Modern Grey","Modern grey corporate design","grey"],
- ["Royal Purple","Purple luxury visiting card","purple"],
- ["Creative Orange","Bright orange business card","orange"],
- ["Minimal Black","Minimal black professional design","black2"],
- ["Ivory Gold","Ivory and gold elegant card","ivory"]]},
- wedding:{title:"Wedding Cards",emoji:"💍",desc:"Shadi ke liye 10 Wedding Invitation Designs",designs:[
- ["Royal Golden Wedding","Gold royal wedding invitation","gold"],
- ["Floral Pink Wedding","Pink floral invitation design","pink"],
- ["Maroon Traditional","Traditional maroon wedding card","maroon"],
- ["Ivory Elegant","Ivory and gold elegant invitation","ivory"],
- ["Red Royal Wedding","Red royal wedding invitation","red"],
- ["Green Mughal Style","Green traditional wedding design","green"],
- ["Blue Pearl Wedding","Blue and silver invitation","blue"],
- ["Minimal Modern","Modern minimal wedding invitation","white"],
- ["Luxury Black Gold","Black gold premium invitation","black"],
- ["Pastel Floral","Soft pastel floral wedding card","pastel"]]},
- flex:{title:"Flex & Banners",emoji:"🪧",desc:"Shop, business aur events ke liye 10 Flex Designs",designs:[
- ["Luxury Black Gold Flex","Premium black gold shop banner","black"],
- ["Blue Business Banner","Professional blue business banner","blue"],
- ["Red Sale Banner","Bold red promotional banner","red"],
- ["Colorful Event Flex","Colorful event function banner","color"],
- ["Restaurant Flex","Food and restaurant banner","orange"],
- ["Medical Shop Flex","Medical business banner","green"],
- ["School Banner","Education and school banner","blue"],
- ["Wedding Event Flex","Wedding welcome banner","pink"],
- ["Grand Opening Flex","Grand opening promotional banner","gold"],
- ["Ivory Premium Flex","Elegant premium business banner","ivory"]]},
- pamphlet:{title:"Pamphlets",emoji:"📄",desc:"Business promotion ke liye 10 Pamphlet Designs",designs:[
- ["Royal Business","Black gold business pamphlet","black"],
- ["Blue Corporate","Blue corporate pamphlet","blue"],
- ["Red Offer","Red discount offer pamphlet","red"],
- ["Food Menu","Restaurant food menu pamphlet","orange"],
- ["Coaching Classes","Education promotion pamphlet","blue"],
- ["Medical Services","Medical services pamphlet","green"],
- ["Real Estate","Property promotion pamphlet","gold"],
- ["Beauty Salon","Beauty salon pamphlet","pink"],
- ["Event Promotion","Event announcement pamphlet","purple"],
- ["Simple Elegant","Minimal elegant pamphlet","white"]]},
- letterhead:{title:"Letterheads",emoji:"📃",desc:"Office aur business ke liye 10 Letterhead Designs",designs:[
- ["Royal Gold Letterhead","Black gold premium letterhead","black"],
- ["Corporate Blue","Professional blue letterhead","blue"],
- ["Classic White","Clean white office letterhead","white"],
- ["Maroon Executive","Maroon executive letterhead","maroon"],
- ["Green Nature","Green modern letterhead","green"],
- ["Grey Minimal","Minimal grey letterhead","grey"],
- ["Purple Creative","Creative purple letterhead","purple"],
- ["Red Business","Red business letterhead","red"],
- ["Ivory Premium","Ivory premium letterhead","ivory"],
- ["Modern Gradient","Modern gradient letterhead","color"]]},
- billbook:{title:"Bill Books",emoji:"📒",desc:"Shop aur business ke liye 10 Bill Book Designs",designs:[
- ["Shop Bill Book","Professional shop bill design","blue"],
- ["Royal Black Gold","Luxury black and gold bill book","black"],
- ["Grocery Bill","Grocery store bill design","green"],
- ["Medical Bill","Medical store bill design","white"],
- ["Restaurant Bill","Restaurant bill book design","orange"],
- ["Hardware Bill","Hardware shop bill design","red"],
- ["Transport Bill","Transport business bill design","blue"],
- ["Wholesale Bill","Wholesale business bill design","grey"],
- ["Modern GST Bill","Modern invoice design","ivory"],
- ["Classic Cash Memo","Classic cash memo design","maroon"]]},
- poster:{title:"Posters",emoji:"🖼️",desc:"Advertising aur events ke liye 10 Poster Designs",designs:[
- ["Grand Opening","Grand opening poster","gold"],
- ["Mega Sale","Mega sale poster","red"],
- ["Business Promotion","Business promotion poster","blue"],
- ["Education Poster","Education awareness poster","green"],
- ["Wedding Poster","Wedding event poster","pink"],
- ["Restaurant Poster","Food promotion poster","orange"],
- ["Festival Poster","Festival greeting poster","purple"],
- ["Luxury Poster","Black gold luxury poster","black"],
- ["Health Poster","Health awareness poster","white"],
- ["Modern Creative","Modern creative poster","color"]]},
- stickers:{title:"Stickers & Labels",emoji:"🏷️",desc:"Product branding ke liye 10 Sticker Designs",designs:[
- ["Round Gold Label","Round luxury gold label","gold"],
- ["Black Brand Sticker","Black premium brand sticker","black"],
- ["Food Product Label","Food packaging label","orange"],
- ["Bottle Label","Bottle branding label","blue"],
- ["Beauty Product Label","Beauty product sticker","pink"],
- ["Green Organic Label","Organic product label","green"],
- ["Square Business Sticker","Square business sticker","red"],
- ["Minimal White Label","Minimal product label","white"],
- ["Royal Purple Label","Purple premium sticker","purple"],
- ["Modern Color Label","Colorful product label","color"]]},
- idcard:{title:"ID Cards",emoji:"🪪",desc:"School aur office ke liye 10 ID Card Designs",designs:[
- ["Corporate Blue ID","Professional office ID card","blue"],
- ["School ID Card","School student ID card","white"],
- ["Royal Black ID","Black premium staff ID","black"],
- ["Green Staff ID","Green company ID card","green"],
- ["Red Employee ID","Red employee identity card","red"],
- ["Purple ID Card","Purple modern ID card","purple"],
- ["Medical Staff ID","Medical staff ID card","white"],
- ["Security ID","Security staff ID card","grey"],
- ["Golden Premium ID","Gold premium ID card","gold"],
- ["Modern Gradient ID","Modern gradient ID card","color"]]},
- certificate:{title:"Certificates",emoji:"🏅",desc:"Award aur achievement ke liye 10 Certificate Designs",designs:[
- ["Royal Gold Certificate","Gold border achievement certificate","gold"],
- ["Blue Academic","Blue academic certificate","blue"],
- ["Classic Ivory","Ivory traditional certificate","ivory"],
- ["Black Premium","Black premium award certificate","black"],
- ["Green Achievement","Green achievement certificate","green"],
- ["Red Award","Red award certificate","red"],
- ["Purple Appreciation","Purple appreciation certificate","purple"],
- ["Minimal White","Minimal white certificate","white"],
- ["Floral Certificate","Floral border certificate","pink"],
- ["Modern Color","Modern colorful certificate","color"]]}
-};
+/* Reveal elements as they enter the screen */
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
-const themes={
- black:["#090909","#f3d27b"],blue:["#063b70","#fff"],
- red:["#a30e19","#fff"],white:["#fff","#242424"],
- green:["#075b3b","#fff2c6"],grey:["#41464e","#fff"],
- purple:["#492064","#ffe5ff"],orange:["#c94d0a","#fff3d7"],
- ivory:["#f0e3c8","#5c3b15"],gold:["#6d4a12","#ffe8a0"],
- pink:["#f6cbd9","#792c4a"],maroon:["#650e2c","#ffe7ce"],
- pastel:["#f5dfe8","#75455d"],
- color:["linear-gradient(120deg,#174f91,#8e2c81,#d15c28)","#fff"],
- black2:["#151515","#f5f5f5"]
-};
+/* Desktop 3D parallax: touch devices keep a gentle static view */
+const scene=document.getElementById('heroScene');
+if(window.matchMedia('(pointer:fine)').matches){
+ document.addEventListener('mousemove',e=>{
+  const x=(e.clientX/window.innerWidth-.5)*10;
+  const y=(e.clientY/window.innerHeight-.5)*-8;
+  scene.style.transform=`rotateY(${x}deg) rotateX(${y}deg)`;
+ });
+}
 
-const serviceGrid=document.getElementById("serviceGrid");
-Object.keys(categories).forEach(key=>{
- const c=categories[key];
- const item=document.createElement("div");
- item.className="service";
- item.innerHTML=`<div class="emoji">${c.emoji}</div><h3>${c.title}</h3><p>10 Premium Designs</p>`;
- item.onclick=()=>openCategory(key);
- serviceGrid.appendChild(item);
+/* Gentle 3D tilt for cards on touch and pointer */
+document.querySelectorAll('.service-card,.sample-card,.gallery-tile').forEach(card=>{
+ card.addEventListener('touchstart',()=>card.classList.add('touched'),{passive:true});
 });
-
-function openCategory(key){
- const c=categories[key];
- if(!c)return;
- document.getElementById("homePage").style.display="none";
- document.getElementById("catalogPage").style.display="block";
- document.getElementById("catalogTitle").textContent=c.title;
- document.getElementById("catalogDescription").textContent=c.desc;
- const grid=document.getElementById("designGrid");
- grid.innerHTML="";
- c.designs.forEach((d,i)=>{
-  const t=themes[d[2]]||themes.gold;
-  const msg=`Assalamualaikum, mujhe WARSI PRINTING PRESS se ${c.title} ka ${d[0]} design order karna hai. Please price aur details batayein.`;
-  const link="https://wa.me/"+phone+"?text="+encodeURIComponent(msg);
-  const card=document.createElement("div");
-  card.className="design-card";
-  card.innerHTML=`
-   <div class="design-preview">
-    <div class="sample" style="background:${t[0]};color:${t[1]}">
-     <small>WARSI PRINTING PRESS</small>
-     <strong>${d[0]}</strong>
-     <span>PREMIUM PRINTING & DESIGN</span>
-     <span>8173834800</span>
-    </div>
-   </div>
-   <h3>${i+1}. ${d[0]}</h3>
-   <p>${d[1]}</p>
-   <a class="order" href="${link}" target="_blank">ORDER ON WHATSAPP</a>`;
-  grid.appendChild(card);
- });
- window.scrollTo({top:0,behavior:"smooth"});
- robotTalk(false,`${c.title} ke 10 designs khul gaye hain. Apni pasand ka design chuniye.`);
-}
-function showHome(){
- document.getElementById("catalogPage").style.display="none";
- document.getElementById("homePage").style.display="block";
- window.scrollTo({top:0,behavior:"smooth"});
- robotTalk(false,"Welcome back! WARSI PRINTING PRESS mein aapka swagat hai.");
-}
-
-/* WARSI PRINTING PRESS - SVG DOWNLOAD SYSTEM */
-
-const svgCards = [
- {name:"Luxury Black Gold",bg:"#111111",fg:"#e4bd65",style:0},
- {name:"Professional Blue",bg:"#123b68",fg:"#ffffff",style:1},
- {name:"Modern Red Black",bg:"#171717",fg:"#ff5260",style:2},
- {name:"Elegant Floral",bg:"#fff5f5",fg:"#914b69",style:3},
- {name:"Premium Ivory Gold",bg:"#f7f0e2",fg:"#60451f",style:4}
-];
-
-function makeSVGCard(index){
- const d=svgCards[index];
- const owner="Ajahruddin Shaikh";
- const phone="8173834800";
- const address="Niyamatganj Chauraha";
- const address2="Tikaitnagar-Bhelsar Road, Barabanki";
-
- const esc=s=>String(s).replace(/[&<>"']/g,c=>({
-  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&apos;"
- }[c]));
-
- let front="",back="";
-
- if(d.style===0){
-  front=`
-   <rect width="1050" height="600" rx="20" fill="#111"/>
-   <rect x="20" y="20" width="1010" height="560" rx="12" fill="none" stroke="#e4bd65" stroke-width="4"/>
-   <circle cx="525" cy="150" r="65" fill="none" stroke="#e4bd65" stroke-width="4"/>
-   <text x="525" y="174" text-anchor="middle" font-size="65" fill="#e4bd65" font-family="Georgia">W</text>
-   <text x="525" y="300" text-anchor="middle" font-size="52" font-weight="bold" fill="#e4bd65">WARSI PRINTING PRESS</text>
-   <text x="525" y="370" text-anchor="middle" font-size="25" fill="white">DESIGN • PRINT • QUALITY</text>
-   <text x="525" y="520" text-anchor="middle" font-size="25" fill="#e4bd65">PREMIUM PRINTING STUDIO</text>`;
-  back=`
-   <rect width="1050" height="600" rx="20" fill="#111"/>
-   <rect x="20" y="20" width="1010" height="560" rx="12" fill="none" stroke="#e4bd65" stroke-width="4"/>
-   <text x="75" y="110" font-size="26" fill="#e4bd65">OWNER</text>
-   <text x="75" y="170" font-size="44" fill="white" font-weight="bold">${esc(owner)}</text>
-   <text x="75" y="275" font-size="27" fill="#e4bd65">MOBILE / WHATSAPP</text>
-   <text x="75" y="330" font-size="42" fill="white">${phone}</text>
-   <text x="75" y="425" font-size="27" fill="#e4bd65">ADDRESS</text>
-   <text x="75" y="475" font-size="30" fill="white">${address}</text>
-   <text x="75" y="520" font-size="26" fill="white">${address2}</text>`;
- }else{
-  const palettes=[
-   ["#123b68","#21a5c7"],
-   ["#171717","#b51f2a"],
-   ["#fff5f5","#d9a6b8"],
-   ["#f7f0e2","#b28a45"]
-  ];
-  const p=palettes[d.style-1];
-  front=`
-   <rect width="1050" height="600" rx="20" fill="${p[0]}"/>
-   <rect x="22" y="22" width="1006" height="556" rx="14" fill="none" stroke="${p[1]}" stroke-width="5"/>
-   <circle cx="525" cy="155" r="65" fill="${p[1]}"/>
-   <text x="525" y="180" text-anchor="middle" font-size="70" fill="white" font-family="Georgia">W</text>
-   <text x="525" y="300" text-anchor="middle" font-size="51" font-weight="bold" fill="${d.fg}">WARSI PRINTING PRESS</text>
-   <text x="525" y="375" text-anchor="middle" font-size="27" fill="${d.fg}">DESIGN • PRINT • QUALITY</text>
-   <text x="525" y="510" text-anchor="middle" font-size="25" fill="${d.fg}">PREMIUM PRINTING STUDIO</text>`;
-  back=`
-   <rect width="1050" height="600" rx="20" fill="${p[0]}"/>
-   <rect x="22" y="22" width="1006" height="556" rx="14" fill="none" stroke="${p[1]}" stroke-width="5"/>
-   <text x="75" y="115" font-size="27" fill="${p[1]}">OWNER</text>
-   <text x="75" y="180" font-size="43" font-weight="bold" fill="${d.fg}">${esc(owner)}</text>
-   <text x="75" y="275" font-size="27" fill="${p[1]}">MOBILE / WHATSAPP</text>
-   <text x="75" y="335" font-size="42" fill="${d.fg}">${phone}</text>
-   <text x="75" y="430" font-size="27" fill="${p[1]}">ADDRESS</text>
-   <text x="75" y="480" font-size="30" fill="${d.fg}">${address}</text>
-   <text x="75" y="525" font-size="25" fill="${d.fg}">${address2}</text>`;
- }
-
- return `<?xml version="1.0" encoding="UTF-8"?>
- <svg xmlns="http://www.w3.org/2000/svg"
- width="220mm" height="126mm" viewBox="0 0 2200 1260">
- <title>${esc(d.name)} - WARSI PRINTING PRESS</title>
- <text x="525" y="45" text-anchor="middle" font-size="25" fill="#777">FRONT</text>
- <text x="1575" y="45" text-anchor="middle" font-size="25" fill="#777">BACK</text>
- <g transform="translate(0 60) scale(1.0476 1.9)">
- ${front}
- </g>
- <g transform="translate(1100 60) scale(1.0476 1.9)">
- ${back}
- </g>
- </svg>`;
-}
-
-function downloadSVG(index){
- const svg=makeSVGCard(index);
- const blob=new Blob([svg],{type:"image/svg+xml;charset=utf-8"});
- const url=URL.createObjectURL(blob);
- const a=document.createElement("a");
- a.href=url;
- a.download="WARSI_"+svgCards[index].name.replace(/\s+/g,"_")+".svg";
- document.body.appendChild(a);
- a.click();
- a.remove();
- setTimeout(()=>URL.revokeObjectURL(url),1500);
-}
-
-function showSVGDesigns(){
- const grid=document.getElementById("svgDesignGrid");
- if(!grid)return;
-
- grid.innerHTML="";
-
- svgCards.forEach((d,i)=>{
-  const card=document.createElement("div");
-  card.className="design-card";
-  card.innerHTML=`
-   <div class="design-preview">
-    <div class="sample" style="background:${d.bg};color:${d.fg}">
-     <small>WARSI PRINTING PRESS</small>
-     <strong>${d.name}</strong>
-     <span>FRONT & BACK DESIGN</span>
-     <span>EDITABLE VECTOR SVG</span>
-    </div>
-   </div>
-   <h3>${i+1}. ${d.name}</h3>
-   <p>Front and Back Visiting Card. Editable SVG for CorelDRAW.</p>
-   <button class="svg-download-btn" onclick="downloadSVG(${i})">
-    ⬇ DOWNLOAD SVG
-   </button>`;
-  grid.appendChild(card);
- });
-}
-
-showSVGDesigns();
-
-/* ROBOT GUIDE */
-function speakText(message){
- if(!("speechSynthesis" in window))return;
- window.speechSynthesis.cancel();
- const utter=new SpeechSynthesisUtterance(message);
- utter.lang="hi-IN";utter.rate=.88;utter.pitch=1.15;
- const voices=window.speechSynthesis.getVoices();
- const voice=voices.find(v=>/female|zira|heera/i.test(v.name))||
- voices.find(v=>v.lang==="hi-IN");
- if(voice)utter.voice=voice;
- window.speechSynthesis.speak(utter);
-}
-function robotTalk(speak=true,custom=""){
- const bubble=document.getElementById("speech");
- const msg=custom||"Assalamualaikum! Welcome to WARSI PRINTING PRESS. Visiting Cards, Wedding Cards, Flex aur sabhi printing designs yahan milenge.";
- bubble.textContent=msg;bubble.style.display="block";
- if(speak)speakText(msg);
- clearTimeout(window.bubbleTimer);
- window.bubbleTimer=setTimeout(()=>bubble.style.display="none",8500);
-}
-
-/* INTRO OPEN */
-function enterWebsite(withVoice){
- const introMessage="Assalamualaikum! Welcome to WARSI PRINTING PRESS. Aapka hamari website par khair maqdam hai. Chaliye designs dekhte hain.";
- if(withVoice){
-  document.getElementById("introMessage").textContent="Welcome! Website khul rahi hai...";
-  speakText(introMessage);
- }
- setTimeout(()=>{
-  document.getElementById("intro").style.display="none";
-  document.getElementById("website").style.display="block";
-  document.getElementById("smallRobot").style.display="block";
-  document.getElementById("waFloat").style.display="block";
-  robotTalk(false,"Assalamualaikum! Main aapka printing guide hoon. Mujh par click karke mujhse baat karein.");
- },withVoice?3500:100);
-}
 </script>
 </body>
 </html>
