@@ -14,6 +14,35 @@
 <!-- RESTORE YOUR ORIGINAL GOOGLE VERIFICATION META TAG HERE -->
 
 <style>
+/* AI ROBOT GUIDE */
+#robotGuide{
+ position:fixed;right:15px;bottom:18px;
+ z-index:999;display:flex;align-items:flex-end;
+ gap:8px;
+}
+#robot{
+ font-size:65px;cursor:pointer;
+ filter:drop-shadow(0 0 15px #e5bd69);
+ animation:robotFloat 2s infinite ease-in-out;
+}
+@keyframes robotFloat{
+ 50%{transform:translateY(-12px) rotate(5deg)}
+}
+#robotChat{
+ background:#123c2b;
+ color:#ffe5a2;padding:13px;
+ border:1px solid #e5bd69;
+ border-radius:15px;
+ max-width:210px;font-size:13px;
+ box-shadow:0 0 20px #d2a34c66;
+}
+#robotChat button{
+ display:block;width:100%;margin-top:8px;
+ padding:8px;border:1px solid #e5bd69;
+ background:#d5ae60;color:#111;
+ border-radius:9px;font-weight:bold;
+ cursor:pointer;
+}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
