@@ -654,6 +654,133 @@ function showHome(){
  robotTalk(false,"Welcome back! WARSI PRINTING PRESS mein aapka swagat hai.");
 }
 
+/* WARSI PRINTING PRESS - SVG DOWNLOAD SYSTEM */
+
+const svgCards = [
+ {name:"Luxury Black Gold",bg:"#111111",fg:"#e4bd65",style:0},
+ {name:"Professional Blue",bg:"#123b68",fg:"#ffffff",style:1},
+ {name:"Modern Red Black",bg:"#171717",fg:"#ff5260",style:2},
+ {name:"Elegant Floral",bg:"#fff5f5",fg:"#914b69",style:3},
+ {name:"Premium Ivory Gold",bg:"#f7f0e2",fg:"#60451f",style:4}
+];
+
+function makeSVGCard(index){
+ const d=svgCards[index];
+ const owner="Ajahruddin Shaikh";
+ const phone="8173834800";
+ const address="Niyamatganj Chauraha";
+ const address2="Tikaitnagar-Bhelsar Road, Barabanki";
+
+ const esc=s=>String(s).replace(/[&<>"']/g,c=>({
+  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&apos;"
+ }[c]));
+
+ let front="",back="";
+
+ if(d.style===0){
+  front=`
+   <rect width="1050" height="600" rx="20" fill="#111"/>
+   <rect x="20" y="20" width="1010" height="560" rx="12" fill="none" stroke="#e4bd65" stroke-width="4"/>
+   <circle cx="525" cy="150" r="65" fill="none" stroke="#e4bd65" stroke-width="4"/>
+   <text x="525" y="174" text-anchor="middle" font-size="65" fill="#e4bd65" font-family="Georgia">W</text>
+   <text x="525" y="300" text-anchor="middle" font-size="52" font-weight="bold" fill="#e4bd65">WARSI PRINTING PRESS</text>
+   <text x="525" y="370" text-anchor="middle" font-size="25" fill="white">DESIGN • PRINT • QUALITY</text>
+   <text x="525" y="520" text-anchor="middle" font-size="25" fill="#e4bd65">PREMIUM PRINTING STUDIO</text>`;
+  back=`
+   <rect width="1050" height="600" rx="20" fill="#111"/>
+   <rect x="20" y="20" width="1010" height="560" rx="12" fill="none" stroke="#e4bd65" stroke-width="4"/>
+   <text x="75" y="110" font-size="26" fill="#e4bd65">OWNER</text>
+   <text x="75" y="170" font-size="44" fill="white" font-weight="bold">${esc(owner)}</text>
+   <text x="75" y="275" font-size="27" fill="#e4bd65">MOBILE / WHATSAPP</text>
+   <text x="75" y="330" font-size="42" fill="white">${phone}</text>
+   <text x="75" y="425" font-size="27" fill="#e4bd65">ADDRESS</text>
+   <text x="75" y="475" font-size="30" fill="white">${address}</text>
+   <text x="75" y="520" font-size="26" fill="white">${address2}</text>`;
+ }else{
+  const palettes=[
+   ["#123b68","#21a5c7"],
+   ["#171717","#b51f2a"],
+   ["#fff5f5","#d9a6b8"],
+   ["#f7f0e2","#b28a45"]
+  ];
+  const p=palettes[d.style-1];
+  front=`
+   <rect width="1050" height="600" rx="20" fill="${p[0]}"/>
+   <rect x="22" y="22" width="1006" height="556" rx="14" fill="none" stroke="${p[1]}" stroke-width="5"/>
+   <circle cx="525" cy="155" r="65" fill="${p[1]}"/>
+   <text x="525" y="180" text-anchor="middle" font-size="70" fill="white" font-family="Georgia">W</text>
+   <text x="525" y="300" text-anchor="middle" font-size="51" font-weight="bold" fill="${d.fg}">WARSI PRINTING PRESS</text>
+   <text x="525" y="375" text-anchor="middle" font-size="27" fill="${d.fg}">DESIGN • PRINT • QUALITY</text>
+   <text x="525" y="510" text-anchor="middle" font-size="25" fill="${d.fg}">PREMIUM PRINTING STUDIO</text>`;
+  back=`
+   <rect width="1050" height="600" rx="20" fill="${p[0]}"/>
+   <rect x="22" y="22" width="1006" height="556" rx="14" fill="none" stroke="${p[1]}" stroke-width="5"/>
+   <text x="75" y="115" font-size="27" fill="${p[1]}">OWNER</text>
+   <text x="75" y="180" font-size="43" font-weight="bold" fill="${d.fg}">${esc(owner)}</text>
+   <text x="75" y="275" font-size="27" fill="${p[1]}">MOBILE / WHATSAPP</text>
+   <text x="75" y="335" font-size="42" fill="${d.fg}">${phone}</text>
+   <text x="75" y="430" font-size="27" fill="${p[1]}">ADDRESS</text>
+   <text x="75" y="480" font-size="30" fill="${d.fg}">${address}</text>
+   <text x="75" y="525" font-size="25" fill="${d.fg}">${address2}</text>`;
+ }
+
+ return `<?xml version="1.0" encoding="UTF-8"?>
+ <svg xmlns="http://www.w3.org/2000/svg"
+ width="220mm" height="126mm" viewBox="0 0 2200 1260">
+ <title>${esc(d.name)} - WARSI PRINTING PRESS</title>
+ <text x="525" y="45" text-anchor="middle" font-size="25" fill="#777">FRONT</text>
+ <text x="1575" y="45" text-anchor="middle" font-size="25" fill="#777">BACK</text>
+ <g transform="translate(0 60) scale(1.0476 1.9)">
+ ${front}
+ </g>
+ <g transform="translate(1100 60) scale(1.0476 1.9)">
+ ${back}
+ </g>
+ </svg>`;
+}
+
+function downloadSVG(index){
+ const svg=makeSVGCard(index);
+ const blob=new Blob([svg],{type:"image/svg+xml;charset=utf-8"});
+ const url=URL.createObjectURL(blob);
+ const a=document.createElement("a");
+ a.href=url;
+ a.download="WARSI_"+svgCards[index].name.replace(/\s+/g,"_")+".svg";
+ document.body.appendChild(a);
+ a.click();
+ a.remove();
+ setTimeout(()=>URL.revokeObjectURL(url),1500);
+}
+
+function showSVGDesigns(){
+ const grid=document.getElementById("svgDesignGrid");
+ if(!grid)return;
+
+ grid.innerHTML="";
+
+ svgCards.forEach((d,i)=>{
+  const card=document.createElement("div");
+  card.className="design-card";
+  card.innerHTML=`
+   <div class="design-preview">
+    <div class="sample" style="background:${d.bg};color:${d.fg}">
+     <small>WARSI PRINTING PRESS</small>
+     <strong>${d.name}</strong>
+     <span>FRONT & BACK DESIGN</span>
+     <span>EDITABLE VECTOR SVG</span>
+    </div>
+   </div>
+   <h3>${i+1}. ${d.name}</h3>
+   <p>Front and Back Visiting Card. Editable SVG for CorelDRAW.</p>
+   <button class="svg-download-btn" onclick="downloadSVG(${i})">
+    ⬇ DOWNLOAD SVG
+   </button>`;
+  grid.appendChild(card);
+ });
+}
+
+showSVGDesigns();
+
 /* ROBOT GUIDE */
 function speakText(message){
  if(!("speechSynthesis" in window))return;
