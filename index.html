@@ -413,6 +413,35 @@ footer strong{color:var(--gold)}
 </footer>
 
 <script>
+function guideTo(place){
+ const messages={
+  services:"Yahan hamari Visiting Cards, Wedding Cards aur Printing Services hain!",
+  about:"Welcome to Warsi Printing Press, Barabanki!",
+  contact:"Yahan se aap WhatsApp par apna order kar sakte hain!"
+ };
+
+ document.getElementById("robotMessage").innerText=messages[place];
+
+ document.getElementById(place).scrollIntoView({
+  behavior:"smooth"
+ });
+
+ speakText(messages[place]);
+}
+
+function speakText(message){
+ if(!window.speechSynthesis)return;
+ window.speechSynthesis.cancel();
+ const speech=new SpeechSynthesisUtterance(message);
+ speech.lang="en-IN";
+ speech.rate=0.9;
+ window.speechSynthesis.speak(speech);
+}
+
+function speakGuide(){
+ speakText("Welcome to Warsi Printing Press. I am your website guide. Please choose a service.");
+}
+
 /* STARS */
 const stars=document.getElementById("stars");
 for(let i=0;i<150;i++){
