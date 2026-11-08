@@ -6,82 +6,235 @@
 <meta name="keywords" content="Warsi Printing Press, Printing Press Barabanki, Wedding Cards, Visiting Cards, Banner Printing">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Warsi Printing Press</title>
+
+<title>Warsi Printing Press | Barabanki</title>
+
+<meta name="description" content="Warsi Printing Press in Barabanki, Uttar Pradesh. Visiting cards, wedding cards, banners, posters and premium printing services.">
+
+<meta name="keywords" content="Warsi Printing Press, Printing Press Barabanki, Wedding Cards, Visiting Cards, Banner Printing">
+
+<!-- YAHAN APNA PURANA GOOGLE VERIFICATION CODE PASTE KAREIN -->
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial;background:#f8f6f0;color:#17233d}
-header{background:#101b35;color:white;text-align:center;padding:25px}
-.logo{font-size:30px;color:#e9b95b;font-weight:bold}
-nav{background:#192846;padding:15px;text-align:center}
-nav a{color:white;margin:10px;text-decoration:none}
-.hero{background:#101b35;color:white;text-align:center;padding:65px 15px}
-.hero h1{font-size:36px;color:#e9b95b}
-.btn{background:#e9b95b;color:#101b35;padding:13px 22px;
-text-decoration:none;border-radius:5px;display:inline-block}
-section{padding:35px 18px;text-align:center}
-h2{color:#101b35}
-.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:15px}
-.card{background:white;padding:22px;border-radius:10px;box-shadow:0 2px 10px #ddd}
-.card h3{color:#a87920}
-.contact{background:#101b35;color:white}
-.contact h2{color:#e9b95b}
-footer{background:#080f20;color:white;text-align:center;padding:18px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ background:#030514;
+ color:white;
+ font-family:Arial,sans-serif;
+ overflow-x:hidden;
+}
+#stars{
+ position:fixed;inset:0;z-index:-2;
+ background:
+ radial-gradient(ellipse at 20% 30%,#312064 0%,transparent 35%),
+ radial-gradient(ellipse at 80% 65%,#102b64 0%,transparent 35%),
+ radial-gradient(ellipse at 50% 100%,#241044 0%,transparent 40%),
+ #030514;
+}
+.star{
+ position:absolute;background:white;border-radius:50%;
+ animation:twinkle 2s infinite alternate;
+}
+@keyframes twinkle{from{opacity:.2}to{opacity:1;box-shadow:0 0 9px white}}
+nav{
+ position:sticky;top:0;z-index:10;
+ display:flex;justify-content:space-between;align-items:center;
+ padding:18px 7%;background:#080b20e8;
+ border-bottom:1px solid #b88bff44;
+ backdrop-filter:blur(15px);
+}
+.logo{color:#ffd978;font-size:21px;font-weight:bold}
+nav a{color:white;text-decoration:none;margin-left:17px;font-size:13px}
+nav a:hover{color:#ffd978}
+.hero{
+ min-height:570px;display:flex;flex-direction:column;
+ justify-content:center;align-items:center;text-align:center;
+ padding:70px 20px;position:relative;overflow:hidden;
+}
+.planet{
+ width:190px;height:190px;border-radius:50%;
+ background:radial-gradient(circle at 30% 25%,#fff0c3,#e8a33d 25%,#7034b5 60%,#080b27 90%);
+ box-shadow:0 0 40px #a66aff,0 0 100px #5330a8;
+ position:relative;margin-bottom:38px;
+ animation:float 5s ease-in-out infinite;
+}
+.planet:after{
+ content:"";position:absolute;width:280px;height:65px;
+ border:7px solid #f5d18b;border-radius:50%;
+ left:-50px;top:60px;transform:rotate(-20deg);
+ box-shadow:0 0 20px #e9a8ff;
+}
+@keyframes float{50%{transform:translateY(-17px) rotate(8deg)}}
+.hero h1{
+ color:#ffdc91;font-size:clamp(32px,7vw,62px);
+ text-shadow:0 0 25px #a76aff;
+ margin-bottom:18px;
+}
+.hero p{color:#d4d8f8;font-size:17px;max-width:650px;line-height:1.7}
+.btn{
+ display:inline-block;margin:25px 8px;padding:14px 27px;
+ border-radius:30px;text-decoration:none;font-weight:bold;
+ background:linear-gradient(120deg,#e8b64f,#fff0b2);
+ color:#17102b;box-shadow:0 0 22px #c99b55;
+ transition:.3s;
+}
+.btn:hover{transform:scale(1.07);box-shadow:0 0 35px #ffd978}
+.btn2{background:transparent;border:1px solid #d8b5ff;color:white}
+section{padding:75px 7%;text-align:center}
+.heading{font-size:34px;color:#ffda91;margin-bottom:15px}
+.sub{color:#b8b9d5;margin-bottom:40px}
+.grid{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+ gap:22px;
+}
+.card{
+ background:linear-gradient(145deg,#171d3d,#0b1026);
+ border:1px solid #a58aff55;border-radius:20px;
+ padding:30px 20px;transition:.35s;
+ box-shadow:0 8px 30px #0008;
+}
+.card:hover{transform:translateY(-9px);border-color:#ffd978;box-shadow:0 0 25px #7046bd66}
+.card .emoji{font-size:48px;margin-bottom:17px}
+.card h3{color:#ffdc91;margin-bottom:12px}
+.card p{color:#c0c4dc;line-height:1.6;font-size:14px}
+.about{
+ max-width:850px;margin:auto;
+ padding:35px;border:1px solid #9872db66;
+ border-radius:20px;background:#111630;
+ line-height:1.9;color:#d2d5ed;
+}
+.contact{background:linear-gradient(180deg,transparent,#151332)}
+footer{
+ padding:30px;text-align:center;color:#aaa;
+ border-top:1px solid #7f61b755;font-size:13px;
+}
+@media(max-width:600px){
+ nav{padding:15px 4%}
+ nav a{margin-left:8px;font-size:11px}
+ .logo{font-size:17px}
+ .hero{min-height:520px}
+ .planet{width:145px;height:145px}
+ .planet:after{width:220px;left:-38px;top:48px}
+ section{padding:55px 5%}
+}
 </style>
 </head>
-<body>
 
-<header>
-<div class="logo">WARSI</div>
-<h2 style="color:white">PRINTING PRESS</h2>
-<p>Quality Printing • Creative Design</p>
-</header>
+<body>
+<div id="stars"></div>
 
 <nav>
-<a href="#home">Home</a>
-<a href="#services">Services</a>
-<a href="#designs">Designs</a>
-<a href="#contact">Contact</a>
+ <div class="logo">✦ WARSI PRINTING</div>
+ <div>
+  <a href="#home">Home</a>
+  <a href="#services">Services</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+ </div>
 </nav>
 
-<div class="hero" id="home">
-<h1>WARSI PRINTING PRESS</h1>
-<p>Making Your Ideas Beautiful With Quality Printing</p>
-<a class="btn" href="#services">Our Services</a>
-</div>
+<header class="hero" id="home">
+ <div class="planet"></div>
+ <h1>WARSI PRINTING PRESS</h1>
+ <p>Welcome to the Galaxy of Creativity!<br>
+ Premium Printing • Creative Designs • Perfect Quality</p>
+ <div>
+  <a href="#services" class="btn">EXPLORE SERVICES ✦</a>
+  <a href="#contact" class="btn btn2">CONTACT US</a>
+ </div>
+</header>
 
 <section id="services">
-<h2>Our Printing Services</h2>
-<div class="services">
-<div class="card">💳<h3>Visiting Cards</h3></div>
-<div class="card">💌<h3>Wedding Cards</h3></div>
-<div class="card">🪧<h3>Banner & Flex</h3></div>
-<div class="card">📄<h3>Photocopy</h3></div>
-<div class="card">🎨<h3>Graphic Design</h3></div>
-<div class="card">📚<h3>Custom Printing</h3></div>
-</div>
+ <h2 class="heading">✦ Our Universe of Printing ✦</h2>
+ <p class="sub">Discover our premium printing services</p>
+ <div class="grid">
+
+  <div class="card">
+   <div class="emoji">💳</div>
+   <h3>Visiting Cards</h3>
+   <p>Premium business cards with beautiful designs and quality printing.</p>
+  </div>
+
+  <div class="card">
+   <div class="emoji">💌</div>
+   <h3>Wedding Cards</h3>
+   <p>Beautiful wedding invitations for your special occasions.</p>
+  </div>
+
+  <div class="card">
+   <div class="emoji">🖼️</div>
+   <h3>Banner & Flex</h3>
+   <p>Eye-catching banners and flex printing for your business.</p>
+  </div>
+
+  <div class="card">
+   <div class="emoji">🎨</div>
+   <h3>Poster Printing</h3>
+   <p>Creative posters with attractive colours and sharp quality.</p>
+  </div>
+
+  <div class="card">
+   <div class="emoji">📄</div>
+   <h3>Brochures</h3>
+   <p>Professional brochures, pamphlets and business advertising.</p>
+  </div>
+
+  <div class="card">
+   <div class="emoji">📚</div>
+   <h3>Custom Printing</h3>
+   <p>Custom printing solutions for your personal and business needs.</p>
+  </div>
+
+ </div>
 </section>
 
-<section id="designs">
-<h2>CDR Design Gallery</h2>
-<p>Our CorelDRAW designs will be available here.</p>
-<p>Downloadable design files will be added soon.</p>
+<section id="about">
+ <h2 class="heading">About Our Galaxy</h2>
+ <p class="sub">Creativity Beyond Imagination</p>
+ <div class="about">
+  <h3 style="color:#ffda91">WARSI PRINTING PRESS</h3>
+  <p>
+  Welcome to Warsi Printing Press, Barabanki, Uttar Pradesh.
+  We provide creative printing services including visiting cards,
+  wedding cards, banners, posters and custom printing.
+  Our mission is to deliver quality, creativity and customer satisfaction.
+  </p>
+ </div>
 </section>
 
-<section class="contact" id="contact">
-<h2>Contact Us</h2>
-<p>Warsi Printing Press</p>
-<p>Niyamatganj Choraha, Tikaitnagar, Bhelsar Road, Barabanki</p>
-<p>
-<a class="btn" href="mailto:warsiprintbarabanki@gmail.com">
-Email Us
-</a>
-</p>
-<p>warsiprintbarabanki@gmail.com</p>
+<section id="contact" class="contact">
+ <h2 class="heading">Connect With Our Galaxy</h2>
+ <p class="sub">Let's create something amazing together!</p>
+ <a class="btn" href="https://wa.me/91XXXXXXXXXX" target="_blank">
+  WhatsApp Order
+ </a>
+ <a class="btn btn2" href="tel:+91XXXXXXXXXX">Call Now</a>
+ <p style="color:#c5c5e0;margin-top:20px">
+  📍 Barabanki, Uttar Pradesh, India
+ </p>
 </section>
 
 <footer>
-© 2026 Warsi Printing Press
+ <p>© 2026 Warsi Printing Press. All Rights Reserved.</p>
+ <p style="margin-top:10px;color:#d6b66d">
+  Designed Beyond The Galaxy ✦
+ </p>
 </footer>
 
+<script>
+const stars=document.getElementById("stars");
+for(let i=0;i<130;i++){
+ const s=document.createElement("span");
+ s.className="star";
+ s.style.left=Math.random()*100+"%";
+ s.style.top=Math.random()*100+"%";
+ s.style.width=(Math.random()*3+1)+"px";
+ s.style.height=s.style.width;
+ s.style.animationDelay=Math.random()*3+"s";
+ stars.appendChild(s);
+}
+</script>
 </body>
 </html>
+
