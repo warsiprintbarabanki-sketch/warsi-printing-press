@@ -4,325 +4,665 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080808">
-<title>WARSI PRINTING PRESS | Barabanki</title>
-<meta name="description" content="WARSI PRINTING PRESS - Visiting Cards, Wedding Cards, Flex Printing, Banners and Graphic Design in Barabanki, Uttar Pradesh.">
+<title>WARSI PRINTING PRESS | Premium Printing Studio</title>
+<meta name="description" content="WARSI PRINTING PRESS Barabanki - Visiting Cards, Wedding Cards, Flex Banners and Premium Printing Services.">
+<meta name="theme-color" content="#050510">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:#080808;color:#fff;font-family:Arial,sans-serif}
-:root{--gold:#dfb65e;--light:#ffe6a6}
-a{text-decoration:none;color:inherit}
-header{position:sticky;top:0;z-index:100;background:#090909f5;border-bottom:1px solid #98712f;padding:14px 5%;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.logo{font-size:23px;font-weight:900;color:var(--gold);letter-spacing:1px}
-.logo small{display:block;font-size:10px;color:white;letter-spacing:4px;margin-top:4px}
-nav{display:flex;gap:20px;align-items:center}
-nav a{font-size:13px;color:#eee}
-nav a:hover{color:var(--gold)}
-.menu-btn{display:none;background:transparent;color:var(--gold);border:1px solid var(--gold);padding:8px 12px;border-radius:6px}
-.hero{min-height:570px;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 6%;background:radial-gradient(ellipse at center,#49330f,#171109 45%,#050505 85%)}
-.hero-content{max-width:850px}
-.hero h1{font-size:clamp(36px,7vw,70px);color:var(--gold);text-shadow:0 0 25px #d8ad5570}
-.hero h2{font-size:19px;letter-spacing:5px;margin:18px 0}
-.hero p{color:#ddd;line-height:1.8;margin:0 auto 25px;max-width:650px}
-.gold-btn,.outline-btn{display:inline-block;padding:13px 24px;border-radius:30px;margin:6px;font-weight:bold}
-.gold-btn{background:linear-gradient(135deg,#ffe7a4,#b7832e);color:#160f04}
-.outline-btn{border:1px solid var(--gold);color:var(--gold)}
-section{padding:70px 6%}
-.section-title{text-align:center;margin-bottom:38px}
-.section-title h2{color:var(--gold);font-size:clamp(27px,4vw,40px);margin-bottom:12px}
-.section-title p{color:#aaa;line-height:1.7}
-.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
-.service-card{display:block;background:linear-gradient(145deg,#211a0e,#0d0d0d);border:1px solid #765a2c;border-radius:15px;padding:26px 18px;text-align:center;transition:.3s}
-.service-card:hover{transform:translateY(-7px);border-color:var(--gold);box-shadow:0 8px 25px #d8ad5530}
-.service-icon{font-size:39px;margin-bottom:13px}
-.service-card h3{color:var(--gold);margin-bottom:10px}
-.service-card p{color:#bbb;font-size:14px;line-height:1.7}
-.about{background:#100d08}
-.about-content{max-width:850px;margin:auto;text-align:center;color:#ccc;line-height:1.9}
-.about-content h3{color:var(--gold);font-size:25px;margin-bottom:15px}
-.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;max-width:950px;margin:auto}
-.contact-item{padding:23px;background:#17130c;border:1px solid #705526;border-radius:14px;text-align:center}
-.contact-item .symbol{font-size:30px}
-.contact-item h3{color:var(--gold);margin:10px}
-.contact-item p{color:#ccc;font-size:14px;line-height:1.7;overflow-wrap:anywhere}
-.contact-item a{color:var(--light)}
-footer{text-align:center;padding:25px 15px;background:#030303;border-top:1px solid #60491f;color:#aaa;font-size:13px;line-height:2}
-footer b{color:var(--gold)}
+:root{--gold:#e4bd65;--gold2:#ffe9ad}
+body{font-family:Arial,sans-serif;background:#050509;color:#fff;overflow-x:hidden}
+button,a{font-family:inherit}
+button{cursor:pointer}
+.hidden{display:none!important}
 
-/* VISITING CARD PAGE */
-#cardPage{display:none;min-height:80vh;background:linear-gradient(180deg,#100d08,#050505)}
-.card-header{text-align:center;padding:35px 15px;background:linear-gradient(135deg,#080808,#38280d);border-bottom:1px solid var(--gold)}
-.card-header h1{color:var(--gold);font-size:clamp(25px,5vw,38px)}
-.card-header p{color:#ddd;margin-top:10px}
-.back-btn{display:inline-block;margin-top:18px;background:linear-gradient(135deg,#ffe7a4,#b7832e);color:#111;padding:11px 23px;border-radius:25px;font-weight:bold}
-.card-intro{text-align:center;padding:30px 12px 5px;color:#bbb}
-.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:23px;padding:25px 5%;max-width:1200px;margin:auto}
-.design-box{background:#17130d;border:1px solid #80602c;border-radius:15px;padding:17px;transition:.3s}
-.design-box:hover{border-color:var(--gold);transform:translateY(-5px)}
-.design-box h3{text-align:center;color:var(--gold);margin-bottom:16px}
-.card-pair{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-.business-card{aspect-ratio:1.75/1;border-radius:7px;padding:8px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden}
-.business-card strong{font-size:clamp(9px,2vw,14px)}
-.business-card small,.business-card span{font-size:8px;margin-top:5px;line-height:1.4}
-.blackgold{background:linear-gradient(135deg,#050505,#49300d);color:#f4d58c;border:1px solid #d8ad55}
-.bluewhite{background:linear-gradient(135deg,#eaf5ff,#fff);color:#102c4c;border:1px solid #477aa9}
-.redblack{background:linear-gradient(135deg,#170909,#741d1d);color:#ffd7b0;border:1px solid #b94b3b}
-.floral{background:linear-gradient(135deg,#fff0f5,#f7dce8);color:#702b4b;border:2px solid #d58aa9}
-.ivory{background:linear-gradient(135deg,#fff7df,#e5c98b);color:#533a13;border:1px solid #a47b32}
-.card-label{display:flex;justify-content:space-around;color:#aaa;font-size:10px;margin-top:10px}
-.order-link{display:block;text-align:center;background:linear-gradient(135deg,#ffe7a4,#b7832e);color:#111;padding:11px;border-radius:25px;font-weight:bold;font-size:13px;margin-top:17px}
-.card-footer{text-align:center;color:#aaa;padding:25px;border-top:1px solid #60491f;line-height:1.8}
+/* GALAXY INTRO */
+#intro{
+position:fixed;inset:0;z-index:9999;
+display:flex;align-items:center;justify-content:center;
+flex-direction:column;text-align:center;overflow:hidden;
+background:
+radial-gradient(ellipse at 50% 45%,#37236e 0%,#15103e 30%,#07091c 65%,#02020b 100%);
+}
+#intro:before,#intro:after{
+content:"";position:absolute;inset:-50%;
+background-image:
+radial-gradient(2px 2px at 20% 30%,white 99%,transparent),
+radial-gradient(2px 2px at 70% 20%,#ffe6a0 99%,transparent),
+radial-gradient(1px 1px at 40% 70%,white 99%,transparent),
+radial-gradient(2px 2px at 80% 80%,#b7c8ff 99%,transparent),
+radial-gradient(1px 1px at 10% 90%,white 99%,transparent);
+background-size:230px 190px;
+animation:starsMove 35s linear infinite;
+}
+#intro:after{transform:rotate(45deg);opacity:.55;animation-duration:50s}
+@keyframes starsMove{to{transform:translate(150px,-100px) rotate(25deg)}}
+.galaxy-ring{
+position:absolute;width:min(90vw,650px);height:min(90vw,650px);
+border:1px solid #c8a2ff55;border-radius:50%;
+box-shadow:0 0 40px #8b55ff55,inset 0 0 50px #8b55ff33;
+animation:spin 18s linear infinite;
+}
+.galaxy-ring:before,.galaxy-ring:after{
+content:"";position:absolute;inset:12%;border:1px solid #f5d58a55;
+border-radius:50%;transform:rotateX(65deg);
+}
+.galaxy-ring:after{inset:25%;transform:rotateY(65deg)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.intro-content{position:relative;z-index:5;padding:20px;width:100%}
+.intro-title{
+font-size:clamp(27px,7vw,54px);font-weight:900;
+letter-spacing:2px;color:#ffe6a0;
+text-shadow:0 0 12px #e9c66c,0 0 35px #b78aff;
+margin-bottom:8px
+}
+.intro-subtitle{color:#ddd1ff;font-size:13px;letter-spacing:4px}
+.intro-welcome{margin-top:10px;color:white;font-size:17px}
 
-/* ROBOT GUIDE */
-.robot{position:fixed;right:15px;bottom:17px;z-index:200;display:flex;align-items:end;gap:8px}
-.robot-face{width:58px;height:58px;border-radius:18px;background:linear-gradient(145deg,#ffe6a0,#b47d28);border:3px solid #fff1c5;display:flex;align-items:center;justify-content:center;font-size:31px;box-shadow:0 0 20px #d8ad5580;animation:bob 2s infinite ease-in-out}
-@keyframes bob{50%{transform:translateY(-6px)}}
-.robot-bubble{max-width:170px;background:#fff;color:#17120a;padding:10px 12px;border-radius:12px 12px 2px 12px;font-size:11px;line-height:1.5}
-.robot-bubble b{color:#9a6b18}
-.robot-controls{position:absolute;right:0;bottom:65px;display:flex;gap:5px}
-.robot-controls button{background:var(--gold);color:#111;border:0;border-radius:20px;padding:7px 10px;font-size:11px}
-.whatsapp-float{position:fixed;left:15px;bottom:18px;background:#20c967;color:white;padding:12px 16px;border-radius:25px;font-weight:bold;z-index:150}
+/* CSS 3D ROBOT CAT */
+.cat-stage{
+height:310px;max-width:500px;margin:10px auto 0;
+position:relative;perspective:900px;overflow:hidden
+}
+.dora{
+width:160px;height:220px;position:absolute;left:50%;top:40px;
+transform:translateX(-50%);animation:catWalk 5s ease-in-out infinite;
+filter:drop-shadow(0 18px 20px #0009)
+}
+.cat-head{
+position:absolute;top:0;left:12px;width:136px;height:120px;
+border-radius:50%;background:linear-gradient(140deg,#5ddcff,#1682d0 55%,#0753a2);
+border:3px solid #bdeeff;
+box-shadow:inset -12px -10px 15px #003a7a,inset 8px 7px 12px #ffffff66,0 0 25px #42c9ff77;
+z-index:3
+}
+.cat-face{
+position:absolute;left:15px;top:30px;width:100px;height:78px;
+border-radius:50%;background:linear-gradient(145deg,#fff,#e5eaf0);
+box-shadow:inset -5px -6px 10px #aab5c2
+}
+.cat-eye{
+position:absolute;top:17px;width:17px;height:25px;
+background:white;border:2px solid #222;border-radius:50%
+}
+.cat-eye:after{
+content:"";position:absolute;width:6px;height:10px;
+background:#111;border-radius:50%;left:5px;top:8px
+}
+.cat-eye.left{left:35px}.cat-eye.right{right:35px}
+.cat-nose{
+position:absolute;top:43px;left:63px;width:17px;height:17px;
+border-radius:50%;background:radial-gradient(circle at 30% 25%,#ffb5b5,#e60026 65%,#8a0017);
+border:1px solid #9a0014;z-index:4
+}
+.cat-line{
+position:absolute;top:60px;left:71px;width:2px;height:20px;background:#555
+}
+.cat-mouth{
+position:absolute;top:72px;left:49px;width:45px;height:19px;
+border-bottom:2px solid #444;border-radius:0 0 50% 50%
+}
+.whisker{
+position:absolute;top:61px;width:25px;height:1px;background:#777
+}
+.whisker.l1{left:4px;transform:rotate(12deg)}
+.whisker.l2{left:3px;top:70px}
+.whisker.l3{left:4px;top:79px;transform:rotate(-12deg)}
+.whisker.r1{right:4px;transform:rotate(-12deg)}
+.whisker.r2{right:3px;top:70px}
+.whisker.r3{right:4px;top:79px;transform:rotate(12deg)}
+.cat-body{
+position:absolute;top:94px;left:30px;width:100px;height:105px;
+border-radius:42% 42% 30% 30%;
+background:linear-gradient(120deg,#5ddcff,#1682d0 60%,#0753a2);
+border:2px solid #bdeeff;
+box-shadow:inset -10px -7px 13px #003c7b,inset 8px 5px 10px #ffffff55
+}
+.cat-belly{
+position:absolute;left:14px;top:20px;width:68px;height:75px;
+border-radius:50%;background:linear-gradient(145deg,#fff,#dfe6ee);
+box-shadow:inset -5px -5px 9px #b8c0cc
+}
+.cat-pocket{
+position:absolute;left:16px;top:48px;width:37px;height:23px;
+border:2px solid #aaa;border-radius:0 0 50% 50%;background:#fff
+}
+.cat-collar{
+position:absolute;top:9px;left:0;width:100%;height:9px;
+background:#d71936;border:1px solid #8c0017;border-radius:5px
+}
+.cat-bell{
+position:absolute;top:14px;left:43px;width:17px;height:17px;
+border-radius:50%;background:radial-gradient(circle at 30% 25%,#fff3a6,#e7a900 70%,#895300);
+border:1px solid #ffe18a
+}
+.cat-arm{
+position:absolute;top:110px;width:23px;height:65px;
+border-radius:20px;background:linear-gradient(90deg,#0870bb,#62dfff);
+border:2px solid #bdeeff;transform-origin:top center
+}
+.cat-arm.left{left:15px;transform:rotate(20deg);animation:wave 1s ease-in-out infinite alternate}
+.cat-arm.right{right:12px;transform:rotate(-20deg)}
+.cat-foot{
+position:absolute;top:185px;width:48px;height:23px;
+border-radius:50%;background:linear-gradient(145deg,#fff,#bfcbd8);
+border:2px solid #fff
+}
+.cat-foot.left{left:25px}.cat-foot.right{right:25px}
+@keyframes catWalk{
+0%,100%{transform:translateX(-50%) translateY(0) rotate(-3deg)}
+25%{transform:translateX(-43%) translateY(-13px) rotate(3deg)}
+50%{transform:translateX(-50%) translateY(0) rotate(-3deg)}
+75%{transform:translateX(-57%) translateY(-13px) rotate(3deg)}
+}
+@keyframes wave{to{transform:rotate(48deg)}}
+.intro-message{
+color:#fff;font-size:14px;min-height:25px;margin:5px auto 18px;
+text-shadow:0 0 10px #a98aff
+}
+.intro-buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.start-btn{
+padding:14px 26px;border:0;border-radius:30px;
+font-size:14px;font-weight:bold;color:#171006;
+background:linear-gradient(120deg,#b57b23,#ffe9a7,#c28c32);
+box-shadow:0 0 25px #e5bd6577
+}
+.skip-btn{
+padding:13px 22px;border:1px solid #e4bd65;border-radius:30px;
+background:#ffffff10;color:white
+}
 
-@media(max-width:700px){
-header{flex-wrap:wrap}
-.menu-btn{display:block}
-nav{display:none;width:100%;flex-direction:column;gap:0;align-items:stretch}
-nav.show{display:flex}
-nav a{padding:12px;border-top:1px solid #302718}
-.hero{min-height:500px;padding:65px 5%}
-section{padding:55px 5%}
-.robot-face{width:50px;height:50px;font-size:27px}
-.robot-bubble{max-width:145px;font-size:10px}
+/* MAIN WEBSITE */
+#website{display:none}
+header{
+position:sticky;top:0;z-index:100;
+background:#080808ed;border-bottom:1px solid #b58b3b;
+backdrop-filter:blur(15px);padding:12px 5%;
+display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap
+}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-icon{
+width:48px;height:48px;border:2px solid var(--gold);
+border-radius:50%;display:grid;place-items:center;color:var(--gold2);
+font-size:24px;box-shadow:0 0 18px #d6ad5580
+}
+.logo h2{font-size:18px;color:var(--gold2);letter-spacing:1px}
+.logo small{display:block;color:#ccc;font-size:10px;letter-spacing:2px}
+nav{display:flex;gap:7px;flex-wrap:wrap}
+nav button{
+border:1px solid #80632e;background:transparent;color:#f7e3b2;
+padding:9px 12px;border-radius:20px;font-size:11px
+}
+nav button:hover{background:var(--gold);color:#000}
+.hero{
+min-height:490px;padding:65px 6%;display:flex;align-items:center;
+justify-content:space-between;gap:30px;flex-wrap:wrap;
+background:radial-gradient(circle at 80% 45%,#b7893155,transparent 35%)
+}
+.hero-content{max-width:650px}
+.tag{display:inline-block;border:1px solid var(--gold);color:var(--gold2);
+padding:8px 16px;border-radius:30px;font-size:12px;letter-spacing:2px;margin-bottom:20px}
+.hero h1{font-size:clamp(34px,6vw,65px);line-height:1.12;margin-bottom:18px}
+.hero h1 span{color:var(--gold2);text-shadow:0 0 25px #d6ad5570}
+.hero p{color:#ccc;line-height:1.8;font-size:15px}
+.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{
+display:inline-block;text-decoration:none;border:0;padding:13px 20px;
+border-radius:30px;font-weight:bold;
+background:linear-gradient(120deg,#a87927,#ffe6a1,#bd8c37);color:#100d06
+}
+.btn-outline{background:transparent;color:var(--gold2);border:1px solid var(--gold)}
+.hero-art{
+width:250px;height:250px;border-radius:50%;border:2px solid #c79b4c;
+display:grid;place-items:center;background:radial-gradient(circle,#38280d,#080808 70%);
+box-shadow:0 0 50px #d6ad5540;animation:float 4s ease-in-out infinite
+}
+.hero-art span{font-size:100px}
+@keyframes float{50%{transform:translateY(-15px) rotate(4deg)}}
+.section{padding:50px 5%}
+.section-title{text-align:center;margin-bottom:30px}
+.section-title h2{font-size:30px;color:var(--gold2)}
+.section-title p{color:#aaa;margin-top:10px;font-size:13px}
+.service-grid{
+display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
+gap:16px;max-width:1200px;margin:auto
+}
+.service{
+background:linear-gradient(145deg,#1c1a16,#090909);
+border:1px solid #705326;border-radius:16px;padding:22px 12px;
+text-align:center;min-height:155px;cursor:pointer;transition:.3s
+}
+.service:hover{transform:translateY(-7px);border-color:var(--gold2);box-shadow:0 0 25px #c99b4340}
+.service .emoji{font-size:35px;margin-bottom:12px}
+.service h3{font-size:14px;color:var(--gold2)}
+.service p{font-size:11px;color:#aaa;margin-top:7px;line-height:1.5}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;max-width:1100px;margin:auto}
+.info{border:1px solid #574322;border-radius:14px;padding:22px;background:#111}
+.info h3{color:var(--gold2);margin-bottom:9px}
+.info p{color:#bbb;font-size:13px;line-height:1.7}
+
+/* CATEGORY PAGE */
+#catalogPage{display:none;min-height:75vh;padding:35px 5% 65px}
+.catalog-head{text-align:center;margin-bottom:28px}
+.catalog-head h2{font-size:clamp(25px,5vw,40px);color:var(--gold2)}
+.catalog-head p{color:#bbb;margin-top:10px}
+.back-btn{display:block;margin:0 auto 25px}
+.design-grid{
+display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:20px;max-width:1250px;margin:auto
+}
+.design-card{background:#121212;border:1px solid #705326;border-radius:16px;overflow:hidden}
+.design-preview{
+height:180px;padding:12px;display:grid;place-items:center;
+background:linear-gradient(135deg,#292015,#080808)
+}
+.sample{
+width:100%;height:100%;border-radius:7px;padding:15px;
+display:flex;flex-direction:column;justify-content:center;align-items:center;
+text-align:center;overflow:hidden;box-shadow:0 5px 15px #0008
+}
+.sample strong{font-size:clamp(15px,3vw,22px);letter-spacing:1px}
+.sample small{font-size:10px;margin-top:7px}
+.sample span{font-size:10px;margin-top:5px}
+.design-card h3{color:var(--gold2);font-size:15px;padding:13px 13px 5px}
+.design-card p{color:#aaa;font-size:12px;line-height:1.5;padding:0 13px 12px}
+.order{
+display:block;text-align:center;text-decoration:none;background:#157a40;
+color:white;font-weight:bold;padding:12px;margin:0 12px 13px;border-radius:8px;font-size:13px
+}
+footer{border-top:1px solid #6f542a;padding:30px 5%;text-align:center;background:#050505;color:#aaa;font-size:12px;line-height:2}
+footer strong{color:var(--gold2)}
+.whatsapp-float{
+position:fixed;left:17px;bottom:20px;z-index:400;background:#1da851;
+color:white;text-decoration:none;padding:13px 17px;border-radius:30px;font-weight:bold
+}
+.speech{
+position:fixed;right:125px;bottom:85px;z-index:501;max-width:230px;
+padding:13px;border-radius:14px;background:#fff;color:#17120a;
+font-size:12px;line-height:1.5;box-shadow:0 0 20px #d6ad5570;display:none
+}
+.robot{
+position:fixed;right:15px;bottom:12px;z-index:500;width:105px;height:140px;
+cursor:pointer;text-align:center;display:none
+}
+.robot-body{
+width:85px;height:104px;margin:auto;position:relative;
+border-radius:42px 42px 25px 25px;
+background:linear-gradient(145deg,#f4f4f4,#8e929b 55%,#333943);
+border:2px solid #d7b45f;box-shadow:0 0 22px #d6ad5580;
+animation:float 3s ease-in-out infinite
+}
+.robot-head{
+width:78px;height:62px;position:absolute;top:-22px;left:2px;
+border-radius:35px 35px 25px 25px;background:linear-gradient(145deg,#fff,#aeb5c1);
+border:2px solid #d7b45f
+}
+.eyes{display:flex;justify-content:space-evenly;padding-top:20px}
+.eye{width:13px;height:17px;border-radius:50%;background:#00cfff;box-shadow:0 0 12px #00cfff}
+.robot-mouth{width:25px;height:6px;border-radius:10px;background:#333;margin:8px auto}
+.robot-chest{
+position:absolute;top:51px;left:24px;width:34px;height:34px;border:2px solid #d6ad55;
+border-radius:50%;display:grid;place-items:center;color:#d6ad55;font-size:17px
+}
+.robot-label{font-size:11px;color:var(--gold2);font-weight:bold;margin-top:12px}
+@media(max-width:650px){
+header{justify-content:center}
+nav{justify-content:center}
+nav button{font-size:10px;padding:8px}
+.hero{text-align:center;justify-content:center}
+.hero-buttons{justify-content:center}
+.hero-art{width:190px;height:190px}
+.hero-art span{font-size:80px}
+.robot{transform:scale(.82);transform-origin:bottom right}
+.speech{right:100px;bottom:75px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- HOMEPAGE -->
-<div id="homePage">
+<!-- GALAXY WELCOME SCREEN -->
+<section id="intro">
+ <div class="galaxy-ring"></div>
+ <div class="intro-content">
+  <div class="intro-title">WARSI PRINTING PRESS</div>
+  <div class="intro-subtitle">DESIGN • PRINT • QUALITY</div>
 
+  <div class="cat-stage">
+   <div class="dora">
+    <div class="cat-head">
+     <div class="cat-face"></div>
+     <div class="cat-eye left"></div>
+     <div class="cat-eye right"></div>
+     <div class="cat-nose"></div>
+     <div class="cat-line"></div>
+     <div class="cat-mouth"></div>
+     <div class="whisker l1"></div><div class="whisker l2"></div><div class="whisker l3"></div>
+     <div class="whisker r1"></div><div class="whisker r2"></div><div class="whisker r3"></div>
+    </div>
+    <div class="cat-body">
+     <div class="cat-collar"></div>
+     <div class="cat-bell"></div>
+     <div class="cat-belly"></div>
+     <div class="cat-pocket"></div>
+    </div>
+    <div class="cat-arm left"></div>
+    <div class="cat-arm right"></div>
+    <div class="cat-foot left"></div>
+    <div class="cat-foot right"></div>
+   </div>
+  </div>
+
+  <div class="intro-welcome">Assalamualaikum! Aapka khush aamdeed hai!</div>
+  <div class="intro-message" id="introMessage">Meet your friendly printing guide...</div>
+  <div class="intro-buttons">
+   <button class="start-btn" onclick="enterWebsite(true)">🚀 START & OPEN WEBSITE</button>
+   <button class="skip-btn" onclick="enterWebsite(false)">SKIP INTRO</button>
+  </div>
+ </div>
+</section>
+
+<!-- MAIN WEBSITE -->
+<div id="website">
 <header>
-<a href="#home" class="logo">WARSI <small>PRINTING PRESS</small></a>
-<button class="menu-btn" onclick="toggleMenu()">☰ MENU</button>
-<nav id="nav">
-<a href="#home" onclick="closeMenu()">HOME</a>
-<a href="#services" onclick="closeMenu()">SERVICES</a>
-<a href="javascript:void(0)" onclick="showCards()">VISITING CARDS</a>
-<a href="#about" onclick="closeMenu()">ABOUT</a>
-<a href="#contact" onclick="closeMenu()">CONTACT</a>
-</nav>
+ <div class="logo">
+  <div class="logo-icon">W</div>
+  <div>
+   <h2>WARSI PRINTING PRESS</h2>
+   <small>DESIGN • PRINT • QUALITY</small>
+  </div>
+ </div>
+ <nav>
+  <button onclick="showHome()">HOME</button>
+  <button onclick="openCategory('visiting')">VISITING</button>
+  <button onclick="openCategory('wedding')">WEDDING</button>
+  <button onclick="openCategory('flex')">FLEX</button>
+  <button onclick="openCategory('pamphlet')">PAMPHLETS</button>
+ </nav>
 </header>
 
-<section class="hero" id="home">
-<div class="hero-content">
-<h1>WARSI PRINTING PRESS</h1>
-<h2>DESIGN • PRINT • CREATE</h2>
-<p>Welcome to WARSI PRINTING PRESS! Your trusted destination for beautiful designs, premium printing and creative solutions. We turn your ideas into beautiful prints.</p>
-<a class="gold-btn" href="#services">Explore Our Services</a>
-<a class="outline-btn" href="https://wa.me/918173834800" target="_blank">WhatsApp Us</a>
-</div>
-</section>
+<main id="homePage">
+ <section class="hero">
+  <div class="hero-content">
+   <div class="tag">PREMIUM PRINTING STUDIO</div>
+   <h1>Welcome to <span class="gold">WARSI</span><br>PRINTING PRESS</h1>
+   <p>आपका स्वागत है! शानदार Wedding Cards, Visiting Cards, Flex Banners और सभी प्रकार की Printing Services अब एक ही जगह पर।</p>
+   <div class="hero-buttons">
+    <button class="btn" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">EXPLORE DESIGNS</button>
+    <a class="btn btn-outline" href="https://wa.me/918173834800" target="_blank">WHATSAPP ORDER</a>
+   </div>
+  </div>
+  <div class="hero-art"><span>🖨️</span></div>
+ </section>
 
-<section id="services">
-<div class="section-title">
-<h2>Our Premium Services</h2>
-<p>Quality printing, creative designs and professional service.</p>
-</div>
-<div class="services">
+ <section class="section" id="services">
+  <div class="section-title">
+   <h2>Our Printing Services</h2>
+   <p>अपनी पसंद की कैटेगरी चुनें और 10 शानदार डिज़ाइन देखें</p>
+  </div>
+  <div class="service-grid" id="serviceGrid"></div>
+ </section>
 
-<a class="service-card" href="javascript:void(0)" onclick="showCards()">
-<div class="service-icon">💳</div>
-<h3>Visiting Cards</h3>
-<p>Click here to explore five premium visiting card designs.</p>
-</a>
+ <section class="section">
+  <div class="section-title">
+   <h2>Why Choose Us?</h2>
+   <p>आपके हर खास मौके के लिए शानदार प्रिंटिंग</p>
+  </div>
+  <div class="info-grid">
+   <div class="info"><h3>✦ Premium Quality</h3><p>साफ-सुथरी डिजाइन और बेहतरीन प्रिंटिंग क्वालिटी।</p></div>
+   <div class="info"><h3>✦ Custom Design</h3><p>आपकी पसंद के अनुसार डिजाइन और रंगों का चुनाव।</p></div>
+   <div class="info"><h3>✦ Easy WhatsApp Order</h3><p>डिजाइन चुनें और सीधे WhatsApp पर ऑर्डर भेजें।</p></div>
+  </div>
+ </section>
+</main>
 
-<div class="service-card"><div class="service-icon">💍</div><h3>Wedding Cards</h3><p>Beautiful wedding and invitation card printing.</p></div>
-<div class="service-card"><div class="service-icon">🖨️</div><h3>Digital Printing</h3><p>High-quality digital printing for your business and events.</p></div>
-<div class="service-card"><div class="service-icon">🎨</div><h3>Graphic Design</h3><p>Creative logo, poster, banner and advertisement designs.</p></div>
-<div class="service-card"><div class="service-icon">🪧</div><h3>Flex & Banners</h3><p>Eye-catching flex, banners and shop boards.</p></div>
-<div class="service-card"><div class="service-icon">📄</div><h3>Document Printing</h3><p>Document, photocopy and other printing services.</p></div>
-
-</div>
-</section>
-
-<section class="about" id="about">
-<div class="section-title"><h2>About WARSI PRINTING PRESS</h2></div>
-<div class="about-content">
-<h3>Your Ideas, Our Creativity</h3>
-<p>WARSI PRINTING PRESS is dedicated to providing creative designs and quality printing services. From visiting cards to wedding invitations, banners and graphic designing, we aim to make every print special. Contact us for your printing requirements.</p>
-</div>
-</section>
-
-<section id="contact">
-<div class="section-title">
-<h2>Contact Us</h2>
-<p>We are ready to help you with your printing needs.</p>
-</div>
-<div class="contact-grid">
-<div class="contact-item"><div class="symbol">👤</div><h3>Owner</h3><p>Ajahruddin Shaikh</p></div>
-<div class="contact-item"><div class="symbol">📞</div><h3>Call / WhatsApp</h3><p><a href="tel:+918173834800">+91 8173834800</a></p></div>
-<div class="contact-item"><div class="symbol">📍</div><h3>Our Address</h3><p>Niyamatganj Chauraha,<br>Tikaitnagar–Bhelsar Road,<br>Tehsil Ram Sanehi Ghat,<br>District Barabanki, Uttar Pradesh, India</p></div>
-<div class="contact-item"><div class="symbol">✉️</div><h3>Email</h3><p><a href="mailto:ajahruddinsheikh0@gmail.com">ajahruddinsheikh0@gmail.com</a></p></div>
-</div>
-<div style="text-align:center;margin-top:30px">
-<a class="gold-btn" href="https://wa.me/918173834800" target="_blank">Message on WhatsApp</a>
-<a class="outline-btn" href="tel:+918173834800">Call Now</a>
-</div>
+<section id="catalogPage">
+ <button class="btn back-btn" onclick="showHome()">← BACK TO HOME</button>
+ <div class="catalog-head">
+  <div class="tag">WARSI PRINTING PRESS</div>
+  <h2 id="catalogTitle">Our Designs</h2>
+  <p id="catalogDescription">अपना पसंदीदा डिजाइन चुनें</p>
+ </div>
+ <div class="design-grid" id="designGrid"></div>
 </section>
 
 <footer>
-<p><b>WARSI PRINTING PRESS</b></p>
-<p>Design • Print • Create</p>
-<p>Niyamatganj Chauraha, Barabanki, Uttar Pradesh</p>
-<p>© <span class="year"></span> WARSI PRINTING PRESS. All Rights Reserved.</p>
+ <strong>WARSI PRINTING PRESS</strong><br>
+ Niyamatganj Chauraha, Tikaitnagar–Bhelsar Road<br>
+ Tehsil Ram Sanehi Ghat, District Barabanki, Uttar Pradesh<br>
+ Phone / WhatsApp: +91 8173834800<br>
+ Email: ajahruddinsheikh0@gmail.com<br>
+ © 2026 WARSI PRINTING PRESS. All Rights Reserved.
 </footer>
-
-</div>
-<!-- END HOMEPAGE -->
-
-
-<!-- VISITING CARDS PAGE -->
-<div id="cardPage">
-
-<div class="card-header">
-<h1>WARSI PRINTING PRESS</h1>
-<p>Premium Visiting Card Collection</p>
-<a class="back-btn" href="javascript:void(0)" onclick="showHome()">← BACK TO HOME</a>
 </div>
 
-<div class="card-intro">
-<h2 style="color:#dfb65e;margin-bottom:10px">Choose Your Visiting Card Design</h2>
-<p>Five beautiful styles • Front & Back Preview</p>
-</div>
+<a class="whatsapp-float" id="waFloat" href="https://wa.me/918173834800" target="_blank" style="display:none">WhatsApp</a>
 
-<div class="card-grid">
-
-<div class="design-box">
-<h3>01. Luxury Black & Gold</h3>
-<div class="card-pair">
-<div class="business-card blackgold"><strong>WARSI</strong><small>PRINTING PRESS</small><span>DESIGN • PRINT • CREATE</span></div>
-<div class="business-card blackgold"><strong>AJAH RUDDIN SHAIKH</strong><small>OWNER</small><span>☎ 8173834800</span><span>Barabanki, U.P.</span></div>
-</div>
-<div class="card-label"><span>FRONT SIDE</span><span>BACK SIDE</span></div>
-<a class="order-link" href="https://wa.me/918173834800?text=I%20want%20Luxury%20Black%20Gold%20visiting%20card" target="_blank">Order This Design</a>
-</div>
-
-<div class="design-box">
-<h3>02. Professional Blue & White</h3>
-<div class="card-pair">
-<div class="business-card bluewhite"><strong>WARSI</strong><small>PRINTING PRESS</small><span>YOUR BRAND, OUR DESIGN</span></div>
-<div class="business-card bluewhite"><strong>AJAH RUDDIN SHAIKH</strong><small>OWNER</small><span>☎ 8173834800</span><span>Barabanki, U.P.</span></div>
-</div>
-<div class="card-label"><span>FRONT SIDE</span><span>BACK SIDE</span></div>
-<a class="order-link" href="https://wa.me/918173834800?text=I%20want%20Blue%20White%20visiting%20card" target="_blank">Order This Design</a>
-</div>
-
-<div class="design-box">
-<h3>03. Bold Red & Black</h3>
-<div class="card-pair">
-<div class="business-card redblack"><strong>WARSI</strong><small>PRINTING PRESS</small><span>PREMIUM PRINTING</span></div>
-<div class="business-card redblack"><strong>AJAH RUDDIN SHAIKH</strong><small>OWNER</small><span>☎ 8173834800</span><span>Barabanki, U.P.</span></div>
-</div>
-<div class="card-label"><span>FRONT SIDE</span><span>BACK SIDE</span></div>
-<a class="order-link" href="https://wa.me/918173834800?text=I%20want%20Red%20Black%20visiting%20card" target="_blank">Order This Design</a>
-</div>
-
-<div class="design-box">
-<h3>04. Elegant Floral</h3>
-<div class="card-pair">
-<div class="business-card floral"><strong>WARSI</strong><small>PRINTING PRESS</small><span>CREATIVE PRINTING</span></div>
-<div class="business-card floral"><strong>AJAH RUDDIN SHAIKH</strong><small>OWNER</small><span>☎ 8173834800</span><span>Barabanki, U.P.</span></div>
-</div>
-<div class="card-label"><span>FRONT SIDE</span><span>BACK SIDE</span></div>
-<a class="order-link" href="https://wa.me/918173834800?text=I%20want%20Floral%20visiting%20card" target="_blank">Order This Design</a>
-</div>
-
-<div class="design-box">
-<h3>05. Premium Ivory & Gold</h3>
-<div class="card-pair">
-<div class="business-card ivory"><strong>WARSI</strong><small>PRINTING PRESS</small><span>ROYAL PRINT COLLECTION</span></div>
-<div class="business-card ivory"><strong>AJAH RUDDIN SHAIKH</strong><small>OWNER</small><span>☎ 8173834800</span><span>Barabanki, U.P.</span></div>
-</div>
-<div class="card-label"><span>FRONT SIDE</span><span>BACK SIDE</span></div>
-<a class="order-link" href="https://wa.me/918173834800?text=I%20want%20Ivory%20Gold%20visiting%20card" target="_blank">Order This Design</a>
-</div>
-
-</div>
-
-<div class="card-footer">
-<b style="color:#dfb65e">WARSI PRINTING PRESS</b><br>
-Niyamatganj Chauraha, Tikaitnagar–Bhelsar Road,<br>
-Ram Sanehi Ghat, Barabanki, Uttar Pradesh<br>
-<a class="back-btn" href="javascript:void(0)" onclick="showHome()">← Back to Homepage</a>
-</div>
-
-</div>
-<!-- END VISITING CARDS PAGE -->
-
-
-<a class="whatsapp-float" href="https://wa.me/918173834800" target="_blank">WhatsApp</a>
-
-<div class="robot" id="robot">
-<div class="robot-bubble" id="robotText"><b>Assalamualaikum!</b><br>WARSI PRINTING PRESS mein aapka swagat hai!</div>
-<div class="robot-face">🤖</div>
-<div class="robot-controls">
-<button onclick="robotSpeak()">🔊 Speak</button>
-<button onclick="robotHide()">✖</button>
-</div>
+<div class="speech" id="speech"></div>
+<div class="robot" id="smallRobot" onclick="robotTalk(true)">
+ <div class="robot-body">
+  <div class="robot-head">
+   <div class="eyes"><div class="eye"></div><div class="eye"></div></div>
+   <div class="robot-mouth"></div>
+  </div>
+  <div class="robot-chest">W</div>
+ </div>
+ <div class="robot-label">TALK TO ME</div>
 </div>
 
 <script>
-function toggleMenu(){
-document.getElementById("nav").classList.toggle("show");
-}
-function closeMenu(){
-document.getElementById("nav").classList.remove("show");
-}
+const phone="918173834800";
 
-function showCards(){
-document.getElementById("homePage").style.display="none";
-document.getElementById("cardPage").style.display="block";
-window.scrollTo(0,0);
-document.getElementById("robotText").innerHTML="<b>Visiting Cards!</b><br>Apna pasandida design chuniye.";
-}
+const categories={
+ visiting:{title:"Visiting Cards",emoji:"💳",desc:"Business ke liye 10 Visiting Card Designs",designs:[
+ ["Luxury Black Gold","Black and gold royal business card","black"],
+ ["Classic Blue","Professional blue and white card","blue"],
+ ["Royal Red","Bold red and black business card","red"],
+ ["Elegant White","Simple clean white business card","white"],
+ ["Premium Green","Green and gold premium design","green"],
+ ["Modern Grey","Modern grey corporate design","grey"],
+ ["Royal Purple","Purple luxury visiting card","purple"],
+ ["Creative Orange","Bright orange business card","orange"],
+ ["Minimal Black","Minimal black professional design","black2"],
+ ["Ivory Gold","Ivory and gold elegant card","ivory"]]},
+ wedding:{title:"Wedding Cards",emoji:"💍",desc:"Shadi ke liye 10 Wedding Invitation Designs",designs:[
+ ["Royal Golden Wedding","Gold royal wedding invitation","gold"],
+ ["Floral Pink Wedding","Pink floral invitation design","pink"],
+ ["Maroon Traditional","Traditional maroon wedding card","maroon"],
+ ["Ivory Elegant","Ivory and gold elegant invitation","ivory"],
+ ["Red Royal Wedding","Red royal wedding invitation","red"],
+ ["Green Mughal Style","Green traditional wedding design","green"],
+ ["Blue Pearl Wedding","Blue and silver invitation","blue"],
+ ["Minimal Modern","Modern minimal wedding invitation","white"],
+ ["Luxury Black Gold","Black gold premium invitation","black"],
+ ["Pastel Floral","Soft pastel floral wedding card","pastel"]]},
+ flex:{title:"Flex & Banners",emoji:"🪧",desc:"Shop, business aur events ke liye 10 Flex Designs",designs:[
+ ["Luxury Black Gold Flex","Premium black gold shop banner","black"],
+ ["Blue Business Banner","Professional blue business banner","blue"],
+ ["Red Sale Banner","Bold red promotional banner","red"],
+ ["Colorful Event Flex","Colorful event function banner","color"],
+ ["Restaurant Flex","Food and restaurant banner","orange"],
+ ["Medical Shop Flex","Medical business banner","green"],
+ ["School Banner","Education and school banner","blue"],
+ ["Wedding Event Flex","Wedding welcome banner","pink"],
+ ["Grand Opening Flex","Grand opening promotional banner","gold"],
+ ["Ivory Premium Flex","Elegant premium business banner","ivory"]]},
+ pamphlet:{title:"Pamphlets",emoji:"📄",desc:"Business promotion ke liye 10 Pamphlet Designs",designs:[
+ ["Royal Business","Black gold business pamphlet","black"],
+ ["Blue Corporate","Blue corporate pamphlet","blue"],
+ ["Red Offer","Red discount offer pamphlet","red"],
+ ["Food Menu","Restaurant food menu pamphlet","orange"],
+ ["Coaching Classes","Education promotion pamphlet","blue"],
+ ["Medical Services","Medical services pamphlet","green"],
+ ["Real Estate","Property promotion pamphlet","gold"],
+ ["Beauty Salon","Beauty salon pamphlet","pink"],
+ ["Event Promotion","Event announcement pamphlet","purple"],
+ ["Simple Elegant","Minimal elegant pamphlet","white"]]},
+ letterhead:{title:"Letterheads",emoji:"📃",desc:"Office aur business ke liye 10 Letterhead Designs",designs:[
+ ["Royal Gold Letterhead","Black gold premium letterhead","black"],
+ ["Corporate Blue","Professional blue letterhead","blue"],
+ ["Classic White","Clean white office letterhead","white"],
+ ["Maroon Executive","Maroon executive letterhead","maroon"],
+ ["Green Nature","Green modern letterhead","green"],
+ ["Grey Minimal","Minimal grey letterhead","grey"],
+ ["Purple Creative","Creative purple letterhead","purple"],
+ ["Red Business","Red business letterhead","red"],
+ ["Ivory Premium","Ivory premium letterhead","ivory"],
+ ["Modern Gradient","Modern gradient letterhead","color"]]},
+ billbook:{title:"Bill Books",emoji:"📒",desc:"Shop aur business ke liye 10 Bill Book Designs",designs:[
+ ["Shop Bill Book","Professional shop bill design","blue"],
+ ["Royal Black Gold","Luxury black and gold bill book","black"],
+ ["Grocery Bill","Grocery store bill design","green"],
+ ["Medical Bill","Medical store bill design","white"],
+ ["Restaurant Bill","Restaurant bill book design","orange"],
+ ["Hardware Bill","Hardware shop bill design","red"],
+ ["Transport Bill","Transport business bill design","blue"],
+ ["Wholesale Bill","Wholesale business bill design","grey"],
+ ["Modern GST Bill","Modern invoice design","ivory"],
+ ["Classic Cash Memo","Classic cash memo design","maroon"]]},
+ poster:{title:"Posters",emoji:"🖼️",desc:"Advertising aur events ke liye 10 Poster Designs",designs:[
+ ["Grand Opening","Grand opening poster","gold"],
+ ["Mega Sale","Mega sale poster","red"],
+ ["Business Promotion","Business promotion poster","blue"],
+ ["Education Poster","Education awareness poster","green"],
+ ["Wedding Poster","Wedding event poster","pink"],
+ ["Restaurant Poster","Food promotion poster","orange"],
+ ["Festival Poster","Festival greeting poster","purple"],
+ ["Luxury Poster","Black gold luxury poster","black"],
+ ["Health Poster","Health awareness poster","white"],
+ ["Modern Creative","Modern creative poster","color"]]},
+ stickers:{title:"Stickers & Labels",emoji:"🏷️",desc:"Product branding ke liye 10 Sticker Designs",designs:[
+ ["Round Gold Label","Round luxury gold label","gold"],
+ ["Black Brand Sticker","Black premium brand sticker","black"],
+ ["Food Product Label","Food packaging label","orange"],
+ ["Bottle Label","Bottle branding label","blue"],
+ ["Beauty Product Label","Beauty product sticker","pink"],
+ ["Green Organic Label","Organic product label","green"],
+ ["Square Business Sticker","Square business sticker","red"],
+ ["Minimal White Label","Minimal product label","white"],
+ ["Royal Purple Label","Purple premium sticker","purple"],
+ ["Modern Color Label","Colorful product label","color"]]},
+ idcard:{title:"ID Cards",emoji:"🪪",desc:"School aur office ke liye 10 ID Card Designs",designs:[
+ ["Corporate Blue ID","Professional office ID card","blue"],
+ ["School ID Card","School student ID card","white"],
+ ["Royal Black ID","Black premium staff ID","black"],
+ ["Green Staff ID","Green company ID card","green"],
+ ["Red Employee ID","Red employee identity card","red"],
+ ["Purple ID Card","Purple modern ID card","purple"],
+ ["Medical Staff ID","Medical staff ID card","white"],
+ ["Security ID","Security staff ID card","grey"],
+ ["Golden Premium ID","Gold premium ID card","gold"],
+ ["Modern Gradient ID","Modern gradient ID card","color"]]},
+ certificate:{title:"Certificates",emoji:"🏅",desc:"Award aur achievement ke liye 10 Certificate Designs",designs:[
+ ["Royal Gold Certificate","Gold border achievement certificate","gold"],
+ ["Blue Academic","Blue academic certificate","blue"],
+ ["Classic Ivory","Ivory traditional certificate","ivory"],
+ ["Black Premium","Black premium award certificate","black"],
+ ["Green Achievement","Green achievement certificate","green"],
+ ["Red Award","Red award certificate","red"],
+ ["Purple Appreciation","Purple appreciation certificate","purple"],
+ ["Minimal White","Minimal white certificate","white"],
+ ["Floral Certificate","Floral border certificate","pink"],
+ ["Modern Color","Modern colorful certificate","color"]]}
+};
 
-function showHome(){
-document.getElementById("cardPage").style.display="none";
-document.getElementById("homePage").style.display="block";
-window.scrollTo(0,0);
-document.getElementById("robotText").innerHTML="<b>Welcome Back!</b><br>WARSI PRINTING PRESS mein aapka swagat hai!";
-}
+const themes={
+ black:["#090909","#f3d27b"],blue:["#063b70","#fff"],
+ red:["#a30e19","#fff"],white:["#fff","#242424"],
+ green:["#075b3b","#fff2c6"],grey:["#41464e","#fff"],
+ purple:["#492064","#ffe5ff"],orange:["#c94d0a","#fff3d7"],
+ ivory:["#f0e3c8","#5c3b15"],gold:["#6d4a12","#ffe8a0"],
+ pink:["#f6cbd9","#792c4a"],maroon:["#650e2c","#ffe7ce"],
+ pastel:["#f5dfe8","#75455d"],
+ color:["linear-gradient(120deg,#174f91,#8e2c81,#d15c28)","#fff"],
+ black2:["#151515","#f5f5f5"]
+};
 
-function robotSpeak(){
-if(!("speechSynthesis" in window)){
-alert("Voice is not supported in this browser.");
-return;
-}
-speechSynthesis.cancel();
-let text;
-if(document.getElementById("cardPage").style.display==="block"){
-text="Welcome to Warsi Printing Press visiting card collection. Please choose your favourite design.";
-}else{
-text="Assalamualaikum. Welcome to Warsi Printing Press. Yahan aapko visiting cards, wedding cards, flex printing aur graphic designing ki services milengi. Thank you for visiting.";
-}
-let msg=new SpeechSynthesisUtterance(text);
-msg.lang="hi-IN";
-msg.rate=0.88;
-msg.pitch=1.15;
-speechSynthesis.speak(msg);
-}
-
-function robotHide(){
-document.getElementById("robot").style.display="none";
-}
-
-document.querySelectorAll(".year").forEach(function(el){
-el.textContent=new Date().getFullYear();
+const serviceGrid=document.getElementById("serviceGrid");
+Object.keys(categories).forEach(key=>{
+ const c=categories[key];
+ const item=document.createElement("div");
+ item.className="service";
+ item.innerHTML=`<div class="emoji">${c.emoji}</div><h3>${c.title}</h3><p>10 Premium Designs</p>`;
+ item.onclick=()=>openCategory(key);
+ serviceGrid.appendChild(item);
 });
-</script>
 
+function openCategory(key){
+ const c=categories[key];
+ if(!c)return;
+ document.getElementById("homePage").style.display="none";
+ document.getElementById("catalogPage").style.display="block";
+ document.getElementById("catalogTitle").textContent=c.title;
+ document.getElementById("catalogDescription").textContent=c.desc;
+ const grid=document.getElementById("designGrid");
+ grid.innerHTML="";
+ c.designs.forEach((d,i)=>{
+  const t=themes[d[2]]||themes.gold;
+  const msg=`Assalamualaikum, mujhe WARSI PRINTING PRESS se ${c.title} ka ${d[0]} design order karna hai. Please price aur details batayein.`;
+  const link="https://wa.me/"+phone+"?text="+encodeURIComponent(msg);
+  const card=document.createElement("div");
+  card.className="design-card";
+  card.innerHTML=`
+   <div class="design-preview">
+    <div class="sample" style="background:${t[0]};color:${t[1]}">
+     <small>WARSI PRINTING PRESS</small>
+     <strong>${d[0]}</strong>
+     <span>PREMIUM PRINTING & DESIGN</span>
+     <span>8173834800</span>
+    </div>
+   </div>
+   <h3>${i+1}. ${d[0]}</h3>
+   <p>${d[1]}</p>
+   <a class="order" href="${link}" target="_blank">ORDER ON WHATSAPP</a>`;
+  grid.appendChild(card);
+ });
+ window.scrollTo({top:0,behavior:"smooth"});
+ robotTalk(false,`${c.title} ke 10 designs khul gaye hain. Apni pasand ka design chuniye.`);
+}
+function showHome(){
+ document.getElementById("catalogPage").style.display="none";
+ document.getElementById("homePage").style.display="block";
+ window.scrollTo({top:0,behavior:"smooth"});
+ robotTalk(false,"Welcome back! WARSI PRINTING PRESS mein aapka swagat hai.");
+}
+
+/* ROBOT GUIDE */
+function speakText(message){
+ if(!("speechSynthesis" in window))return;
+ window.speechSynthesis.cancel();
+ const utter=new SpeechSynthesisUtterance(message);
+ utter.lang="hi-IN";utter.rate=.88;utter.pitch=1.15;
+ const voices=window.speechSynthesis.getVoices();
+ const voice=voices.find(v=>/female|zira|heera/i.test(v.name))||
+ voices.find(v=>v.lang==="hi-IN");
+ if(voice)utter.voice=voice;
+ window.speechSynthesis.speak(utter);
+}
+function robotTalk(speak=true,custom=""){
+ const bubble=document.getElementById("speech");
+ const msg=custom||"Assalamualaikum! Welcome to WARSI PRINTING PRESS. Visiting Cards, Wedding Cards, Flex aur sabhi printing designs yahan milenge.";
+ bubble.textContent=msg;bubble.style.display="block";
+ if(speak)speakText(msg);
+ clearTimeout(window.bubbleTimer);
+ window.bubbleTimer=setTimeout(()=>bubble.style.display="none",8500);
+}
+
+/* INTRO OPEN */
+function enterWebsite(withVoice){
+ const introMessage="Assalamualaikum! Welcome to WARSI PRINTING PRESS. Aapka hamari website par khair maqdam hai. Chaliye designs dekhte hain.";
+ if(withVoice){
+  document.getElementById("introMessage").textContent="Welcome! Website khul rahi hai...";
+  speakText(introMessage);
+ }
+ setTimeout(()=>{
+  document.getElementById("intro").style.display="none";
+  document.getElementById("website").style.display="block";
+  document.getElementById("smallRobot").style.display="block";
+  document.getElementById("waFloat").style.display="block";
+  robotTalk(false,"Assalamualaikum! Main aapka printing guide hoon. Mujh par click karke mujhse baat karein.");
+ },withVoice?3500:100);
+}
+</script>
 </body>
 </html>
