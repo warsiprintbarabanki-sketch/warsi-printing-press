@@ -1,524 +1,166 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WARSI PRINTING PRESS | 4D Royal Printing Studio</title>
-<meta name="description" content="WARSI PRINTING PRESS, Barabanki. Premium visiting cards, wedding cards, flex banners, posters and printing services.">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>WARSI PRINTING PRESS | 3D Royal Studio</title>
+<meta name="description" content="WARSI PRINTING PRESS, Barabanki. Visiting cards, wedding cards, flex banners, posters and premium printing services.">
 <meta name="theme-color" content="#080706">
-
-<!-- IMPORTANT: Apna original Google verification meta tag yahan dobara paste karein -->
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&display=swap');
-
-:root{
- --gold:#d9ad58;
- --gold2:#ffdf91;
- --bg:#080706;
- --panel:#15120e;
- --text:#fff9ed;
- --muted:#b9ad99;
- --line:rgba(226,183,100,.25);
- --glow:rgba(218,169,76,.25);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
- background:var(--bg);color:var(--text);
- font-family:'DM Sans',sans-serif;overflow-x:hidden;
-}
-body:before{
- content:"";position:fixed;inset:0;z-index:-3;
- background:
- radial-gradient(ellipse at 15% 15%,rgba(181,121,31,.18),transparent 35%),
- radial-gradient(ellipse at 85% 65%,rgba(120,77,20,.16),transparent 38%),
- linear-gradient(135deg,#080706,#17110a 48%,#080706);
-}
-a{color:inherit;text-decoration:none}
-button{font:inherit;cursor:pointer}
-.gold{color:var(--gold2)}
-.container{width:min(1160px,92%);margin:auto}
-.section{padding:90px 0;position:relative}
-.section-title{text-align:center;margin-bottom:42px}
-.section-title small{color:var(--gold);letter-spacing:4px;text-transform:uppercase}
-.section-title h2{
- font-family:Cinzel,serif;font-size:clamp(28px,5vw,46px);
- margin:12px 0;color:var(--gold2);text-shadow:0 0 25px var(--glow)
-}
-.section-title p{color:var(--muted);max-width:650px;margin:auto;line-height:1.7}
-.gold-line{width:90px;height:2px;margin:18px auto;background:linear-gradient(90deg,transparent,var(--gold2),transparent)}
-/* Golden ambient particles */
-#particles{position:fixed;inset:0;pointer-events:none;z-index:-1;overflow:hidden}
-.spark{
- position:absolute;width:3px;height:3px;border-radius:50%;
- background:#ffda83;box-shadow:0 0 12px 3px rgba(255,194,75,.35);
- animation:rise linear infinite;opacity:.7
-}
-@keyframes rise{from{transform:translateY(110vh) scale(.5);opacity:0}15%{opacity:.8}to{transform:translateY(-10vh) scale(1.3);opacity:0}}
-/* Navigation */
-header{
- position:sticky;top:0;z-index:100;
- background:rgba(8,7,6,.82);backdrop-filter:blur(18px);
- border-bottom:1px solid var(--line)
-}
-.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:15px}
-.brand{display:flex;align-items:center;gap:11px}
-.brand-mark{
- width:45px;height:45px;border:1px solid var(--gold);
- display:grid;place-items:center;border-radius:13px;
- color:var(--gold2);font-family:Cinzel,serif;font-weight:bold;
- transform:rotate(-5deg);box-shadow:0 0 20px var(--glow)
-}
-.brand-name{font-family:Cinzel,serif;font-size:15px;letter-spacing:1.4px}
-.brand-name span{display:block;color:var(--gold);font:10px 'DM Sans';letter-spacing:3px;margin-top:3px}
-.nav-links{display:flex;align-items:center;gap:23px}
-.nav-links a{font-size:12px;color:#e5d9c6;transition:.3s}
-.nav-links a:hover{color:var(--gold2)}
-.nav-cta,.btn{
- border:1px solid var(--gold);border-radius:30px;padding:12px 20px;
- color:#171006;background:linear-gradient(120deg,#b77b29,#ffe2a0,#c28b39);
- font-weight:800;font-size:12px;display:inline-flex;align-items:center;
- justify-content:center;gap:8px;box-shadow:0 8px 25px rgba(207,153,62,.18);
- transition:.3s
-}
-.nav-cta:hover,.btn:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(222,174,83,.35)}
-.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--gold2);padding:9px 12px;border-radius:10px}
-/* Hero */
-.hero{min-height:680px;display:grid;align-items:center;position:relative;overflow:hidden;padding:80px 0 90px}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:40px}
-.eyebrow{color:var(--gold);letter-spacing:4px;font-size:11px;text-transform:uppercase}
-.hero h1{
- font:800 clamp(40px,6.5vw,76px)/1.12 Cinzel,serif;
- margin:20px 0;color:#fff4df;letter-spacing:-1.5px
-}
-.hero h1 em{font-style:normal;color:var(--gold2);text-shadow:0 0 28px rgba(226,177,82,.28)}
-.hero-copy{max-width:540px;color:#c5b9a6;line-height:1.9;font-size:15px}
-.hero-actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:30px}
-.btn-outline{background:transparent;color:var(--gold2);box-shadow:none}
-.hero-stats{display:flex;gap:30px;margin-top:42px;flex-wrap:wrap}
-.stat strong{display:block;color:var(--gold2);font:700 23px Cinzel}
-.stat span{font-size:11px;color:var(--muted)}
-/* 3D showroom */
-.showroom{height:430px;perspective:1100px;display:grid;place-items:center}
-.scene{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .18s ease-out}
-.orbit{
- position:absolute;width:310px;height:310px;border:1px solid rgba(232,184,92,.22);
- border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%) rotateX(70deg);
- box-shadow:0 0 45px rgba(207,153,62,.08)
-}
-.orbit.two{width:390px;height:390px;transform:translate(-50%,-50%) rotateX(70deg) rotateZ(55deg);border-style:dashed}
-.hero-product{
- position:absolute;left:50%;top:48%;width:260px;height:170px;
- transform:translate(-50%,-50%) rotateY(-18deg) rotateX(12deg) translateZ(50px);
- transform-style:preserve-3d;animation:float 5s ease-in-out infinite
-}
-.card3d{
- position:absolute;inset:0;border-radius:13px;
- background:linear-gradient(135deg,#282016,#080706 55%,#6e4a1d);
- border:1px solid #c69b51;
- box-shadow:0 25px 50px #000,0 0 30px rgba(220,171,80,.22);
- display:flex;flex-direction:column;justify-content:center;align-items:center;
- text-align:center;backface-visibility:hidden
-}
-.card3d:before{content:"";position:absolute;inset:8px;border:1px solid rgba(240,202,130,.5);border-radius:8px}
-.card3d h3{font:700 25px Cinzel;color:#f6d58c;letter-spacing:2px}
-.card3d p{font-size:9px;letter-spacing:3px;color:#fff0d0;margin-top:9px}
-.card3d small{color:#c99c51;margin-top:16px;font-size:8px;letter-spacing:2px}
-.floating-card{
- position:absolute;width:130px;height:82px;border:1px solid #b88c48;border-radius:8px;
- background:linear-gradient(130deg,#c9a15d,#332313 65%,#090807);
- box-shadow:0 15px 30px #000;display:grid;place-items:center;
- color:#fff0cf;font:700 11px Cinzel;letter-spacing:1px
-}
-.fc1{left:2%;top:20%;transform:rotateY(25deg) rotateZ(-12deg) translateZ(80px);animation:float 6s infinite}
-.fc2{right:0;bottom:18%;transform:rotateY(-28deg) rotateZ(12deg) translateZ(100px);animation:float 5s infinite reverse}
-.fc3{right:8%;top:10%;width:90px;height:60px;transform:rotateX(25deg) rotateZ(15deg);animation:float 7s infinite}
-@keyframes float{0%,100%{margin-top:0}50%{margin-top:-18px}}
-.glow-ball{
- position:absolute;width:190px;height:190px;border-radius:50%;
- background:radial-gradient(circle,rgba(228,179,85,.25),transparent 70%);
- filter:blur(8px);top:50%;left:50%;transform:translate(-50%,-50%)
-}
-/* Feature strip */
-.feature-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.025)}
-.feature-row{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;padding:22px 0}
-.feature{text-align:center;color:#e9d6b5;font-size:12px}
-.feature b{display:block;color:var(--gold2);font-size:20px;margin-bottom:5px}
-/* Cards */
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.service-card,.sample-card,.info-card{
- position:relative;overflow:hidden;border:1px solid var(--line);border-radius:19px;
- background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.018));
- padding:26px;box-shadow:0 18px 40px rgba(0,0,0,.23);
- transform-style:preserve-3d;transition:transform .35s,border-color .35s,box-shadow .35s
-}
-.service-card:hover,.sample-card:hover,.info-card:hover{
- transform:translateY(-8px) rotateX(3deg) rotateY(-3deg);
- border-color:var(--gold);box-shadow:0 20px 45px rgba(208,155,63,.13)
-}
-.service-icon{font-size:34px;margin-bottom:18px;filter:drop-shadow(0 0 10px var(--glow))}
-.service-card h3,.sample-card h3{font:600 18px Cinzel;color:var(--gold2);margin-bottom:10px}
-.service-card p,.sample-card p,.info-card p{font-size:13px;color:var(--muted);line-height:1.7}
-.card-link{display:inline-block;color:var(--gold2);font-size:12px;margin-top:18px;font-weight:700}
-/* Showcase */
-.showcase{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}
-.showcase-visual{
- min-height:340px;border-radius:22px;border:1px solid var(--line);
- background:radial-gradient(circle at 50% 40%,#59401d,#17110b 60%,#090807);
- display:grid;place-items:center;perspective:900px;overflow:hidden
-}
-.print-stack{position:relative;width:230px;height:150px;transform-style:preserve-3d;transform:rotateX(55deg) rotateZ(-25deg);animation:stackFloat 6s ease-in-out infinite}
-.print-stack span{
- position:absolute;inset:0;border:1px solid #f3d18a;border-radius:8px;
- background:linear-gradient(135deg,#d6ad65,#261b10 70%);box-shadow:0 8px 0 #6d4c20,0 16px 0 #372615,0 24px 30px #000;
- display:grid;place-items:center;color:#fff3d4;font:700 17px Cinzel
-}
-@keyframes stackFloat{50%{transform:rotateX(55deg) rotateZ(-25deg) translateY(-15px)}}
-.showcase-copy h3{font:700 30px Cinzel;color:var(--gold2);margin-bottom:15px}
-.showcase-copy p{color:var(--muted);line-height:1.9;margin-bottom:20px}
-/* visiting cards */
-.card-samples{display:grid;grid-template-columns:repeat(5,1fr);gap:15px}
-.sample-card{padding:13px}
-.mini-card{
- aspect-ratio:1.65;display:flex;flex-direction:column;justify-content:center;align-items:center;
- text-align:center;border-radius:8px;margin-bottom:14px;padding:8px;
- background:linear-gradient(130deg,#21180d,#050505 65%,#8c6429);
- border:1px solid #c59b53;box-shadow:0 8px 20px #000;
- transform:rotateY(-8deg);transition:.4s
-}
-.sample-card:hover .mini-card{transform:rotateY(8deg) rotateX(5deg) scale(1.04)}
-.mini-card strong{font:700 12px Cinzel;color:#ffdc96}
-.mini-card span{font-size:7px;color:#e7d4b4;margin-top:5px;letter-spacing:1px}
-.sample-card h3{font:600 12px 'DM Sans';margin:0}
-.sample-card p{font-size:10px;margin-top:5px}
-/* Gallery */
-.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.gallery-tile{
- min-height:175px;border:1px solid var(--line);border-radius:15px;padding:20px;
- display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;
- background:linear-gradient(145deg,#5b401d,#1a120a 55%,#080706);
- transition:.4s
-}
-.gallery-tile:before{
- content:"";position:absolute;width:170px;height:170px;border-radius:50%;
- background:radial-gradient(circle,rgba(255,213,130,.22),transparent 70%);
- top:-60px;right:-55px;transition:.4s
-}
-.gallery-tile:hover{transform:translateY(-6px) rotateY(-4deg);border-color:var(--gold)}
-.gallery-tile:hover:before{transform:scale(1.5)}
-.gallery-tile span{font-size:30px;position:relative}
-.gallery-tile h3{font:600 16px Cinzel;color:var(--gold2);position:relative;margin-top:12px}
-.gallery-tile p{font-size:11px;color:#c7b79e;position:relative;margin-top:5px}
-/* About and contact */
-.about-box{border:1px solid var(--line);border-radius:22px;padding:38px;background:linear-gradient(130deg,rgba(202,153,69,.12),rgba(255,255,255,.025))}
-.about-box h3{font:700 27px Cinzel;color:var(--gold2);margin-bottom:15px}
-.about-box p{color:var(--muted);line-height:1.9}
-.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.contact-item{padding:24px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.035)}
-.contact-item b{display:block;color:var(--gold2);margin:10px 0}
-.contact-item p{font-size:13px;color:var(--muted);line-height:1.7;overflow-wrap:anywhere}
-.contact-item .btn{margin-top:14px}
-/* Footer and floating buttons */
-footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:var(--muted);font-size:12px}
-footer strong{color:var(--gold2);font-family:Cinzel}
-.float-actions{position:fixed;right:17px;bottom:20px;z-index:90;display:flex;flex-direction:column;gap:10px}
-.float-actions a{width:49px;height:49px;border-radius:50%;display:grid;place-items:center;background:#1c160c;border:1px solid var(--gold);font-size:20px;box-shadow:0 5px 20px #000}
-/* Theme panel */
-.theme-toggle{position:fixed;left:15px;bottom:20px;z-index:100;background:#17120b;color:var(--gold2);border:1px solid var(--gold);border-radius:30px;padding:12px 15px;font-size:12px}
-.theme-panel{
- position:fixed;left:15px;bottom:75px;width:min(300px,calc(100% - 30px));
- z-index:110;background:#14100b;border:1px solid var(--gold);border-radius:18px;
- padding:20px;box-shadow:0 20px 60px #000;display:none
-}
-.theme-panel.open{display:block;animation:panelIn .25s ease}
-@keyframes panelIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-.theme-panel h3{font:600 17px Cinzel;color:var(--gold2);margin-bottom:15px}
-.theme-options{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.theme-options button{background:#241c11;border:1px solid var(--line);color:#f2dfbd;padding:10px 7px;border-radius:9px;font-size:11px}
-.theme-options button:hover{border-color:var(--gold)}
-/* Welcome */
-.welcome{
- position:fixed;inset:0;z-index:200;background:radial-gradient(circle at center,#382711,#080706 65%);
- display:grid;place-items:center;text-align:center;padding:25px;transition:opacity .7s,visibility .7s
-}
-.welcome.hide{opacity:0;visibility:hidden;pointer-events:none}
-.welcome-inner{max-width:600px}
-.welcome-logo{width:95px;height:95px;border:1px solid var(--gold);border-radius:25px;display:grid;place-items:center;margin:0 auto 25px;font:700 32px Cinzel;color:var(--gold2);box-shadow:0 0 45px var(--glow);transform:rotate(-7deg)}
-.welcome h1{font:700 clamp(28px,6vw,48px) Cinzel;color:var(--gold2);margin-bottom:13px}
-.welcome p{color:#c7b99f;line-height:1.7;margin-bottom:25px}
-.reveal{opacity:0;transform:translateY(25px);transition:opacity .8s,transform .8s}
-.reveal.visible{opacity:1;transform:none}
-@media(max-width:850px){
- .nav-links{display:none;position:absolute;top:76px;left:0;right:0;background:#0e0b08;padding:22px;flex-direction:column;border-bottom:1px solid var(--line)}
- .nav-links.show{display:flex}.menu-btn{display:block}.nav-cta{display:none}
- .hero-grid{grid-template-columns:1fr}.hero{text-align:center;padding-top:65px}
- .hero-copy{margin:auto}.hero-actions,.hero-stats{justify-content:center}
- .showroom{height:350px}.grid{grid-template-columns:repeat(2,1fr)}
- .card-samples{grid-template-columns:repeat(2,1fr)}
- .gallery-grid{grid-template-columns:repeat(2,1fr)}
- .showcase{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}
- .feature-row{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:480px){
- .section{padding:65px 0}.grid{grid-template-columns:1fr}
- .hero h1{font-size:39px}.showroom{height:300px}
- .hero-product{transform:translate(-50%,-50%) scale(.82) rotateY(-18deg) rotateX(12deg)}
- .orbit{width:250px;height:250px}.orbit.two{width:310px;height:310px}
- .floating-card{width:95px;height:65px;font-size:9px}
- .fc1{left:0}.fc2{right:0}
- .card-samples{grid-template-columns:repeat(2,1fr)}
- .gallery-grid{grid-template-columns:1fr 1fr}
- .about-box{padding:25px}
-}
-@media(prefers-reduced-motion:reduce){
- *,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
-}
+:root{--gold:#d9ad58;--gold2:#ffdf91;--bg:#080706;--panel:#15120e;--text:#fff9ed;--muted:#b9ad99;--line:rgba(226,183,100,.25);--glow:rgba(218,169,76,.25)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-3;background:radial-gradient(ellipse at 15% 15%,rgba(181,121,31,.18),transparent 35%),radial-gradient(ellipse at 85% 65%,rgba(120,77,20,.16),transparent 38%),linear-gradient(135deg,#080706,#17110a 48%,#080706)}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}.gold{color:var(--gold2)}.container{width:min(1160px,92%);margin:auto}.section{padding:85px 0;position:relative}
+.section-title{text-align:center;margin-bottom:42px}.section-title small,.eyebrow{color:var(--gold);letter-spacing:4px;text-transform:uppercase;font-size:11px}.section-title h2{font:700 clamp(28px,5vw,46px) Cinzel,serif;margin:12px 0;color:var(--gold2);text-shadow:0 0 25px var(--glow)}.section-title p{color:var(--muted);max-width:650px;margin:auto;line-height:1.7}.gold-line{width:90px;height:2px;margin:18px auto;background:linear-gradient(90deg,transparent,var(--gold2),transparent)}
+#particles{position:fixed;inset:0;pointer-events:none;z-index:-1;overflow:hidden}.spark{position:absolute;width:3px;height:3px;border-radius:50%;background:#ffda83;box-shadow:0 0 12px 3px rgba(255,194,75,.35);animation:rise linear infinite;opacity:.7}@keyframes rise{to{transform:translateY(-110vh);opacity:0}}
+header{position:sticky;top:0;z-index:100;background:rgba(8,7,6,.86);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{display:flex;align-items:center;gap:11px}.brand-mark{width:45px;height:45px;border:1px solid var(--gold);display:grid;place-items:center;border-radius:13px;color:var(--gold2);font-family:Cinzel;font-weight:bold;transform:rotate(-5deg);box-shadow:0 0 20px var(--glow)}.brand-name{font:700 15px Cinzel;letter-spacing:1.4px}.brand-name span{display:block;color:var(--gold);font:10px 'DM Sans';letter-spacing:3px;margin-top:3px}.nav-links{display:flex;align-items:center;gap:22px}.nav-links a{font-size:12px;color:#e5d9c6}.nav-links a:hover{color:var(--gold2)}.nav-cta,.btn{border:1px solid var(--gold);border-radius:30px;padding:12px 20px;color:#171006;background:linear-gradient(120deg,#b77b29,#ffe2a0,#c28b39);font-weight:800;font-size:12px;display:inline-flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 8px 25px rgba(207,153,62,.18);transition:.3s}.btn:hover,.nav-cta:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(222,174,83,.35)}.btn-outline{background:transparent;color:var(--gold2);box-shadow:none}.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--gold2);padding:9px 12px;border-radius:10px}
+.hero{min-height:620px;display:grid;align-items:center;padding:75px 0}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:35px}.hero h1{font:800 clamp(40px,6.5vw,76px)/1.12 Cinzel;margin:20px 0;color:#fff4df}.hero h1 em{font-style:normal;color:var(--gold2);text-shadow:0 0 28px rgba(226,177,82,.28)}.hero-copy{max-width:540px;color:#c5b9a6;line-height:1.9;font-size:15px}.hero-actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:28px}.hero-stats{display:flex;gap:30px;margin-top:38px;flex-wrap:wrap}.stat strong{display:block;color:var(--gold2);font:700 23px Cinzel}.stat span{font-size:11px;color:var(--muted)}
+/* interactive 3D entrance */
+#world{height:min(76vh,690px);min-height:510px;position:relative;background:#080706;border:1px solid rgba(224,178,91,.35);border-radius:22px;overflow:hidden;box-shadow:0 25px 80px #000,0 0 45px rgba(218,169,76,.12)}
+#world canvas{display:block;width:100%;height:100%;touch-action:none}.world-label{position:absolute;top:15px;left:15px;right:15px;display:flex;justify-content:space-between;gap:8px;pointer-events:none}.world-label span{background:#090806b8;border:1px solid #c89b4c77;border-radius:30px;padding:8px 12px;font-size:10px;letter-spacing:1.5px;color:#ffe1a0;backdrop-filter:blur(8px)}.world-tip{position:absolute;left:50%;top:15px;transform:translateX(-50%);font-size:11px;color:#fff2d4;background:#080706b8;padding:8px 13px;border-radius:20px;white-space:nowrap;pointer-events:none}.world-message{position:absolute;left:50%;bottom:105px;transform:translateX(-50%);background:#090806df;border:1px solid var(--gold);color:#ffe3a1;padding:10px 15px;border-radius:12px;font-size:12px;text-align:center;opacity:0;transition:.2s;pointer-events:none;max-width:85%}.world-controls{position:absolute;bottom:14px;left:14px;right:14px;display:flex;justify-content:space-between;align-items:end;pointer-events:none}.joystick{width:112px;height:112px;border:2px solid #fff7;border-radius:50%;background:#ffffff18;position:relative;pointer-events:auto;touch-action:none}.knob{position:absolute;left:31px;top:31px;width:46px;height:46px;background:linear-gradient(135deg,#ffe7a8,#b77b29);border:2px solid white;border-radius:50%;box-shadow:0 4px 15px #0009}.world-buttons{display:flex;gap:8px;pointer-events:auto}.world-buttons button{width:54px;height:54px;border-radius:50%;border:1px solid #f5d18a;background:#17120de8;color:#ffe1a0;font-weight:800;font-size:10px}.world-buttons button:active{transform:scale(.94)}
+.feature-strip{border-block:1px solid var(--line);background:#ffffff06}.feature-row{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;padding:22px 0}.feature{text-align:center;color:#e9d6b5;font-size:12px}.feature b{display:block;color:var(--gold2);font-size:20px;margin-bottom:5px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.service-card,.sample-card,.info-card{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:19px;background:linear-gradient(145deg,#ffffff12,#ffffff05);padding:26px;box-shadow:0 18px 40px #0005;transition:.35s}.service-card:hover,.sample-card:hover,.info-card:hover{transform:translateY(-8px) rotateX(3deg) rotateY(-3deg);border-color:var(--gold);box-shadow:0 20px 45px #d09b3f22}.service-icon{font-size:34px;margin-bottom:18px;filter:drop-shadow(0 0 10px var(--glow))}.service-card h3,.sample-card h3{font:600 18px Cinzel;color:var(--gold2);margin-bottom:10px}.service-card p,.sample-card p,.info-card p{font-size:13px;color:var(--muted);line-height:1.7}.card-link{display:inline-block;color:var(--gold2);font-size:12px;margin-top:18px;font-weight:700}
+.showcase{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}.showcase-visual{min-height:330px;border-radius:22px;border:1px solid var(--line);background:radial-gradient(circle at 50% 40%,#59401d,#17110b 60%,#090807);display:grid;place-items:center;perspective:900px;overflow:hidden}.print-stack{position:relative;width:230px;height:150px;transform-style:preserve-3d;transform:rotateX(55deg) rotateZ(-25deg);animation:float 6s ease-in-out infinite}.print-stack span{position:absolute;inset:0;border:1px solid #f3d18a;border-radius:8px;background:linear-gradient(135deg,#d6ad65,#261b10 70%);box-shadow:0 8px 0 #6d4c20,0 16px 0 #372615,0 24px 30px #000;display:grid;place-items:center;color:#fff3d4;font:700 17px Cinzel}@keyframes float{50%{transform:translateY(-15px) rotateX(55deg) rotateZ(-25deg)}}
+.showcase-copy h3{font:700 30px Cinzel;color:var(--gold2);margin:15px 0}.showcase-copy p{color:var(--muted);line-height:1.9;margin-bottom:20px}.card-samples{display:grid;grid-template-columns:repeat(5,1fr);gap:15px}.sample-card{padding:13px}.mini-card{aspect-ratio:1.65;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;border-radius:8px;margin-bottom:14px;padding:8px;background:linear-gradient(130deg,#21180d,#050505 65%,#8c6429);border:1px solid #c59b53;box-shadow:0 8px 20px #000;transform:rotateY(-8deg);transition:.4s}.sample-card:hover .mini-card{transform:rotateY(8deg) rotateX(5deg) scale(1.04)}.mini-card strong{font:700 12px Cinzel;color:#ffdc96}.mini-card span{font-size:7px;color:#e7d4b4;margin-top:5px;letter-spacing:1px}.sample-card h3{font:600 12px 'DM Sans';margin:0}.sample-card p{font-size:10px;margin-top:5px}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.gallery-tile{min-height:175px;border:1px solid var(--line);border-radius:15px;padding:20px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;background:linear-gradient(145deg,#5b401d,#1a120a 55%,#080706);transition:.4s}.gallery-tile:hover{transform:translateY(-6px) rotateY(-4deg);border-color:var(--gold)}.gallery-tile span{font-size:30px}.gallery-tile h3{font:600 16px Cinzel;color:var(--gold2);margin-top:12px}.gallery-tile p{font-size:11px;color:#c7b79e;margin-top:5px}
+.about-box{border:1px solid var(--line);border-radius:22px;padding:38px;background:linear-gradient(130deg,#ca99451f,#ffffff06)}.about-box h3{font:700 27px Cinzel;color:var(--gold2);margin-bottom:15px}.about-box p{color:var(--muted);line-height:1.9}.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.contact-item{padding:24px;border:1px solid var(--line);border-radius:16px;background:#ffffff09}.contact-item b{display:block;color:var(--gold2);margin:10px 0}.contact-item p{font-size:13px;color:var(--muted);line-height:1.7;overflow-wrap:anywhere}.contact-item .btn{margin-top:14px}footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:var(--muted);font-size:12px}footer strong{color:var(--gold2);font-family:Cinzel}.float-actions{position:fixed;right:17px;bottom:20px;z-index:90;display:flex;flex-direction:column;gap:10px}.float-actions a{width:49px;height:49px;border-radius:50%;display:grid;place-items:center;background:#1c160c;border:1px solid var(--gold);font-size:20px;box-shadow:0 5px 20px #000}
+.theme-toggle{position:fixed;left:15px;bottom:20px;z-index:100;background:#17120b;color:var(--gold2);border:1px solid var(--gold);border-radius:30px;padding:12px 15px;font-size:12px}.theme-panel{position:fixed;left:15px;bottom:75px;width:min(300px,calc(100% - 30px));z-index:110;background:#14100b;border:1px solid var(--gold);border-radius:18px;padding:20px;box-shadow:0 20px 60px #000;display:none}.theme-panel.open{display:block}.theme-panel h3{font:600 17px Cinzel;color:var(--gold2);margin-bottom:15px}.theme-options{display:grid;grid-template-columns:1fr 1fr;gap:8px}.theme-options button{background:#241c11;border:1px solid var(--line);color:#f2dfbd;padding:10px 7px;border-radius:9px;font-size:11px}
+.welcome{position:fixed;inset:0;z-index:200;background:radial-gradient(circle at center,#382711,#080706 65%);display:grid;place-items:center;text-align:center;padding:25px;transition:opacity .7s,visibility .7s}.welcome.hide{opacity:0;visibility:hidden;pointer-events:none}.welcome-inner{max-width:620px;position:relative;z-index:2}.welcome button{position:relative;z-index:3;pointer-events:auto;touch-action:manipulation}.welcome-logo{width:95px;height:95px;border:1px solid var(--gold);border-radius:25px;display:grid;place-items:center;margin:0 auto 25px;font:700 32px Cinzel;color:var(--gold2);box-shadow:0 0 45px var(--glow);transform:rotate(-7deg)}.welcome h1{font:700 clamp(28px,6vw,48px) Cinzel;color:var(--gold2);margin:12px 0}.welcome p{color:#c7b99f;line-height:1.7;margin-bottom:25px}.reveal{opacity:0;transform:translateY(25px);transition:.8s}.reveal.visible{opacity:1;transform:none}
+@media(max-width:850px){.nav-links{display:none;position:absolute;top:76px;left:0;right:0;background:#0e0b08;padding:22px;flex-direction:column;border-bottom:1px solid var(--line)}.nav-links.show{display:flex}.menu-btn{display:block}.nav-cta{display:none}.hero-grid{grid-template-columns:1fr}.hero{text-align:center;padding:55px 0}.hero-copy{margin:auto}.hero-actions,.hero-stats{justify-content:center}.grid{grid-template-columns:repeat(2,1fr)}.card-samples{grid-template-columns:repeat(2,1fr)}.gallery-grid{grid-template-columns:repeat(2,1fr)}.showcase{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.feature-row{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.section{padding:62px 0}.grid{grid-template-columns:1fr}.hero h1{font-size:39px}#world{height:570px;min-height:0}.world-tip{top:58px;font-size:9px}.world-label span{font-size:9px}.joystick{width:100px;height:100px}.knob{left:26px;top:26px}.world-buttons button{width:48px;height:48px}.card-samples{grid-template-columns:repeat(2,1fr)}.gallery-grid{grid-template-columns:1fr 1fr}.about-box{padding:25px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-
 <div id="particles"></div>
-
-<div class="welcome" id="welcome">
- <div class="welcome-inner">
-  <div class="welcome-logo">WP</div>
-  <p class="eyebrow">A Royal Printing Experience</p>
-  <h1>WARSI PRINTING PRESS</h1>
-  <p>Premium Printing • Creative Design • Royal Finishing</p>
-  <button class="btn" onclick="enterSite()">ENTER THE EXPERIENCE ✦</button>
- </div>
-</div>
-
-<header>
- <div class="container nav">
-  <a class="brand" href="#home">
-   <div class="brand-mark">WP</div>
-   <div class="brand-name">WARSI PRINTING PRESS<span>ROYAL PRINTING STUDIO</span></div>
-  </a>
-  <nav class="nav-links" id="navLinks">
-   <a href="#home">Home</a><a href="#services">Services</a>
-   <a href="#visiting">Visiting Cards</a><a href="#gallery">Gallery</a>
-   <a href="#about">About</a><a href="#contact">Contact</a>
-  </nav>
-  <a class="nav-cta" href="https://wa.me/918173834800">Order Now ↗</a>
-  <button class="menu-btn" onclick="toggleMenu()">☰</button>
- </div>
-</header>
-
+<div class="welcome" id="welcome"><div class="welcome-inner"><div class="welcome-logo">WP</div><p class="eyebrow">A Royal 3D Printing Experience</p><h1>WARSI PRINTING PRESS</h1><p>Walk inside our virtual printing studio. Explore designs, services and place your order.</p><button class="btn" id="enterWarsiBtn" type="button">ENTER 3D SHOWROOM ✦</button></div></div>
+<header><div class="container nav"><a class="brand" href="#home"><div class="brand-mark">WP</div><div class="brand-name">WARSI PRINTING PRESS<span>ROYAL 3D PRINTING STUDIO</span></div></a><nav class="nav-links" id="navLinks"><a href="#home">Home</a><a href="#services">Services</a><a href="#visiting">Visiting Cards</a><a href="#gallery">Gallery</a><a href="#about">About</a><a href="#contact">Contact</a></nav><a class="nav-cta" href="https://wa.me/918173834800">Order Now ↗</a><button class="menu-btn" onclick="toggleMenu()">☰</button></div></header>
 <main>
-<section class="hero" id="home">
- <div class="container hero-grid">
-  <div class="hero-content reveal">
-   <p class="eyebrow">✦ Barabanki's Creative Printing Studio</p>
-   <h1>Printing With<br><em>Royal Touch.</em></h1>
-   <p class="hero-copy">Aapke har idea ko premium printing mein badalne ka ek naya experience. Wedding cards se visiting cards tak — quality, creativity aur royal finishing.</p>
-   <div class="hero-actions">
-    <a class="btn" href="https://wa.me/918173834800?text=Assalamualaikum%2C%20mujhe%20printing%20order%20karna%20hai.">✦ Start Your Order</a>
-    <a class="btn btn-outline" href="#services">Explore Services ↓</a>
-   </div>
-   <div class="hero-stats">
-    <div class="stat"><strong>8+</strong><span>Printing Services</span></div>
-    <div class="stat"><strong>10</strong><span>Card Concepts</span></div>
-    <div class="stat"><strong>100%</strong><span>Creative Focus</span></div>
-   </div>
-  </div>
-  <div class="showroom">
-   <div class="scene" id="heroScene">
-    <div class="glow-ball"></div><div class="orbit"></div><div class="orbit two"></div>
-    <div class="hero-product">
-     <div class="card3d"><h3>WARSI</h3><p>PRINTING PRESS</p><small>CREATIVE • PREMIUM • ROYAL</small></div>
-    </div>
-    <div class="floating-card fc1">PREMIUM<br>PRINT</div>
-    <div class="floating-card fc2">ROYAL<br>DESIGN</div>
-    <div class="floating-card fc3">WP ✦</div>
-   </div>
-  </div>
- </div>
-</section>
-
-<div class="feature-strip">
- <div class="container feature-row">
-  <div class="feature"><b>✦</b>Creative Designs</div>
-  <div class="feature"><b>◈</b>Premium Finishing</div>
-  <div class="feature"><b>▣</b>Multiple Print Options</div>
-  <div class="feature"><b>♧</b>Personalised Orders</div>
- </div>
-</div>
-
-<section class="section" id="services">
- <div class="container">
-  <div class="section-title reveal"><small>What We Create</small><h2>Our Printing Services</h2><div class="gold-line"></div><p>Har occasion aur business ke liye creative printing solutions.</p></div>
-  <div class="grid">
-   <article class="service-card reveal"><div class="service-icon">💳</div><h3>Visiting Cards</h3><p>Business cards, premium matte, glossy aur luxury finishing designs.</p><a class="card-link" href="#visiting">Explore Designs →</a></article>
-   <article class="service-card reveal"><div class="service-icon">💍</div><h3>Wedding Cards</h3><p>Elegant wedding invitations, royal designs aur personalised cards.</p><a class="card-link" href="https://wa.me/918173834800?text=Wedding%20card%20design%20chahiye">Enquire Now →</a></article>
-   <article class="service-card reveal"><div class="service-icon">🖼️</div><h3>Flex Banners</h3><p>Shop banners, event flex, advertising aur promotional printing.</p><a class="card-link" href="https://wa.me/918173834800?text=Flex%20banner%20order%20karna%20hai">Enquire Now →</a></article>
-   <article class="service-card reveal"><div class="service-icon">🎨</div><h3>Posters</h3><p>Attractive promotional posters aur custom graphic layouts.</p><a class="card-link" href="https://wa.me/918173834800?text=Poster%20printing%20chahiye">Enquire Now →</a></article>
-   <article class="service-card reveal"><div class="service-icon">✉️</div><h3>Invitation Cards</h3><p>Special events, functions aur celebrations ke invitation cards.</p><a class="card-link" href="https://wa.me/918173834800?text=Invitation%20card%20chahiye">Enquire Now →</a></article>
-   <article class="service-card reveal"><div class="service-icon">📚</div><h3>Book Printing</h3><p>Books, notebooks, booklets aur customised printed material.</p><a class="card-link" href="https://wa.me/918173834800?text=Book%20printing%20chahiye">Enquire Now →</a></article>
-   <article class="service-card reveal"><div class="service-icon">🧾</div><h3>Bill Books</h3><p>Business bills, receipt books aur office stationery.</p><a class="card-link" href="https://wa.me/918173834800?text=Bill%20book%20chahiye">Enquire Now →</a></article>
-   <article class="service-card reveal"><div class="service-icon">🏷️</div><h3>Stickers & Labels</h3><p>Product labels, shop stickers aur custom branding material.</p><a class="card-link" href="https://wa.me/918173834800?text=Sticker%20aur%20label%20chahiye">Enquire Now →</a></article>
-   <article class="service-card reveal"><div class="service-icon">✧</div><h3>Custom Printing</h3><p>Aapke idea ke hisaab se customised design aur printing.</p><a class="card-link" href="https://wa.me/918173834800?text=Custom%20printing%20ke%20liye%20baat%20karni%20hai">Discuss Project →</a></article>
-  </div>
- </div>
-</section>
-
-<section class="section">
- <div class="container showcase">
-  <div class="showcase-visual reveal">
-   <div class="print-stack"><span>WARSI ✦</span></div>
-  </div>
-  <div class="showcase-copy reveal">
-   <p class="eyebrow">Designed To Impress</p>
-   <h3>Make Your First Impression Unforgettable.</h3>
-   <p>Ek achha design sirf print nahi hota — woh aapke business aur special moments ki pehchaan banata hai. Apna design idea WhatsApp par share karein.</p>
-   <a class="btn" href="https://wa.me/918173834800?text=I%20want%20a%20custom%20printing%20design">Create My Design ↗</a>
-  </div>
- </div>
-</section>
-
-<section class="section" id="visiting">
- <div class="container">
-  <div class="section-title reveal"><small>Dedicated Card Collection</small><h2>Visiting Card Designs</h2><div class="gold-line"></div><p>Apne business ke liye ek professional pehchaan chunein. Apna favourite concept WhatsApp par bhejein.</p></div>
-  <div class="card-samples">
-   <article class="sample-card"><div class="mini-card"><strong>ROYAL GOLD</strong><span>PREMIUM BUSINESS CARD</span></div><h3>01 • Royal Gold</h3><p>Elegant golden finish</p></article>
-   <article class="sample-card"><div class="mini-card" style="background:linear-gradient(130deg,#eee,#999);color:#111"><strong style="color:#222">SILVER ELITE</strong><span style="color:#333">BUSINESS IDENTITY</span></div><h3>02 • Silver Elite</h3><p>Modern silver look</p></article>
-   <article class="sample-card"><div class="mini-card" style="background:linear-gradient(130deg,#073d36,#07110e)"><strong>EMERALD</strong><span>PREMIUM BUSINESS</span></div><h3>03 • Emerald</h3><p>Deep green luxury</p></article>
-   <article class="sample-card"><div class="mini-card" style="background:linear-gradient(130deg,#67232e,#18080b)"><strong>ROYAL MAROON</strong><span>YOUR BRAND</span></div><h3>04 • Maroon</h3><p>Classic royal style</p></article>
-   <article class="sample-card"><div class="mini-card" style="background:linear-gradient(130deg,#e9b8a9,#4b2524)"><strong style="color:#fff">ROSE GOLD</strong><span style="color:#fff">CREATIVE STUDIO</span></div><h3>05 • Rose Gold</h3><p>Soft metallic finish</p></article>
-   <article class="sample-card"><div class="mini-card" style="background:linear-gradient(130deg,#13274d,#080c18)"><strong>BLUE ELITE</strong><span>BUSINESS CARD</span></div><h3>06 • Blue Elite</h3><p>Corporate blue</p></article>
-   <article class="sample-card"><div class="mini-card" style="background:linear-gradient(130deg,#e8e0c9,#8d8066)"><strong style="color:#342819">CLASSIC IVORY</strong><span style="color:#342819">TIMELESS DESIGN</span></div><h3>07 • Ivory</h3><p>Clean classic look</p></article>
-   <article class="sample-card"><div class="mini-card" style="background:linear-gradient(130deg,#401d65,#10071c)"><strong>ROYAL PURPLE</strong><span>PREMIUM PRINT</span></div><h3>08 • Purple</h3><p>Bold creative style</p></article>
-   <article class="sample-card"><div class="mini-card" style="background:linear-gradient(130deg,#17636c,#071a21)"><strong>CYBER TEAL</strong><span>FUTURE BUSINESS</span></div><h3>09 • Cyber Teal</h3><p>Futuristic identity</p></article>
-   <article class="sample-card"><div class="mini-card" style="background:linear-gradient(130deg,#b88a45,#35210e)"><strong>BLACK LABEL</strong><span>EXCLUSIVE EDITION</span></div><h3>10 • Black Label</h3><p>Luxury dark design</p></article>
-  </div>
-  <div style="text-align:center;margin-top:30px"><a class="btn" href="https://wa.me/918173834800?text=Mujhe%20visiting%20card%20design%20samples%20aur%20price%20chahiye">Order Visiting Cards ↗</a></div>
- </div>
-</section>
-
-<section class="section" id="gallery">
- <div class="container">
-  <div class="section-title reveal"><small>Our Creative World</small><h2>Printing Gallery</h2><div class="gold-line"></div><p>Har category ke liye alag creative printing collection.</p></div>
-  <div class="gallery-grid">
-   <a class="gallery-tile" href="https://wa.me/918173834800?text=Wedding%20card%20gallery%20dikhaiye"><span>💍</span><h3>Wedding Cards</h3><p>Royal invitation collection</p></a>
-   <a class="gallery-tile" href="https://wa.me/918173834800?text=Flex%20banner%20samples%20dikhaiye"><span>🖼️</span><h3>Flex Banners</h3><p>Promotional displays</p></a>
-   <a class="gallery-tile" href="https://wa.me/918173834800?text=Poster%20samples%20dikhaiye"><span>🎨</span><h3>Posters</h3><p>Creative poster designs</p></a>
-   <a class="gallery-tile" href="https://wa.me/918173834800?text=Invitation%20samples%20dikhaiye"><span>✉️</span><h3>Invitations</h3><p>Special occasion cards</p></a>
-   <a class="gallery-tile" href="https://wa.me/918173834800?text=Book%20printing%20samples"><span>📚</span><h3>Books</h3><p>Booklets and publications</p></a>
-   <a class="gallery-tile" href="https://wa.me/918173834800?text=Bill%20book%20samples"><span>🧾</span><h3>Bill Books</h3><p>Business stationery</p></a>
-   <a class="gallery-tile" href="https://wa.me/918173834800?text=Sticker%20samples"><span>🏷️</span><h3>Stickers</h3><p>Labels and branding</p></a>
-   <a class="gallery-tile" href="https://wa.me/918173834800?text=Custom%20printing%20samples"><span>✦</span><h3>Custom Prints</h3><p>Your idea, our design</p></a>
-  </div>
- </div>
-</section>
-
-<section class="section" id="about">
- <div class="container">
-  <div class="section-title reveal"><small>Our Identity</small><h2>About WARSI</h2><div class="gold-line"></div></div>
-  <div class="about-box reveal">
-   <h3>Creative Ideas. Premium Printing.</h3>
-   <p><strong class="gold">WARSI PRINTING PRESS</strong> mein hum visiting cards, wedding cards, flex banners, posters, invitations aur business printing solutions provide karte hain. Hamara focus creative designs, attractive presentation aur customer ki requirement ke mutabiq printing par hai.</p>
-   <p style="margin-top:12px">Aap apna design, text ya reference WhatsApp par share karke order ke baare mein baat kar sakte hain.</p>
-  </div>
- </div>
-</section>
-
-<section class="section" id="contact">
- <div class="container">
-  <div class="section-title reveal"><small>Let's Connect</small><h2>Contact & Orders</h2><div class="gold-line"></div><p>Apne next printing project ke liye humse contact karein.</p></div>
-  <div class="contact-grid">
-   <div class="contact-item"><span style="font-size:27px">📍</span><b>Our Address</b><p>Niyamatganj Chauraha,<br>Tikaitnagar–Bhelsar Road,<br>Tehsil Ram Sanehi Ghat,<br>District Barabanki, Uttar Pradesh.</p></div>
-   <div class="contact-item"><span style="font-size:27px">📞</span><b>Call Us</b><p>+91 8173834800</p><a class="btn" href="tel:+918173834800">Call Now ↗</a></div>
-   <div class="contact-item"><span style="font-size:27px">💬</span><b>WhatsApp Orders</b><p>Design, quantity aur order details WhatsApp par share karein.</p><a class="btn" href="https://wa.me/918173834800">Chat on WhatsApp ↗</a></div>
-  </div>
-  <div style="text-align:center;margin-top:30px"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Niyamatganj+Chauraha+Barabanki+Uttar+Pradesh">Find Our Location ↗</a></div>
- </div>
-</section>
+<section class="hero" id="home"><div class="container hero-grid"><div class="reveal"><p class="eyebrow">✦ Barabanki's Creative Printing Studio</p><h1>Step Into Our<br><em>3D Print World.</em></h1><p class="hero-copy">Ab sirf website nahi — ek virtual printing showroom explore karein. Apne character ko move karein, counters ke paas jaayein aur Visiting Cards, Wedding Cards, Flex Banners aur printing services dekhein.</p><div class="hero-actions"><a class="btn" href="#world">✦ Explore 3D Studio</a><a class="btn btn-outline" href="#services">View All Services ↓</a></div><div class="hero-stats"><div class="stat"><strong>9+</strong><span>Printing Services</span></div><div class="stat"><strong>10</strong><span>Card Concepts</span></div><div class="stat"><strong>3D</strong><span>Virtual Showroom</span></div></div></div>
+<div id="world"><canvas id="gameCanvas"></canvas><div class="world-label"><span>WARSI 3D SHOWROOM</span><span id="worldStatus">WASD / JOYSTICK</span></div><div class="world-tip">Move: WASD / joystick · Look: drag screen · Interact: E / USE</div><div class="world-message" id="worldMessage"></div><div class="world-controls"><div class="joystick" id="stick"><div class="knob" id="knob"></div></div><div class="world-buttons"><button id="jumpBtn">JUMP</button><button id="useBtn">USE</button></div></div></div></div></section>
+<div class="feature-strip"><div class="container feature-row"><div class="feature"><b>✦</b>Creative Designs</div><div class="feature"><b>◈</b>Premium Finishing</div><div class="feature"><b>▣</b>Multiple Print Options</div><div class="feature"><b>♧</b>Personalised Orders</div></div></div>
+<section class="section" id="services"><div class="container"><div class="section-title reveal"><small>What We Create</small><h2>Our Printing Services</h2><div class="gold-line"></div><p>Har occasion aur business ke liye creative printing solutions.</p></div><div class="grid">
+<article class="service-card reveal"><div class="service-icon">💳</div><h3>Visiting Cards</h3><p>Business cards, premium matte, glossy aur luxury finishing designs.</p><a class="card-link" href="#visiting">Explore Designs →</a></article>
+<article class="service-card reveal"><div class="service-icon">💍</div><h3>Wedding Cards</h3><p>Elegant wedding invitations, royal designs aur personalised cards.</p><a class="card-link" href="https://wa.me/918173834800?text=Wedding%20card%20design%20chahiye">Enquire Now →</a></article>
+<article class="service-card reveal"><div class="service-icon">🖼️</div><h3>Flex Banners</h3><p>Shop banners, event flex, advertising aur promotional printing.</p><a class="card-link" href="https://wa.me/918173834800?text=Flex%20banner%20order%20karna%20hai">Enquire Now →</a></article>
+<article class="service-card reveal"><div class="service-icon">🎨</div><h3>Posters</h3><p>Attractive promotional posters aur custom graphic layouts.</p><a class="card-link" href="https://wa.me/918173834800?text=Poster%20printing%20chahiye">Enquire Now →</a></article>
+<article class="service-card reveal"><div class="service-icon">✉️</div><h3>Invitation Cards</h3><p>Special events, functions aur celebrations ke invitation cards.</p><a class="card-link" href="https://wa.me/918173834800?text=Invitation%20card%20chahiye">Enquire Now →</a></article>
+<article class="service-card reveal"><div class="service-icon">📚</div><h3>Book Printing</h3><p>Books, notebooks, booklets aur customised printed material.</p><a class="card-link" href="https://wa.me/918173834800?text=Book%20printing%20chahiye">Enquire Now →</a></article>
+<article class="service-card reveal"><div class="service-icon">🧾</div><h3>Bill Books</h3><p>Business bills, receipt books aur office stationery.</p><a class="card-link" href="https://wa.me/918173834800?text=Bill%20book%20chahiye">Enquire Now →</a></article>
+<article class="service-card reveal"><div class="service-icon">🏷️</div><h3>Stickers & Labels</h3><p>Product labels, shop stickers aur custom branding material.</p><a class="card-link" href="https://wa.me/918173834800?text=Sticker%20aur%20label%20chahiye">Enquire Now →</a></article>
+<article class="service-card reveal"><div class="service-icon">✧</div><h3>Custom Printing</h3><p>Aapke idea ke hisaab se customised design aur printing.</p><a class="card-link" href="https://wa.me/918173834800?text=Custom%20printing%20ke%20liye%20baat%20karni%20hai">Discuss Project →</a></article></div></div></section>
+<section class="section"><div class="container showcase"><div class="showcase-visual reveal"><div class="print-stack"><span>WARSI ✦</span></div></div><div class="showcase-copy reveal"><p class="eyebrow">Designed To Impress</p><h3>Make Your First Impression Unforgettable.</h3><p>Ek achha design sirf print nahi hota — woh aapke business aur special moments ki pehchaan banata hai. Apna design idea WhatsApp par share karein.</p><a class="btn" href="https://wa.me/918173834800?text=I%20want%20a%20custom%20printing%20design">Create My Design ↗</a></div></div></section>
+<section class="section" id="visiting"><div class="container"><div class="section-title reveal"><small>Dedicated Card Collection</small><h2>Visiting Card Designs</h2><div class="gold-line"></div><p>Apne business ke liye ek professional pehchaan chunein. Apna favourite concept WhatsApp par bhejein.</p></div><div class="card-samples">
+<article class="sample-card"><div class="mini-card"><strong>ROYAL GOLD</strong><span>PREMIUM BUSINESS CARD</span></div><h3>01 • Royal Gold</h3><p>Elegant golden finish</p></article>
+<article class="sample-card"><div class="mini-card" style="background:linear-gradient(130deg,#eee,#999)"><strong style="color:#222">SILVER ELITE</strong><span style="color:#333">BUSINESS IDENTITY</span></div><h3>02 • Silver Elite</h3><p>Modern silver look</p></article>
+<article class="sample-card"><div class="mini-card" style="background:linear-gradient(130deg,#073d36,#07110e)"><strong>EMERALD</strong><span>PREMIUM BUSINESS</span></div><h3>03 • Emerald</h3><p>Deep green luxury</p></article>
+<article class="sample-card"><div class="mini-card" style="background:linear-gradient(130deg,#67232e,#18080b)"><strong>ROYAL MAROON</strong><span>YOUR BRAND</span></div><h3>04 • Maroon</h3><p>Classic royal style</p></article>
+<article class="sample-card"><div class="mini-card" style="background:linear-gradient(130deg,#e9b8a9,#4b2524)"><strong>ROSE GOLD</strong><span>CREATIVE STUDIO</span></div><h3>05 • Rose Gold</h3><p>Soft metallic finish</p></article>
+<article class="sample-card"><div class="mini-card" style="background:linear-gradient(130deg,#13274d,#080c18)"><strong>BLUE ELITE</strong><span>BUSINESS CARD</span></div><h3>06 • Blue Elite</h3><p>Corporate blue</p></article>
+<article class="sample-card"><div class="mini-card" style="background:linear-gradient(130deg,#e8e0c9,#8d8066)"><strong style="color:#342819">CLASSIC IVORY</strong><span style="color:#342819">TIMELESS DESIGN</span></div><h3>07 • Ivory</h3><p>Clean classic look</p></article>
+<article class="sample-card"><div class="mini-card" style="background:linear-gradient(130deg,#401d65,#10071c)"><strong>ROYAL PURPLE</strong><span>PREMIUM PRINT</span></div><h3>08 • Purple</h3><p>Bold creative style</p></article>
+<article class="sample-card"><div class="mini-card" style="background:linear-gradient(130deg,#17636c,#071a21)"><strong>CYBER TEAL</strong><span>FUTURE BUSINESS</span></div><h3>09 • Cyber Teal</h3><p>Futuristic identity</p></article>
+<article class="sample-card"><div class="mini-card" style="background:linear-gradient(130deg,#b88a45,#35210e)"><strong>BLACK LABEL</strong><span>EXCLUSIVE EDITION</span></div><h3>10 • Black Label</h3><p>Luxury dark design</p></article></div><div style="text-align:center;margin-top:30px"><a class="btn" href="https://wa.me/918173834800?text=Mujhe%20visiting%20card%20design%20samples%20aur%20price%20chahiye">Order Visiting Cards ↗</a></div></div></section>
+<section class="section" id="gallery"><div class="container"><div class="section-title reveal"><small>Our Creative World</small><h2>Printing Gallery</h2><div class="gold-line"></div><p>Har category ke liye alag creative printing collection.</p></div><div class="gallery-grid">
+<a class="gallery-tile" href="https://wa.me/918173834800?text=Wedding%20card%20gallery%20dikhaiye"><span>💍</span><h3>Wedding Cards</h3><p>Royal invitation collection</p></a><a class="gallery-tile" href="https://wa.me/918173834800?text=Flex%20banner%20samples%20dikhaiye"><span>🖼️</span><h3>Flex Banners</h3><p>Promotional displays</p></a><a class="gallery-tile" href="https://wa.me/918173834800?text=Poster%20samples%20dikhaiye"><span>🎨</span><h3>Posters</h3><p>Creative poster designs</p></a><a class="gallery-tile" href="https://wa.me/918173834800?text=Invitation%20samples%20dikhaiye"><span>✉️</span><h3>Invitations</h3><p>Special occasion cards</p></a><a class="gallery-tile" href="https://wa.me/918173834800?text=Book%20printing%20samples"><span>📚</span><h3>Books</h3><p>Booklets and publications</p></a><a class="gallery-tile" href="https://wa.me/918173834800?text=Bill%20book%20samples"><span>🧾</span><h3>Bill Books</h3><p>Business stationery</p></a><a class="gallery-tile" href="https://wa.me/918173834800?text=Sticker%20samples"><span>🏷️</span><h3>Stickers</h3><p>Labels and branding</p></a><a class="gallery-tile" href="https://wa.me/918173834800?text=Custom%20printing%20samples"><span>✦</span><h3>Custom Prints</h3><p>Your idea, our design</p></a></div></div></section>
+<section class="section" id="about"><div class="container"><div class="section-title reveal"><small>Our Identity</small><h2>About WARSI</h2><div class="gold-line"></div></div><div class="about-box reveal"><h3>Creative Ideas. Premium Printing.</h3><p><strong class="gold">WARSI PRINTING PRESS</strong> mein hum visiting cards, wedding cards, flex banners, posters, invitations aur business printing solutions provide karte hain. Hamara focus creative designs, attractive presentation aur customer ki requirement ke mutabiq printing par hai.</p><p style="margin-top:12px">Aap apna design, text ya reference WhatsApp par share karke order ke baare mein baat kar sakte hain.</p></div></div></section>
+<section class="section" id="contact"><div class="container"><div class="section-title reveal"><small>Let's Connect</small><h2>Contact & Orders</h2><div class="gold-line"></div><p>Apne next printing project ke liye humse contact karein.</p></div><div class="contact-grid"><div class="contact-item"><span style="font-size:27px">📍</span><b>Our Address</b><p>Niyamatganj Chauraha,<br>Tikaitnagar–Bhelsar Road,<br>Tehsil Ram Sanehi Ghat,<br>District Barabanki, Uttar Pradesh.</p></div><div class="contact-item"><span style="font-size:27px">📞</span><b>Call Us</b><p>+91 8173834800</p><a class="btn" href="tel:+918173834800">Call Now ↗</a></div><div class="contact-item"><span style="font-size:27px">💬</span><b>WhatsApp Orders</b><p>Design, quantity aur order details WhatsApp par share karein.</p><a class="btn" href="https://wa.me/918173834800">Chat on WhatsApp ↗</a></div></div><div style="text-align:center;margin-top:30px"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Niyamatganj+Chauraha+Barabanki+Uttar+Pradesh">Find Our Location ↗</a></div></div></section>
 </main>
-
-<footer>
- <div class="container">
-  <strong>WARSI PRINTING PRESS</strong>
-  <p style="margin-top:9px">A Royal Touch To Every Print ✦</p>
-  <p style="margin-top:8px">© <span id="year"></span> WARSI PRINTING PRESS. All Rights Reserved.</p>
- </div>
-</footer>
-
-<button class="theme-toggle" onclick="toggleThemes()">✦ Change Look</button>
-<div class="theme-panel" id="themePanel">
- <h3>Choose Your Royal Theme</h3>
- <div class="theme-options">
-  <button onclick="setTheme('gold')">Black & Gold</button>
-  <button onclick="setTheme('blue')">Royal Blue</button>
-  <button onclick="setTheme('purple')">Purple Galaxy</button>
-  <button onclick="setTheme('green')">Emerald Gold</button>
-  <button onclick="setTheme('rose')">Rose Gold</button>
-  <button onclick="setTheme('light')">Ivory Luxury</button>
- </div>
- <button onclick="document.body.classList.toggle('calm')" style="margin-top:10px;width:100%;padding:10px;border:1px solid var(--line);background:#241c11;color:#f2dfbd;border-radius:9px;font-size:11px">Toggle Calm Motion</button>
-</div>
-
-<div class="float-actions">
- <a href="https://wa.me/918173834800" aria-label="WhatsApp">✆</a>
- <a href="tel:+918173834800" aria-label="Call">☎</a>
-</div>
-
+<footer><div class="container"><strong>WARSI PRINTING PRESS</strong><p style="margin-top:9px">A Royal Touch To Every Print ✦</p><p style="margin-top:8px">© <span id="year"></span> WARSI PRINTING PRESS. All Rights Reserved.</p></div></footer>
+<button class="theme-toggle" onclick="toggleThemes()">✦ Change Look</button><div class="theme-panel" id="themePanel"><h3>Choose Your Royal Theme</h3><div class="theme-options"><button onclick="setTheme('gold')">Black & Gold</button><button onclick="setTheme('blue')">Royal Blue</button><button onclick="setTheme('purple')">Purple Galaxy</button><button onclick="setTheme('green')">Emerald Gold</button><button onclick="setTheme('rose')">Rose Gold</button><button onclick="setTheme('light')">Ivory Luxury</button></div><button onclick="document.body.classList.toggle('calm')" style="margin-top:10px;width:100%;padding:10px;border:1px solid var(--line);background:#241c11;color:#f2dfbd;border-radius:9px;font-size:11px">Toggle Calm Motion</button></div>
+<div class="float-actions"><a href="https://wa.me/918173834800" aria-label="WhatsApp">✆</a><a href="tel:+918173834800" aria-label="Call">☎</a></div>
 <script>
-const particles=document.getElementById('particles');
-for(let i=0;i<38;i++){
- const s=document.createElement('i');
- s.className='spark';s.style.left=Math.random()*100+'%';
- s.style.animationDuration=(8+Math.random()*15)+'s';
- s.style.animationDelay=(-Math.random()*20)+'s';
- s.style.opacity=(.25+Math.random()*.65);
- particles.appendChild(s);
-}
-function enterSite(){
- document.getElementById('welcome').classList.add('hide');
- try{sessionStorage.setItem('warsiEntered','yes')}catch(e){}
-}
-try{if(sessionStorage.getItem('warsiEntered'))document.getElementById('welcome').classList.add('hide')}catch(e){}
-function toggleMenu(){document.getElementById('navLinks').classList.toggle('show')}
-document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('show')));
+const particles=document.getElementById('particles');for(let i=0;i<38;i++){const s=document.createElement('i');s.className='spark';s.style.left=Math.random()*100+'%';s.style.animationDuration=(8+Math.random()*15)+'s';s.style.animationDelay=(-Math.random()*20)+'s';particles.appendChild(s)}
+// Reliable ENTER handler: works on mobile Safari and desktop browsers.
+(function(){
+  const welcome = document.getElementById('welcome');
+  const enterButton = document.getElementById('enterWarsiBtn');
+  function enterSite(){
+    if(!welcome) return;
+    welcome.classList.add('hide');
+    welcome.style.opacity = '0';
+    welcome.style.visibility = 'hidden';
+    welcome.style.pointerEvents = 'none';
+    welcome.setAttribute('aria-hidden','true');
+    try { sessionStorage.setItem('warsiEntered','yes'); } catch(e) {}
+  }
+  window.enterSite = enterSite;
+  if(enterButton){
+    enterButton.addEventListener('click', function(e){ e.preventDefault(); enterSite(); }, {passive:false});
+    enterButton.addEventListener('touchend', function(e){ e.preventDefault(); enterSite(); }, {passive:false});
+  }
+  try {
+    if(sessionStorage.getItem('warsiEntered') === 'yes') enterSite();
+  } catch(e) {}
+})();
+function toggleMenu(){document.getElementById('navLinks').classList.toggle('show')}document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('show')));
 function toggleThemes(){document.getElementById('themePanel').classList.toggle('open')}
-function setTheme(t){
- const themes={
-  gold:['#d9ad58','#ffdf91','#080706','#15120e','#fff9ed','#b9ad99','rgba(218,169,76,.25)'],
-  blue:['#83baff','#d6eaff','#07101d','#101d30','#f3f8ff','#b5c5d9','rgba(91,155,255,.25)'],
-  purple:['#c69aff','#eedaff','#10091b','#21132f','#fff6ff','#c5b2d4','rgba(176,105,255,.25)'],
-  green:['#9cc98a','#e2ffc9','#07130d','#132219','#f4fff0','#b6c8b1','rgba(128,205,115,.25)'],
-  rose:['#d99b91','#ffe0d7','#170c0c','#281817','#fff5f1','#d3b7ae','rgba(223,139,128,.25)'],
-  light:['#a77b32','#d6ad65','#f5efe3','#fffaf0','#241b10','#756956','rgba(173,128,55,.2)']
- };
- const v=themes[t];const r=document.documentElement;
- ['--gold','--gold2','--bg','--panel','--text','--muted','--glow'].forEach((k,i)=>r.style.setProperty(k,v[i]));
- document.getElementById('themePanel').classList.remove('open');
- try{localStorage.setItem('warsiTheme',t)}catch(e){}
-}
+function setTheme(t){const themes={gold:['#d9ad58','#ffdf91','#080706','#15120e','#fff9ed','#b9ad99','rgba(218,169,76,.25)'],blue:['#83baff','#d6eaff','#07101d','#101d30','#f3f8ff','#b5c5d9','rgba(91,155,255,.25)'],purple:['#c69aff','#eedaff','#10091b','#21132f','#fff6ff','#c5b2d4','rgba(176,105,255,.25)'],green:['#9cc98a','#e2ffc9','#07130d','#132219','#f4fff0','#b6c8b1','rgba(128,205,115,.25)'],rose:['#d99b91','#ffe0d7','#170c0c','#281817','#fff5f1','#d3b7ae','rgba(223,139,128,.25)'],light:['#a77b32','#d6ad65','#f5efe3','#fffaf0','#241b10','#756956','rgba(173,128,55,.2)']};const v=themes[t],r=document.documentElement;['--gold','--gold2','--bg','--panel','--text','--muted','--glow'].forEach((k,i)=>r.style.setProperty(k,v[i]));document.getElementById('themePanel').classList.remove('open');try{localStorage.setItem('warsiTheme',t)}catch(e){}}
 try{const saved=localStorage.getItem('warsiTheme');if(saved)setTheme(saved)}catch(e){}
 document.getElementById('year').textContent=new Date().getFullYear();
-
-/* Reveal elements as they enter the screen */
-const observer=new IntersectionObserver(entries=>{
- entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})
-},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-
-/* Desktop 3D parallax: touch devices keep a gentle static view */
-const scene=document.getElementById('heroScene');
-if(window.matchMedia('(pointer:fine)').matches){
- document.addEventListener('mousemove',e=>{
-  const x=(e.clientX/window.innerWidth-.5)*10;
-  const y=(e.clientY/window.innerHeight-.5)*-8;
-  scene.style.transform=`rotateY(${x}deg) rotateX(${y}deg)`;
- });
-}
-
-/* Gentle 3D tilt for cards on touch and pointer */
-document.querySelectorAll('.service-card,.sample-card,.gallery-tile').forEach(card=>{
- card.addEventListener('touchstart',()=>card.classList.add('touched'),{passive:true});
-});
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 </script>
-</body>
-</html>
+<script type="module">
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
+const canvas=document.querySelector('#gameCanvas'),host=document.querySelector('#world');
+const scene=new THREE.Scene();scene.background=new THREE.Color(0x17100a);scene.fog=new THREE.Fog(0x17100a,18,38);
+const camera=new THREE.PerspectiveCamera(62,1,.1,100);
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:false});renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+scene.add(new THREE.HemisphereLight(0xffe9c7,0x392314,2.2));
+const key=new THREE.DirectionalLight(0xffd58b,2.5);key.position.set(-6,10,7);key.castShadow=true;key.shadow.mapSize.set(1024,1024);scene.add(key);
+const gold=new THREE.MeshStandardMaterial({color:0xc99a4e,metalness:.65,roughness:.3}),dark=new THREE.MeshStandardMaterial({color:0x17100a,roughness:.7}),wood=new THREE.MeshStandardMaterial({color:0x684222,roughness:.65}),cream=new THREE.MeshStandardMaterial({color:0xe7d6b4}),wall=new THREE.MeshStandardMaterial({color:0x3b2b1c}),black=new THREE.MeshStandardMaterial({color:0x090909}),blue=new THREE.MeshStandardMaterial({color:0x203d5b}),paper=new THREE.MeshStandardMaterial({color:0xe7d6b4}),green=new THREE.MeshStandardMaterial({color:0x245a39});
+function cube(x,y,z,w,h,d,material,name=''){const o=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),material);o.position.set(x,y,z);o.castShadow=true;o.receiveShadow=true;o.userData.label=name;scene.add(o);return o}
+const floor=cube(0,-.18,0,18,.35,18,new THREE.MeshStandardMaterial({color:0x59412b}), 'Floor');
+cube(0,3,-9,18,6,.25,wall);cube(-9,3,0,.25,6,18,wall);cube(9,3,0,.25,6,18,wall);
+for(let x=-8;x<=8;x+=4){cube(x,5.8,0,.08,.08,17,gold);cube(x,5.8,-8,.08,.08,.08,gold)}
+// ceiling beams and warm pendant lights
+for(let x of [-5,0,5]){cube(x,5.85,0,.12,.12,17,gold);const light=new THREE.PointLight(0xffc96d,34,11);light.position.set(x,5.1,-1);scene.add(light);const shade=new THREE.Mesh(new THREE.CylinderGeometry(.55,.8,.22,20),gold);shade.position.set(x,5.55,-1);scene.add(shade)}
+// back logo wall
+cube(0,3,-8.78,5.8,2.2,.15,dark,'WARSI logo wall');cube(0,3,-8.66,5.4,1.8,.05,gold);cube(0,3,-8.6,5.15,1.55,.05,dark);
+function makeTextSprite(text){const c=document.createElement('canvas');c.width=512;c.height=128;const ctx=c.getContext('2d');ctx.fillStyle='#ffdf91';ctx.font='bold 58px Georgia';ctx.textAlign='center';ctx.fillText(text,256,82);const tex=new THREE.CanvasTexture(c);const m=new THREE.MeshBasicMaterial({map:tex,transparent:true});const s=new THREE.Mesh(new THREE.PlaneGeometry(4.7,1.15),m);s.position.set(0,3.15,-8.52);scene.add(s)}
+makeTextSprite('WARSI PRINTING PRESS');
+// counters / stations on left and right
+const stations=[
+ {x:-5.8,z:-3.5,label:'VISITING CARDS',section:'visiting',emoji:'💳'},
+ {x:5.8,z:-3.5,label:'WEDDING CARDS',section:'services',emoji:'💍'},
+ {x:-5.8,z:2.5,label:'FLEX & BANNERS',section:'gallery',emoji:'🖼️'},
+ {x:5.8,z:2.5,label:'POSTERS & PRINTS',section:'gallery',emoji:'🎨'},
+ {x:0,z:-6.3,label:'ORDER COUNTER',section:'contact',emoji:'✦'}
+];
+const clickable=[];
+function station(s){cube(s.x,.65,s.z,3.1,1.25,1.5,wood,s.label);cube(s.x,.16,s.z,3.3,.2,1.65,gold);cube(s.x,1.48,s.z-.78,2.5,.55,.08,dark);cube(s.x,1.5,s.z-.72,2.25,.38,.04,gold);const board=cube(s.x,2.2,s.z-.78,2.7,.9,.12,dark,s.label);cube(s.x,2.2,s.z-.7,2.52,.72,.04,blue);const tag=makeStationLabel(s.label,s.x,2.2,s.z-.66);clickable.push({mesh:board,station:s});for(let i=0;i<3;i++){cube(s.x-1+i,1.36,s.z-.15,.7,.08,.75,[paper,cream,gold][i])}}
+function makeStationLabel(text,x,y,z){const c=document.createElement('canvas');c.width=512;c.height=128;const ctx=c.getContext('2d');ctx.fillStyle='#ffdf91';ctx.font='bold 45px Georgia';ctx.textAlign='center';ctx.fillText(text,256,82);const m=new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(c),transparent:true});const p=new THREE.Mesh(new THREE.PlaneGeometry(2.45,.62),m);p.position.set(x,y,z);scene.add(p);return p}
+stations.forEach(station);
+// printing machine and display racks
+cube(0,.75,3.8,3.5,1.5,2.2,black,'Printing machine');cube(0,1.55,3.8,3.2,.18,2,gold);cube(0,1.9,3.1,2.2,.55,.25,blue);cube(0,2.15,3.1,1.5,.12,.3,gold);
+for(let side of [-1,1]){cube(side*7,.95,0,.55,1.9,5,wood,'Display shelf');for(let y of [.45,1.1,1.75])cube(side*7,y,-.2,.8,.08,4.6,gold);for(let i=0;i<4;i++)cube(side*7,yFor(i),-1.7+i*.95,.45,.5,.1,[paper,blue,gold,green][i])}
+function yFor(i){return 1.43}
+for(let i=0;i<4;i++){cube(-2+i*1.3,.22,-1,.95,.08,.65,[paper,blue,gold,green][i],'Card display')}
+cube(0,.1,0,4,.06,4,new THREE.MeshStandardMaterial({color:0x7d572f}),'Rug');
+// plant pots
+for(let x of [-7.8,7.8]){const pot=new THREE.Mesh(new THREE.CylinderGeometry(.28,.38,.5,16),wood);pot.position.set(x,.25,6.5);scene.add(pot);const leaves=new THREE.Mesh(new THREE.SphereGeometry(.65,12,10),green);leaves.position.set(x,.9,6.5);leaves.scale.y=1.3;scene.add(leaves)}
+// simple stylized human character
+const player=new THREE.Group();scene.add(player);player.position.set(0,0,6);
+const skin=new THREE.MeshStandardMaterial({color:0xc98761}),shirt=new THREE.MeshStandardMaterial({color:0x244e78}),pants=new THREE.MeshStandardMaterial({color:0x252b36}),shoes=new THREE.MeshStandardMaterial({color:0x111111});
+function ball(parent,r,material,x,y,z,sx=1,sy=1,sz=1){const o=new THREE.Mesh(new THREE.SphereGeometry(r,16,12),material);o.position.set(x,y,z);o.scale.set(sx,sy,sz);o.castShadow=true;parent.add(o);return o}
+function cylinderBetween(parent,a,b,r1,r2,material){const d=new THREE.Vector3().subVectors(b,a),o=new THREE.Mesh(new THREE.CylinderGeometry(r2,r1,d.length(),12),material);o.position.copy(a).add(b).multiplyScalar(.5);o.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.normalize());o.castShadow=true;parent.add(o)}
+const rig=new THREE.Group();player.add(rig);ball(rig,.31,shirt,0,1.25,0,.95,1.35,.62);ball(rig,.23,skin,0,2.02,0,1,1.08,1);ball(rig,.065,black,.09,2.08,-.19);ball(rig,.065,black,-.09,2.08,-.19);
+cylinderBetween(rig,new THREE.Vector3(-.25,1.55,0),new THREE.Vector3(-.4,.98,0),.13,.1,skin);cylinderBetween(rig,new THREE.Vector3(.25,1.55,0),new THREE.Vector3(.4,.98,0),.13,.1,skin);
+const legs=[];for(const x of [-.14,.14]){const g=new THREE.Group();g.position.set(x,.8,0);rig.add(g);cylinderBetween(g,new THREE.Vector3(0,0,0),new THREE.Vector3(0,-.62,0),.13,.1,pants);ball(g,.13,shoes,0,-.68,-.08,1,.55,1.5);legs.push(g)}
+let yaw=0,pitch=.22,joyX=0,joyY=0,drag=false,lastX=0,lastY=0,vy=0,grounded=true,walk=0;
+const keys={};addEventListener('keydown',e=>{keys[e.code]=true;if(e.code==='Space')jump()});addEventListener('keyup',e=>keys[e.code]=false);
+function jump(){if(grounded){vy=6;grounded=false}}
+document.getElementById('jumpBtn').onclick=jump;
+const stick=document.getElementById('stick'),knob=document.getElementById('knob');let stickActive=false;
+function moveStick(e){const r=stick.getBoundingClientRect(),x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2,d=Math.min(35,Math.hypot(x,y)),a=Math.atan2(y,x);joyX=Math.cos(a)*d/35;joyY=Math.sin(a)*d/35;knob.style.transform=`translate(${joyX*35}px,${joyY*35}px)`}
+stick.addEventListener('pointerdown',e=>{stickActive=true;stick.setPointerCapture(e.pointerId);moveStick(e)});stick.addEventListener('pointermove',e=>{if(stickActive)moveStick(e)});function resetStick(){stickActive=false;joyX=joyY=0;knob.style.transform=''}stick.addEventListener('pointerup',resetStick);stick.addEventListener('pointercancel',resetStick);
+canvas.addEventListener('pointerdown',e=>{if(e.clientX>host.getBoundingClientRect().left+host.clientWidth*.28){drag=true;lastX=e.clientX;lastY=e.clientY;canvas.setPointerCapture(e.pointerId)}});canvas.addEventListener('pointermove',e=>{if(drag){yaw-=(e.clientX-lastX)*.006;pitch=THREE.MathUtils.clamp(pitch+(e.clientY-lastY)*.003,-.05,.6);lastX=e.clientX;lastY=e.clientY}});canvas.addEventListener('pointerup',()=>drag=false);canvas.addEventListener('pointercancel',()=>drag=false);
+const message=document.getElementById('worldMessage');let msgTimer;function say(t){message.textContent=t;message.style.opacity=1;clearTimeout(msgTimer);msgTimer=setTimeout(()=>message.style.opacity=0,2400)}
+function interact(){let nearest=null,dist=99;for(const s of stations){const d=Math.hypot(player.position.x-s.x,player.position.z-s.z);if(d<dist){dist=d;nearest=s}}if(nearest&&dist<3.5){say(nearest.emoji+' '+nearest.label+' — opening section');document.getElementById(nearest.section).scrollIntoView({behavior:'smooth'});}else say('Kisi counter ke paas jaakar USE dabayein.');}
+document.getElementById('useBtn').onclick=interact;addEventListener('keydown',e=>{if(e.code==='KeyE')interact()});
+const raycaster=new THREE.Raycaster(),pointer=new THREE.Vector2();canvas.addEventListener('dblclick',e=>{const r=canvas.getBoundingClientRect();pointer.x=((e.clientX-r.left)/r.width)*2-1;pointer.y=-((e.clientY-r.top)/r.height)*2+1;raycaster.setFromCamera(pointer,camera);const hit=raycaster.intersectObjects(clickable.map(x=>x.mesh));if(hit.length){const s=clickable.find(x=>x.mesh===hit[0].object).station;document.getElementById(s.section).scrollIntoView({behavior:'smooth'})}});
+function resize(){const w=host.clientWidth,h=host.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()}new ResizeObserver(resize).observe(host);resize();
+let previous=performance.now();function frame(now){const dt=Math.min((now-previous)/1000,.04);previous=now;let f=(keys.KeyW||keys.ArrowUp?1:0)-(keys.KeyS||keys.ArrowDown?1:0)-joyY,s=(keys.KeyD||keys.ArrowRight?1:0)-(keys.KeyA||keys.ArrowLeft?1:0)+joyX,l=Math.hypot(f,s);if(l>1){f/=l;s/=l}const speed=3.4,dx=(Math.sin(yaw)*f+Math.cos(yaw)*s)*speed*dt,dz=(-Math.cos(yaw)*f+Math.sin(yaw)*s)*speed*dt;player.position.x=THREE.MathUtils.clamp(player.position.x+dx,-8,8);player.position.z=THREE.MathUtils.clamp(player.position.z+dz,-8,8);if(l>.08){player.rotation.y=Math.atan2(dx,dz);walk+=dt*10;legs[0].rotation.x=Math.sin(walk)*.65;legs[1].rotation.x=-Math.sin(walk)*.65}else legs.forEach(g=>g.rotation.x=0);vy-=14*dt;player.position.y+=vy*dt;if(player.position.y<=0){player.position.y=0;vy=0;grounded=true}
+const target=new THREE.Vector3(player.position.x+Math.sin(yaw)*6,player.position.y+2.7+pitch*2,player.position.z+Math.cos(yaw)*6);camera.position.lerp(target,1-Math.pow(.001,dt));camera.lookAt(player.position.x,player.position.y+1.1,player.position.z);renderer.render(scene,camera);requestAnimationFrame(frame)}requestAnimationFrame(frame);
+</script>
+</body></html>
