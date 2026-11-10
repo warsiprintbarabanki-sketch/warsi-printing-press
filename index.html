@@ -21,6 +21,8 @@ button{cursor:pointer}
 #stick{position:absolute;left:36px;top:36px;width:48px;height:48px;background:#d9b35c;border-radius:50%;border:2px solid white}
 #interact{position:absolute;bottom:125px;right:20px;width:76px;height:76px;border-radius:50%;border:0;background:#e4bc66;font-weight:bold;pointer-events:auto}
 #hint{display:none;position:fixed;bottom:10px;left:50%;transform:translateX(-50%);background:#000b;padding:9px;border-radius:8px;font-size:11px;white-space:nowrap;z-index:2}
+#speech{display:none;position:fixed;left:50%;top:12%;transform:translateX(-50%);z-index:6;width:min(90%,520px);padding:14px 18px;border:1px solid #e2b65d;border-radius:14px;background:#101010ed;color:#fff;text-align:center;font-size:15px;line-height:1.5;box-shadow:0 8px 30px #0009}
+#speech strong{display:block;color:#f2d18b;margin-bottom:5px}
 #order{display:none;position:fixed;inset:0;background:#000d;z-index:8;align-items:center;justify-content:center;padding:15px}
 .panel{width:min(430px,100%);max-height:90vh;overflow:auto;background:#17130d;border:1px solid #c69b4b;border-radius:15px;padding:22px}
 .panel h2{color:#e8c16b}
@@ -35,62 +37,83 @@ button{cursor:pointer}
 <body>
 <div id="game"></div>
 
+<div id="loadError" style="display:none;position:fixed;z-index:20;inset:0;background:#100d09;color:#fff;padding:28px;font:16px Arial;align-items:center;justify-content:center;text-align:center">
+<div>
+<h2 style="color:#eac778">3D Office load nahi ho paya</h2>
+<p id="loadErrorText">Internet connection check karke page dobara kholiye.</p>
+</div>
+</div>
+
 <div id="intro">
- <div class="box">
-  <div class="logo">WARSI</div>
-  <h2 style="letter-spacing:5px;margin:5px">PRINTING PRESS</h2>
-  <p style="line-height:1.8;color:#ddd">
-   Welcome to our Premium HD 3D Virtual Office<br>
-   Explore our showroom, cabins and printing factory.
-  </p>
-  <p style="color:#e9c779">Niyamatganj Chauraha, Barabanki</p>
-  <button class="gold" id="enter">ENTER 3D OFFICE</button>
-  <p style="font-size:11px;color:#aaa">Mobile: joystick se chalo, screen drag karke dekho.</p>
- </div>
+<div class="box">
+<div class="logo">WARSI</div>
+<h2 style="letter-spacing:5px;margin:5px">PRINTING PRESS</h2>
+<p style="line-height:1.8;color:#ddd">
+Welcome to our Premium HD 3D Virtual Office<br>
+Explore our showroom, cabins and printing factory.
+</p>
+<p style="color:#e9c779">Niyamatganj Chauraha, Barabanki</p>
+<button class="gold" id="enter">ENTER 3D OFFICE</button>
+<p style="font-size:11px;color:#aaa">Mobile: joystick se chalo, screen drag karke dekho.</p>
+</div>
 </div>
 
 <div id="top">
- <span>WARSI PRINTING PRESS</span>
- <span id="location">MAIN OFFICE</span>
+<span>WARSI PRINTING PRESS</span>
+<span id="location">MAIN OFFICE</span>
 </div>
+
 <div id="controls">
- <div id="joy"><div id="stick"></div></div>
- <button id="interact">ORDER</button>
+<div id="joy"><div id="stick"></div></div>
+<button id="interact">ORDER</button>
 </div>
-<div id="hint">W A S D = Move | Mouse = Look | E = Order</div>
+
+<div id="hint">AUTO TOUR MODE</div>
+<div id="speech">
+<strong id="speaker"></strong>
+<span id="spoken"></span>
+</div>
 
 <div id="order">
- <div class="panel">
-  <h2>WARSI PRINTING PRESS</h2>
-  <form id="orderForm">
-   <label>Your Name</label>
-   <input id="name" required placeholder="Your name">
-   <label>Mobile Number</label>
-   <input id="phone" required placeholder="Mobile number">
-   <label>Service</label>
-   <select id="service">
-    <option>Wedding Cards</option>
-    <option>Visiting Cards</option>
-    <option>Banner / Flex</option>
-    <option>Brochure / Pamphlet</option>
-    <option>Custom Printing</option>
-   </select>
-   <label>Order Details</label>
-   <textarea id="details" rows="3" placeholder="Quantity, size, design..."></textarea>
-   <button id="send" type="submit">SEND ON WHATSAPP</button>
-  </form>
-  <button id="close">CLOSE</button>
- </div>
+<div class="panel">
+<h2>WARSI PRINTING PRESS</h2>
+<form id="orderForm">
+<label>Your Name</label>
+<input id="name" required placeholder="Your name">
+<label>Mobile Number</label>
+<input id="phone" required placeholder="Mobile number">
+<label>Service</label>
+<select id="service">
+<option>Wedding Cards</option>
+<option>Visiting Cards</option>
+<option>Banner / Flex</option>
+<option>Brochure / Pamphlet</option>
+<option>Custom Printing</option>
+</select>
+<label>Order Details</label>
+<textarea id="details" rows="3" placeholder="Quantity, size, design..."></textarea>
+<button id="send" type="submit">SEND ON WHATSAPP</button>
+</form>
+<button id="close">CLOSE</button>
+</div>
 </div>
 
-<script type="module">
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"
+onerror="document.getElementById('loadError').style.display='flex';document.getElementById('loadErrorText').textContent='Three.js library internet se load nahi hui. Internet on karke dobara kholiye.'"></script>
+
+<script>
+function mat(color){
+return new THREE.MeshStandardMaterial({color:color,roughness:.55});
+}
 
 const scene=new THREE.Scene();
 scene.background=new THREE.Color(0x9eb6c4);
 scene.fog=new THREE.Fog(0x9eb6c4,55,130);
 
 const camera=new THREE.PerspectiveCamera(65,innerWidth/innerHeight,.1,250);
+camera.position.set(0,7,34);
+camera.lookAt(0,5,10);
+
 const renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:"high-performance"});
 renderer.setSize(innerWidth,innerHeight);
 renderer.setPixelRatio(Math.min(devicePixelRatio,2));
@@ -103,6 +126,7 @@ document.getElementById('game').appendChild(renderer.domElement);
 
 const hemi=new THREE.HemisphereLight(0xffffff,0x57412c,2.2);
 scene.add(hemi);
+
 const sun=new THREE.DirectionalLight(0xffe3b1,3);
 sun.position.set(-25,35,25);
 sun.castShadow=true;
@@ -123,369 +147,572 @@ const white=new THREE.MeshStandardMaterial({color:0xf4f0e7});
 const green=new THREE.MeshStandardMaterial({color:0x285c37});
 
 function box(w,h,d,x,y,z,m,shadow=true){
- const o=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m);
- o.position.set(x,y,z);
- o.castShadow=shadow;
- o.receiveShadow=true;
- scene.add(o);
- return o;
-}
-function cyl(r1,r2,h,x,y,z,m){
- const o=new THREE.Mesh(new THREE.CylinderGeometry(r1,r2,h,24),m);
- o.position.set(x,y,z);o.castShadow=true;scene.add(o);return o;
-}
-function labelTexture(text){
- const c=document.createElement('canvas');c.width=1200;c.height=300;
- const ctx=c.getContext('2d');
- ctx.fillStyle='#11100d';ctx.fillRect(0,0,1200,300);
- ctx.strokeStyle='#e2b65d';ctx.lineWidth=12;ctx.strokeRect(8,8,1184,284);
- ctx.fillStyle='#f2d18b';ctx.font='bold 90px Arial';ctx.textAlign='center';
- ctx.fillText(text,600,185);
- const t=new THREE.CanvasTexture(c);
- t.colorSpace=THREE.SRGBColorSpace;
- return t;
-}
-function sign(text,w,h,x,y,z){
- const o=new THREE.Mesh(new THREE.PlaneGeometry(w,h),
- new THREE.MeshBasicMaterial({map:labelTexture(text)}));
- o.position.set(x,y,z);scene.add(o);return o;
-}
-function roomSign(text,x,z){
- sign(text,5,.9,x,3.5,z);
+const o=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m);
+o.position.set(x,y,z);
+o.castShadow=shadow;
+o.receiveShadow=true;
+scene.add(o);
+return o;
 }
 
-// LARGE BUILDING
+function cyl(r1,r2,h,x,y,z,m){
+const o=new THREE.Mesh(new THREE.CylinderGeometry(r1,r2,h,24),m);
+o.position.set(x,y,z);
+o.castShadow=true;
+scene.add(o);
+return o;
+}
+
+function labelTexture(text){
+const c=document.createElement('canvas');
+c.width=1200;c.height=300;
+const ctx=c.getContext('2d');
+ctx.fillStyle='#11100d';ctx.fillRect(0,0,1200,300);
+ctx.strokeStyle='#e2b65d';ctx.lineWidth=12;
+ctx.strokeRect(8,8,1184,284);
+ctx.fillStyle='#f2d18b';
+ctx.font='bold 90px Arial';
+ctx.textAlign='center';
+ctx.fillText(text,600,185);
+const t=new THREE.CanvasTexture(c);
+t.colorSpace=THREE.SRGBColorSpace;
+return t;
+}
+
+function sign(text,w,h,x,y,z){
+const o=new THREE.Mesh(new THREE.PlaneGeometry(w,h),
+new THREE.MeshBasicMaterial({map:labelTexture(text)}));
+o.position.set(x,y,z);
+scene.add(o);
+return o;
+}
+
+function roomSign(text,x,z){
+sign(text,5,.9,x,3.5,z);
+}
+
+// BUILDING
 box(50,.5,48,0,-.35,0,new THREE.MeshStandardMaterial({color:0x6d6a64}));
 box(34,.4,28,0,.1,0,floorMat);
-box(34,.4,28,0,12,-0,white,false);
+box(34,.4,28,0,12,0,white,false);
 
-// Exterior rear and side walls
 box(34,12,.5,0,6,-14,wall);
 box(.5,12,28,-17,6,0,wall);
 box(.5,12,28,17,6,0,wall);
 
-// Front wall segments, leaving central entrance
 box(13,12,.5,-10.5,6,14,wall);
 box(13,12,.5,10.5,6,14,wall);
 box(8,1,.5,0,11.5,14,wall);
 
-// Front glass windows and central glass entrance
 box(12,6,.16,-10.5,5,13.7,glass);
 box(12,6,.16,10.5,5,13.7,glass);
 box(.18,7,.18,-4,5,13.7,gold);
 box(.18,7,.18,4,5,13.7,gold);
-box(3.8,7,.12,0,4.5,13.8,glass);
 box(.15,7,.2,-1.9,4.5,13.9,gold);
 box(.15,7,.2,1.9,4.5,13.9,gold);
 
-// Roof and golden architectural borders
 box(35,.5,29,0,12.3,0,black);
 box(35,.22,29,0,12.6,0,gold);
 box(35,.3,.5,0,11.8,14,black);
 box(35,.2,.3,0,12,14,gold);
 
-// Main sign
 box(16,3,.5,0,9.2,14.35,black);
 sign('WARSI PRINTING PRESS',15,2.5,0,9.2,14.65);
 
-// Entrance steps
 for(let i=0;i<4;i++)box(10,.25,1.1,0,.15+i*.22,15.2+i*.9,white);
 
-// Floor design lines
-for(let x=-15;x<=15;x+=5){
- box(.035,.012,27,x,.32,0,gold,false);
-}
-for(let z=-12;z<=12;z+=5){
- box(33,.012,.035,0,.32,z,gold,false);
-}
+for(let x=-15;x<=15;x+=5)box(.035,.012,27,x,.32,0,gold,false);
+for(let z=-12;z<=12;z+=5)box(33,.012,.035,0,.32,z,gold,false);
 
-// Interior ceiling lights
 for(let x=-12;x<=12;x+=8){
- for(let z=-10;z<=10;z+=8){
-  const light=new THREE.PointLight(0xffdfa1,28,12);
-  light.position.set(x,10,z);scene.add(light);
-  box(2,.12,.6,x,11.5,z,white);
- }
+for(let z=-10;z<=10;z+=8){
+const light=new THREE.PointLight(0xffdfa1,28,12);
+light.position.set(x,10,z);
+scene.add(light);
+box(2,.12,.6,x,11.5,z,white);
+}
 }
 
-// Partition helper: separate departments with door gaps
 function partitionX(x,z1,z2,doorCenter,doorWidth=2.5){
- const mid=(z1+z2)/2;
- const len=z2-z1;
- const left=doorCenter-doorWidth/2;
- const right=doorCenter+doorWidth/2;
- if(left>z1)box(.22,5,left-z1,x,2.8,(z1+left)/2,wall);
- if(right<z2)box(.22,5,z2-right,x,2.8,(right+z2)/2,wall);
- box(.22,1.5,doorWidth,x,4.55,doorCenter,wall);
-}
-function partitionZ(z,x1,x2,doorCenter,doorWidth=2.5){
- const left=doorCenter-doorWidth/2;
- const right=doorCenter+doorWidth/2;
- if(left>x1)box(left-x1,5,.22,(x1+left)/2,2.8,z,wall);
- if(right<x2)box(x2-right,5,.22,(right+x2)/2,2.8,z,wall);
- box(doorWidth,1.5,.22,doorCenter,4.55,z,wall);
+const left=doorCenter-doorWidth/2;
+const right=doorCenter+doorWidth/2;
+if(left>z1)box(.22,5,left-z1,x,2.8,(z1+left)/2,wall);
+if(right<z2)box(.22,5,z2-right,x,2.8,(right+z2)/2,wall);
+box(.22,1.5,doorWidth,x,4.55,doorCenter,wall);
 }
 
-// Five spacious departments
-// Boss cabin rear-left
+function partitionZ(z,x1,x2,doorCenter,doorWidth=2.5){
+const left=doorCenter-doorWidth/2;
+const right=doorCenter+doorWidth/2;
+if(left>x1)box(left-x1,5,.22,(x1+left)/2,2.8,z,wall);
+if(right<x2)box(x2-right,5,.22,(right+x2)/2,2.8,z,wall);
+box(doorWidth,1.5,.22,doorCenter,4.55,z,wall);
+}
+
 partitionX(-7,-12,-1,-6);
 partitionZ(-12,-17,-7,-12);
 partitionZ(-1,-17,-7,-12);
 roomSign('BOSS PRIVATE CABIN',-12,-11.85);
 
-// Design studio rear-right
 partitionX(7,-12,-1,-6);
 partitionZ(-12,7,17,12);
 partitionZ(-1,7,17,12);
 roomSign('DESIGN STUDIO',12,-11.85);
 
-// Printing department left-front
 partitionX(-7,1,12,6);
 partitionZ(1,-17,-7,-12);
 roomSign('PRINTING DEPARTMENT',-12,.85);
 
-// Packing department right-front
 partitionX(7,1,12,6);
 partitionZ(1,7,17,12);
 roomSign('PACKING DEPARTMENT',12,.85);
 
-// Reception desk and waiting lounge
+// RECEPTION
 box(7,1.2,1.4,0,.95,7,wood);
 box(7.1,.12,1.5,0,1.62,7,gold);
 box(4,.9,.12,0,2.4,6.25,black);
 sign('RECEPTION',3.8,.8,0,2.4,6.18);
 
 for(let x of [-5,-2,2,5]){
- box(1.7,.35,1.2,x,.65,10,wood);
- box(1.7,1.3,.18,x,1.35,10.5,wood);
- box(1.2,.08,.8,x,1.1,9.8,gold);
+box(1.7,.35,1.2,x,.65,10,wood);
+box(1.7,1.3,.18,x,1.35,10.5,wood);
+box(1.2,.08,.8,x,1.1,9.8,gold);
 }
 
-// Desk and computers
 function desk(x,z,w=3){
- box(w,.18,1.4,x,1.25,z,wood);
- box(w,.1,1.45,x,1.38,z,gold);
- for(let dx of [-w/2+.2,w/2-.2]){
-  box(.15,1.2,.15,x+dx,.65,z-.5,black);
-  box(.15,1.2,.15,x+dx,.65,z+.5,black);
- }
+box(w,.18,1.4,x,1.25,z,wood);
+box(w,.1,1.45,x,1.38,z,gold);
+for(let dx of [-w/2+.2,w/2-.2]){
+box(.15,1.2,.15,x+dx,.65,z-.5,black);
+box(.15,1.2,.15,x+dx,.65,z+.5,black);
 }
-function computer(x,z){
- box(1.1,.8,.12,x,2,z,black);
- box(1,.67,.04,x,2,z+.08,new THREE.MeshStandardMaterial({color:0x244f62,emissive:0x102735}));
- box(.12,.4,.12,x,1.55,z,black);
- box(.8,.07,.45,x,1.35,z,black);
-}
-function chair(x,z){
- cyl(.42,.42,.18,x,.6,z,black);
- box(.12,.12,.75,x,.95,z+.25,black);
- box(.8,.12,.8,x,.42,z,black);
 }
 
-// Boss office
+function computer(x,z){
+box(1.1,.8,.12,x,2,z,black);
+box(1,.67,.04,x,2,z+.08,new THREE.MeshStandardMaterial({color:0x244f62,emissive:0x102735}));
+box(.12,.4,.12,x,1.55,z,black);
+box(.8,.07,.45,x,1.35,z,black);
+}
+
+function chair(x,z){
+cyl(.42,.42,.18,x,.6,z,black);
+box(.12,.12,.75,x,.95,z+.25,black);
+box(.8,.12,.8,x,.42,z,black);
+}
+
 desk(-12,-7,3.5);computer(-12,-7.2);
 chair(-12,-9);
 box(2,.15,1,-12,2.7,-11,wood);
 box(1,.08,.8,-12,2.82,-11,gold);
 
-// Design room
 desk(10,-7);computer(10,-7);
 desk(14,-7);computer(14,-7);
 chair(10,-9);chair(14,-9);
 
-// Printing machines
 function printer(x,z){
- box(2.5,2,2,x,1.3,z,black);
- box(2.2,.15,1.8,x,2.35,z,gold);
- box(1.7,.12,1.2,x,2.45,z,white);
- box(1.8,.3,.08,x,1.7,z+1.02,white);
- cyl(.3,.3,.12,x,2.5,z+.5,gold);
+box(2.5,2,2,x,1.3,z,black);
+box(2.2,.15,1.8,x,2.35,z,gold);
+box(1.7,.12,1.2,x,2.45,z,white);
+box(1.8,.3,.08,x,1.7,z+1.02,white);
+cyl(.3,.3,.12,x,2.5,z+.5,gold);
 }
 printer(-12,4);printer(-12,9);
 box(3,.2,1.5,-12,.9,11,wood);
 
-// Packing tables
 desk(10,5);desk(14,5);
 for(let i=0;i<5;i++){
- box(.7,.65,.7,9+i*1.5,1.85,9,mat(0xb48b4e));
- box(.72,.05,.72,9+i*1.5,2.2,9,gold);
+box(.7,.65,.7,9+i*1.5,1.85,9,mat(0xb48b4e));
+box(.72,.05,.72,9+i*1.5,2.2,9,gold);
 }
 
-// Decoration and plants
 function plant(x,z){
- cyl(.65,.8,.9,x,.5,z,wood);
- cyl(.1,.12,1.8,x,1.8,z,wood);
- for(let i=0;i<7;i++){
-  const leaf=new THREE.Mesh(new THREE.SphereGeometry(.48,10,8),green);
-  leaf.scale.set(.7,1.2,.65);
-  leaf.position.set(x+Math.sin(i)*.5,2.5+Math.cos(i)*.35,z+Math.cos(i)*.5);
-  scene.add(leaf);
- }
+cyl(.65,.8,.9,x,.5,z,wood);
+cyl(.1,.12,1.8,x,1.8,z,wood);
+for(let i=0;i<7;i++){
+const leaf=new THREE.Mesh(new THREE.SphereGeometry(.48,10,8),green);
+leaf.scale.set(.7,1.2,.65);
+leaf.position.set(x+Math.sin(i)*.5,2.5+Math.cos(i)*.35,z+Math.cos(i)*.5);
+scene.add(leaf);
+}
 }
 plant(-15,10);plant(15,10);plant(-15,-10);plant(15,-10);
 
-// Human 3D character
+// CHARACTERS
 function person(shirt=0x9b762f){
- const g=new THREE.Group();
- const skin=new THREE.MeshStandardMaterial({color:0xc78d65});
- const clothes=new THREE.MeshStandardMaterial({color:shirt});
- const pants=new THREE.MeshStandardMaterial({color:0x22252b});
- const body=new THREE.Mesh(new THREE.CapsuleGeometry(.34,.65,5,12),clothes);
- body.position.y=1.2;g.add(body);
- const head=new THREE.Mesh(new THREE.SphereGeometry(.27,20,16),skin);
- head.position.y=1.95;g.add(head);
- const hair=new THREE.Mesh(new THREE.SphereGeometry(.275,16,10),black);
- hair.scale.y=.45;hair.position.y=2.12;g.add(hair);
- const legs=[];
- for(let side of [-1,1]){
-  const leg=new THREE.Mesh(new THREE.CapsuleGeometry(.11,.55,4,8),pants);
-  leg.position.set(side*.16,.43,0);g.add(leg);legs.push(leg);
-  const arm=new THREE.Mesh(new THREE.CapsuleGeometry(.09,.48,4,8),clothes);
-  arm.position.set(side*.4,1.28,0);g.add(arm);
- }
- g.userData.legs=legs;
- scene.add(g);return g;
+const g=new THREE.Group();
+const skin=new THREE.MeshStandardMaterial({color:0xc78d65});
+const clothes=new THREE.MeshStandardMaterial({color:shirt});
+const pants=new THREE.MeshStandardMaterial({color:0x22252b});
+const body=new THREE.Mesh(new THREE.CapsuleGeometry(.34,.65,5,12),clothes);
+body.position.y=1.2;g.add(body);
+const head=new THREE.Mesh(new THREE.SphereGeometry(.27,20,16),skin);
+head.position.y=1.95;g.add(head);
+const hair=new THREE.Mesh(new THREE.SphereGeometry(.275,16,10),black);
+hair.scale.y=.45;hair.position.y=2.12;g.add(hair);
+const legs=[];
+for(let side of [-1,1]){
+const leg=new THREE.Mesh(new THREE.CapsuleGeometry(.11,.55,4,8),pants);
+leg.position.set(side*.16,.43,0);g.add(leg);legs.push(leg);
+const arm=new THREE.Mesh(new THREE.CapsuleGeometry(.09,.48,4,8),clothes);
+arm.position.set(side*.4,1.28,0);g.add(arm);
 }
+g.userData.legs=legs;
+scene.add(g);
+return g;
+}
+
 const player=person(0x99702b);
-player.position.set(0,0,9);
+player.position.set(0,0,23.5);
+
 const workers=[
- {p:person(0x234b8c),x:-12,z:-8},
- {p:person(0x28734e),x:10,z:-8},
- {p:person(0x9b3939),x:-12,z:5},
- {p:person(0x704c9b),x:12,z:5}
+{p:person(0x234b8c),x:-12,z:-8},
+{p:person(0x28734e),x:10,z:-8},
+{p:person(0x9b3939),x:-12,z:5},
+{p:person(0x704c9b),x:12,z:5}
 ];
 workers.forEach(w=>w.p.position.set(w.x,0,w.z));
 
-// Movement controls
-let entered=false,yaw=0,pitch=.12;
+// SLIDING DOORS
+const doorLeft=box(1.8,6.7,.16,-.95,4.35,13.82,glass);
+const doorRight=box(1.8,6.7,.16,.95,4.35,13.82,glass);
+box(.12,7,.22,-1.95,4.5,13.9,gold);
+box(.12,7,.22,1.95,4.5,13.9,gold);
+let doorsOpen=false,doorProgress=0;
+let entered=false,yaw=0,pitch=.12,tourRunning=false;
+let entrySequence=false,entryDone=false;
+
+function setDoorOpen(v){doorsOpen=v;}
+
+function receptionist(){
+const g=person(0x315f78);
+g.position.set(0,0,5.25);
+g.rotation.y=Math.PI;
+return g;
+}
+const receptionistNPC=receptionist();
+
+const interaction=document.createElement('div');
+interaction.style.cssText='position:fixed;left:50%;top:68%;transform:translate(-50%,-50%);z-index:4;background:#17130eee;border:1px solid #d4ad5d;color:#f2d18b;padding:12px 18px;border-radius:9px;font-weight:bold;font-size:13px;display:none;text-align:center;box-shadow:0 5px 25px #0006';
+interaction.textContent='PRESS E TO TALK';
+document.body.appendChild(interaction);
+
+function showReception(){
+interaction.textContent='PRESS E TO TALK TO RECEPTION';
+interaction.style.display='block';
+}
+function hideInteraction(){interaction.style.display='none';}
+function showBoss(){
+interaction.textContent='PRESS E TO MEET THE BOSS';
+interaction.style.display='block';
+}
+
+// VOICE DIALOGUE
+function sayAs(name,line){
+return new Promise(resolve=>{
+const card=document.getElementById('speech');
+document.getElementById('speaker').textContent=name;
+document.getElementById('spoken').textContent=line;
+card.style.display='block';
+
+if(!('speechSynthesis' in window)){
+setTimeout(()=>{card.style.display='none';resolve();},3500);
+return;
+}
+
+speechSynthesis.cancel();
+const u=new SpeechSynthesisUtterance(line);
+u.lang='hi-IN';
+u.rate=.92;
+u.pitch=1;
+u.onend=()=>{card.style.display='none';resolve();};
+u.onerror=()=>{setTimeout(()=>{card.style.display='none';resolve();},2500);};
+speechSynthesis.speak(u);
+});
+}
+
+// AUTOMATIC WALKING
+function walkTo(x,z){
+return new Promise(resolve=>{
+const step=()=>{
+const dx=x-player.position.x;
+const dz=z-player.position.z;
+const d=Math.hypot(dx,dz);
+
+if(d<.16){
+player.position.set(x,0,z);
+resolve();
+return;
+}
+
+const v=Math.min(d,3.4/60);
+player.position.x+=dx/d*v;
+player.position.z+=dz/d*v;
+player.rotation.y=Math.atan2(dx,dz);
+
+player.userData.legs.forEach((l,i)=>{
+l.rotation.x=Math.sin(clock.elapsedTime*9+i*Math.PI)*.5;
+});
+
+requestAnimationFrame(step);
+};
+step();
+});
+}
+
+// FULL AUTOMATIC TOUR
+async function startGuidedTour(){
+tourRunning=true;
+setDoorOpen(true);
+
+await sayAs('WARSI PRINTING PRESS',
+'Assalamu Alaikum! WARSI PRINTING PRESS mein aapka swagat hai. Aaiye, main aapko apna office dikhata hoon.');
+
+await walkTo(0,9.6);
+
+await sayAs('Receptionist',
+'Assalamu Alaikum sir! Welcome to WARSI PRINTING PRESS. Aapko kis tarah ki printing chahiye? Wedding card, visiting card ya banner?');
+
+await sayAs('Visitor',
+'Mujhe aapka office aur printing ka kaam dekhna hai. Kya main boss se mil sakta hoon?');
+
+await sayAs('Receptionist',
+'Ji bilkul. Main aapko boss ke cabin tak le chalta hoon.');
+
+await walkTo(0,4.5);
+await walkTo(-6,1);
+await walkTo(-10,-4);
+await walkTo(-12,-7.2);
+
+await sayAs('Boss',
+'Assalamu Alaikum! WARSI PRINTING PRESS mein khush aamdeed. Hum wedding cards, visiting cards, banners, brochures aur custom printing ka kaam karte hain.');
+
+await sayAs('Visitor',
+'Bahut achha! Mujhe apne order ke baare mein baat karni hai.');
+
+await sayAs('Boss',
+'Zaroor. ORDER button se apni details bhejiye. Hamari team WhatsApp par aapse rabta karegi.');
+
+tourRunning=false;
+document.getElementById('hint').textContent='GUIDED TOUR COMPLETE | ORDER BUTTON SE CONTACT KAREIN';
+}
+
+// CONTROLS
 const keys={};
 addEventListener('keydown',e=>{
- keys[e.key.toLowerCase()]=true;
- if(e.key.toLowerCase()==='e')openOrder();
+keys[e.key.toLowerCase()]=true;
+
+if(e.key.toLowerCase()==='e' && !tourRunning){
+const nearReception=Math.abs(player.position.x)<3.4 && player.position.z>7.2 && player.position.z<11.5;
+const nearBoss=Math.hypot(player.position.x+12,player.position.z+8)<3.3;
+
+if(nearReception){
+document.getElementById('order').style.display='flex';
+}else if(nearBoss){
+document.getElementById('order').style.display='flex';
+document.getElementById('service').value='Custom Printing';
+}else{
+openOrder();
+}
+}
 });
+
 addEventListener('keyup',e=>keys[e.key.toLowerCase()]=false);
 
 let moveX=0,moveY=0,joyActive=false;
 const joy=document.getElementById('joy');
 const stick=document.getElementById('stick');
+
 joy.addEventListener('pointerdown',e=>{
- joyActive=true;joy.setPointerCapture(e.pointerId);joyMove(e);
+joyActive=true;
+joy.setPointerCapture(e.pointerId);
+joyMove(e);
 });
-joy.addEventListener('pointermove',e=>{if(joyActive)joyMove(e)});
+joy.addEventListener('pointermove',e=>{
+if(joyActive)joyMove(e);
+});
+
 function joyMove(e){
- const r=joy.getBoundingClientRect();
- let dx=e.clientX-r.left-r.width/2;
- let dy=e.clientY-r.top-r.height/2;
- const len=Math.hypot(dx,dy),max=43;
- if(len>max){dx*=max/len;dy*=max/len}
- moveX=dx/max;moveY=dy/max;
- stick.style.left=(36+dx)+'px';
- stick.style.top=(36+dy)+'px';
+const r=joy.getBoundingClientRect();
+let dx=e.clientX-r.left-r.width/2;
+let dy=e.clientY-r.top-r.height/2;
+const len=Math.hypot(dx,dy),max=43;
+if(len>max){dx*=max/len;dy*=max/len;}
+moveX=dx/max;
+moveY=dy/max;
+stick.style.left=(36+dx)+'px';
+stick.style.top=(36+dy)+'px';
 }
+
 function resetJoy(){
- joyActive=false;moveX=moveY=0;
- stick.style.left='36px';stick.style.top='36px';
+joyActive=false;
+moveX=moveY=0;
+stick.style.left='36px';
+stick.style.top='36px';
 }
 joy.addEventListener('pointerup',resetJoy);
 joy.addEventListener('pointercancel',resetJoy);
 
-// Camera drag
+// CAMERA
 let dragging=false,lastX=0,lastY=0;
 renderer.domElement.addEventListener('pointerdown',e=>{
- if(entered){dragging=true;lastX=e.clientX;lastY=e.clientY;
- renderer.domElement.setPointerCapture(e.pointerId)}
+if(entered){
+dragging=true;
+lastX=e.clientX;
+lastY=e.clientY;
+renderer.domElement.setPointerCapture(e.pointerId);
+}
 });
 renderer.domElement.addEventListener('pointermove',e=>{
- if(!dragging)return;
- const dx=e.clientX-lastX,dy=e.clientY-lastY;
- lastX=e.clientX;lastY=e.clientY;
- yaw-=dx*.004;
- pitch=THREE.MathUtils.clamp(pitch-dy*.003,-.35,.55);
+if(!dragging)return;
+const dx=e.clientX-lastX,dy=e.clientY-lastY;
+lastX=e.clientX;
+lastY=e.clientY;
+yaw-=dx*.004;
+pitch=THREE.MathUtils.clamp(pitch-dy*.003,-.35,.55);
 });
 renderer.domElement.addEventListener('pointerup',()=>dragging=false);
 renderer.domElement.addEventListener('pointercancel',()=>dragging=false);
 
+// ENTER
 document.getElementById('enter').onclick=()=>{
- entered=true;
- document.getElementById('intro').style.display='none';
- document.getElementById('top').style.display='flex';
- document.getElementById('controls').style.display='block';
- document.getElementById('hint').style.display='block';
+entered=true;
+entrySequence=false;
+entryDone=false;
+document.getElementById('intro').style.display='none';
+document.getElementById('top').style.display='flex';
+document.getElementById('controls').style.display='block';
+document.getElementById('hint').style.display='block';
+document.getElementById('hint').textContent='AUTOMATIC OFFICE TOUR…';
+startGuidedTour();
 };
 
 function openOrder(){
- if(entered)document.getElementById('order').style.display='flex';
+if(entered && !tourRunning){
+document.getElementById('order').style.display='flex';
 }
-document.getElementById('interact').onclick=openOrder;
-document.getElementById('close').onclick=()=>{
- document.getElementById('order').style.display='none';
+}
+
+document.getElementById('interact').onclick=()=>{
+const nearReception=Math.abs(player.position.x)<3.4 && player.position.z>7.2 && player.position.z<11.5;
+const nearBoss=Math.hypot(player.position.x+12,player.position.z+8)<3.3;
+if(!tourRunning && (nearReception||nearBoss)){
+document.getElementById('order').style.display='flex';
+}else{
+openOrder();
+}
 };
+
+document.getElementById('close').onclick=()=>{
+document.getElementById('order').style.display='none';
+};
+
 document.getElementById('orderForm').addEventListener('submit',e=>{
- e.preventDefault();
- const n=document.getElementById('name').value.trim();
- const p=document.getElementById('phone').value.trim();
- const s=document.getElementById('service').value;
- const d=document.getElementById('details').value.trim();
- const msg=`Assalamu Alaikum WARSI PRINTING PRESS%0AName: ${encodeURIComponent(n)}%0APhone: ${encodeURIComponent(p)}%0AService: ${encodeURIComponent(s)}%0ADetails: ${encodeURIComponent(d)}`;
- window.open('https://wa.me/918173834800?text='+msg,'_blank');
+e.preventDefault();
+const n=document.getElementById('name').value.trim();
+const p=document.getElementById('phone').value.trim();
+const s=document.getElementById('service').value;
+const d=document.getElementById('details').value.trim();
+
+const msg=`Assalamu Alaikum WARSI PRINTING PRESS%0AName: ${encodeURIComponent(n)}%0APhone: ${encodeURIComponent(p)}%0AService: ${encodeURIComponent(s)}%0ADetails: ${encodeURIComponent(d)}`;
+
+window.open('https://wa.me/918173834800?text='+msg,'_blank');
 });
 
-// Animation loop
+// ANIMATION
 const clock=new THREE.Clock();
+
 function animate(){
- requestAnimationFrame(animate);
- const dt=Math.min(clock.getDelta(),.04);
- if(entered){
-  let f=(keys.w||keys.arrowup?1:0)-(keys.s||keys.arrowdown?1:0)-moveY;
-  let s=(keys.d||keys.arrowright?1:0)-(keys.a||keys.arrowleft?1:0)+moveX;
-  const len=Math.hypot(f,s);
-  if(len>1){f/=len;s/=len}
-  const speed=6*dt;
-  const dx=(Math.sin(yaw)*f+Math.cos(yaw)*s)*speed;
-  const dz=(-Math.cos(yaw)*f+Math.sin(yaw)*s)*speed;
-  player.position.x=THREE.MathUtils.clamp(player.position.x+dx,-15.5,15.5);
-  player.position.z=THREE.MathUtils.clamp(player.position.z+dz,-12.5,12.5);
-  const walking=Math.abs(f)+Math.abs(s)>.05;
-  if(walking){
-   player.rotation.y=Math.atan2(dx,dz);
-   player.userData.legs.forEach((l,i)=>{
-    l.rotation.x=Math.sin(clock.elapsedTime*9+i*Math.PI)*.55;
-   });
-  }else{
-   player.userData.legs.forEach(l=>l.rotation.x=0);
-  }
+requestAnimationFrame(animate);
+const dt=Math.min(clock.getDelta(),.04);
 
-  const target=new THREE.Vector3(player.position.x,1.25,player.position.z);
-  const dist=7;
-  const desired=new THREE.Vector3(
-   target.x+Math.sin(yaw)*dist,
-   target.y+3+pitch*4,
-   target.z+Math.cos(yaw)*dist
-  );
-  camera.position.lerp(desired,.13);
-  camera.lookAt(target);
+if(entered){
 
-  let area='MAIN RECEPTION';
-  if(player.position.x < -7 && player.position.z < -1)area='BOSS CABIN';
-  else if(player.position.x > 7 && player.position.z < -1)area='DESIGN STUDIO';
-  else if(player.position.x < -7 && player.position.z > 1)area='PRINTING ROOM';
-  else if(player.position.x > 7 && player.position.z > 1)area='PACKING ROOM';
-  document.getElementById('location').textContent=area;
- }
- workers.forEach((w,i)=>{
-  w.p.userData.legs.forEach((l,j)=>{
-   l.rotation.x=Math.sin(clock.elapsedTime*2+i+j)*.08;
-  });
- });
- renderer.render(scene,camera);
+if(entrySequence){
+player.position.z=THREE.MathUtils.damp(player.position.z,9.6,1.25,dt);
+player.rotation.y=0;
+if(Math.abs(player.position.z-9.6)<0.12){
+player.position.z=9.6;
+entrySequence=false;
+entryDone=true;
+document.getElementById('hint').textContent='WASD / ARROWS = MOVE | E = INTERACT';
 }
+}
+
+let f=(entrySequence||tourRunning)?0:
+((keys.w||keys.arrowup?1:0)-(keys.s||keys.arrowdown?1:0)-moveY);
+
+let s=(entrySequence||tourRunning)?0:
+((keys.d||keys.arrowright?1:0)-(keys.a||keys.arrowleft?1:0)+moveX);
+
+const len=Math.hypot(f,s);
+if(len>1){f/=len;s/=len;}
+
+const speed=6*dt;
+const dx=(Math.sin(yaw)*f+Math.cos(yaw)*s)*speed;
+const dz=(-Math.cos(yaw)*f+Math.sin(yaw)*s)*speed;
+
+player.position.x=THREE.MathUtils.clamp(player.position.x+dx,-15.5,15.5);
+player.position.z=THREE.MathUtils.clamp(player.position.z+dz,-12.5,12.5);
+
+const walking=entrySequence || Math.abs(f)+Math.abs(s)>.05;
+if(walking){
+player.rotation.y=Math.atan2(dx,dz);
+player.userData.legs.forEach((l,i)=>{
+l.rotation.x=Math.sin(clock.elapsedTime*9+i*Math.PI)*.55;
+});
+}else{
+player.userData.legs.forEach(l=>l.rotation.x=0);
+}
+
+const target=new THREE.Vector3(player.position.x,1.25,player.position.z);
+const dist=7;
+const desired=new THREE.Vector3(
+target.x+Math.sin(yaw)*dist,
+target.y+3+pitch*4,
+target.z+Math.cos(yaw)*dist
+);
+
+camera.position.lerp(desired,.13);
+camera.lookAt(target);
+
+let area='MAIN RECEPTION';
+if(player.position.x < -7 && player.position.z < -1)area='BOSS CABIN';
+else if(player.position.x > 7 && player.position.z < -1)area='DESIGN STUDIO';
+else if(player.position.x < -7 && player.position.z > 1)area='PRINTING ROOM';
+else if(player.position.x > 7 && player.position.z > 1)area='PACKING ROOM';
+document.getElementById('location').textContent=area;
+}
+
+const doorTarget=doorsOpen?2.05:0;
+doorProgress=THREE.MathUtils.damp(doorProgress,doorTarget,5,dt);
+doorLeft.position.x=-.95-doorProgress;
+doorRight.position.x=.95+doorProgress;
+
+if(!entrySequence && entered && !tourRunning){
+const nearReception=Math.abs(player.position.x)<3.4 && player.position.z>7.2 && player.position.z<11.5;
+const nearBoss=Math.hypot(player.position.x+12,player.position.z+8)<3.3;
+if(nearReception)showReception();
+else if(nearBoss)showBoss();
+else hideInteraction();
+}
+
+workers.forEach((w,i)=>{
+w.p.userData.legs.forEach((l,j)=>{
+l.rotation.x=Math.sin(clock.elapsedTime*2+i+j)*.08;
+});
+});
+
+renderer.render(scene,camera);
+}
+
 animate();
 
 addEventListener('resize',()=>{
- camera.aspect=innerWidth/innerHeight;
- camera.updateProjectionMatrix();
- renderer.setSize(innerWidth,innerHeight);
- renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+camera.aspect=innerWidth/innerHeight;
+camera.updateProjectionMatrix();
+renderer.setSize(innerWidth,innerHeight);
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
 });
 </script>
 </body>
